@@ -1221,9 +1221,6 @@ local function INEXCDA_fake_script() -- Run.LocalScript
 
 						if func then
 							func()
-						else
-							local f = loadstring(tbox.Text)
-							if f then f() end
 						end
 					end)
 
@@ -1580,6 +1577,7 @@ local function JLYVKG_fake_script() -- fluxusz.LocalScript
 	
 end
 coroutine.wrap(JLYVKG_fake_script)()
+
 
 
 
