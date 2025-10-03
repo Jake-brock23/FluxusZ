@@ -1237,11 +1237,6 @@ local function INEXCDA_fake_script() -- Run.LocalScript
 		end
 	end
 end
-
--- Call the function once
-INEXCDA_fake_script()
-	
-end
 coroutine.wrap(INEXCDA_fake_script)()
 local function KCED_fake_script() -- Copy.LocalScript 
 	local script = Instance.new('LocalScript', Copy)
@@ -1585,5 +1580,6 @@ local function JLYVKG_fake_script() -- fluxusz.LocalScript
 	
 end
 coroutine.wrap(JLYVKG_fake_script)()
+
 
 
