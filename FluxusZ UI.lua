@@ -1199,7 +1199,7 @@ local function LFJUVM_fake_script() -- Clear.LocalScript
 	
 	
 end
-coroutine.wrap(LFJUVM_fake_script)()
+-- Removed unnecessary coroutine wrap
 local function INEXCDA_fake_script() -- Run.LocalScript 
 	local script = Instance.new('LocalScript', Run)
 
@@ -1210,27 +1210,36 @@ local function INEXCDA_fake_script() -- Run.LocalScript
 	if scrollingFrame then
 		local tbox = scrollingFrame:FindFirstChild("TextBox")
 		if tbox and tbox:IsA("TextBox") then
-			Button.MouseButton1Click:Connect(function()
-				local success, result = pcall(function()
-					local func
-					if dtc and dtc.schedule then
-						func = dtc.schedule(tbox.Text)
-					end
-	
-					if func then
-						func()
-					else
-						local f = loadstring(tbox.Text)
-						if f then f() end
+			-- Prevent double connections
+			if not Button:GetAttribute("Connected") then
+				Button.MouseButton1Click:Connect(function()
+					local success, result = pcall(function()
+						local func
+						if dtc and dtc.schedule then
+							func = dtc.schedule(tbox.Text)
+						end
+
+						if func then
+							func()
+						else
+							local f = loadstring(tbox.Text)
+							if f then f() end
+						end
+					end)
+
+					if not success then
+						warn("Error executing code:", result)
 					end
 				end)
-	
-				if not success then
-					warn("Error executing code:", result)
-				end
-			end)
+
+				Button:SetAttribute("Connected", true)
+			end
 		end
 	end
+end
+
+-- Call the function once
+INEXCDA_fake_script()
 	
 end
 coroutine.wrap(INEXCDA_fake_script)()
@@ -1266,8 +1275,8 @@ local function SXFBH_fake_script() -- Paste.LocalScript
 			end)
 		end
 	end
-	
-	
+
+
 end
 coroutine.wrap(SXFBH_fake_script)()
 local function DXVRJG_fake_script() -- TextBox.LocalScript 
@@ -1576,4 +1585,5 @@ local function JLYVKG_fake_script() -- fluxusz.LocalScript
 	
 end
 coroutine.wrap(JLYVKG_fake_script)()
+
 
