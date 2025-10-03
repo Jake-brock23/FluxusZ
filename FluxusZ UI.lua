@@ -364,12 +364,29 @@ TextLabel_2.BorderSizePixel = 0
 TextLabel_2.Position = UDim2.new(0, 0, 0.552200079, 0)
 TextLabel_2.Size = UDim2.new(0, 267, 0, 91)
 TextLabel_2.Font = Enum.Font.Gotham
-TextLabel_2.Text = "- Kaiso"
+TextLabel_2.Text = ""
 TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_2.TextSize = 15.000
 TextLabel_2.TextWrapped = true
 TextLabel_2.TextXAlignment = Enum.TextXAlignment.Right
 TextLabel_2.TextYAlignment = Enum.TextYAlignment.Bottom
+
+-- Smoothed FPS updater
+local RunService = game:GetService("RunService")
+local lastTime = tick()
+local fps = 60
+local alpha = 0.1 -- smoothing factor (lower = smoother, slower updates)
+
+RunService.RenderStepped:Connect(function()
+	local now = tick()
+	local currentFps = 1 / (now - lastTime)
+	lastTime = now
+
+	-- simple exponential moving average
+	fps = fps + (currentFps - fps) * alpha
+
+	TextLabel_2.Text = "FPS: " .. math.floor(fps)
+end)
 
 Discord.Name = "Discord"
 Discord.Parent = home_2
@@ -1559,3 +1576,4 @@ local function JLYVKG_fake_script() -- fluxusz.LocalScript
 	
 end
 coroutine.wrap(JLYVKG_fake_script)()
+
