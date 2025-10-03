@@ -1,7 +1,7 @@
 {
   "moduleName": "FluxusZ",
   "rbxhttp": false,
-  "script": "dtc.schedule(game:HttpGet('https://raw.githubusercontent.com/Snowie3310/Frostware/main/Frostware%20Key.lua', true))",
+  "script": "dtc.schedule(game:HttpGet('https://raw.githubusercontent.com/Jake-brock23/FluxusZ/main/FluxusZ%20UI.lua', true))",
   "versionName": "1",
   "Keysystem": false
 }
