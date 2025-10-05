@@ -1,1031 +1,1605 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
-
-local fluxusz = Instance.new("ScreenGui")
-local main = Instance.new("Frame")
-local UICorner = Instance.new("UICorner")
-local tabsbar = Instance.new("ScrollingFrame")
-local UICorner_2 = Instance.new("UICorner")
-local home = Instance.new("TextButton")
-local UICorner_3 = Instance.new("UICorner")
-local ImageLabel = Instance.new("ImageLabel")
-local credits = Instance.new("TextButton")
-local UICorner_4 = Instance.new("UICorner")
-local ImageLabel_2 = Instance.new("ImageLabel")
-local editor = Instance.new("TextButton")
-local UICorner_5 = Instance.new("UICorner")
-local ImageLabel_3 = Instance.new("ImageLabel")
-local UIListLayout = Instance.new("UIListLayout")
-local UIPadding = Instance.new("UIPadding")
-local settings = Instance.new("TextButton")
-local UICorner_6 = Instance.new("UICorner")
-local ImageLabel_4 = Instance.new("ImageLabel")
-local scripthub = Instance.new("TextButton")
-local UICorner_7 = Instance.new("UICorner")
-local ImageLabel_5 = Instance.new("ImageLabel")
-local tabs = Instance.new("Folder")
-local home_2 = Instance.new("Frame")
-local UICorner_8 = Instance.new("UICorner")
-local logo = Instance.new("ImageLabel")
-local UICorner_9 = Instance.new("UICorner")
-local TextContainer = Instance.new("Frame")
-local UICorner_10 = Instance.new("UICorner")
-local TextLabel = Instance.new("TextLabel")
-local UIPadding_2 = Instance.new("UIPadding")
-local TextLabel_2 = Instance.new("TextLabel")
-local Discord = Instance.new("TextButton")
-local UIPadding_3 = Instance.new("UIPadding")
-local UICorner_11 = Instance.new("UICorner")
-local dclogo = Instance.new("ImageLabel")
-local editor_2 = Instance.new("Frame")
-local UICorner_12 = Instance.new("UICorner")
-local Controls = Instance.new("Frame")
-local UICorner_13 = Instance.new("UICorner")
-local UIListLayout_2 = Instance.new("UIListLayout")
-local Clear = Instance.new("ImageButton")
-local UICorner_14 = Instance.new("UICorner")
-local ImageLabel_6 = Instance.new("ImageLabel")
-local Run = Instance.new("ImageButton")
-local UICorner_15 = Instance.new("UICorner")
-local ImageLabel_7 = Instance.new("ImageLabel")
-local Copy = Instance.new("ImageButton")
-local UICorner_16 = Instance.new("UICorner")
-local ImageLabel_8 = Instance.new("ImageLabel")
-local Paste = Instance.new("ImageButton")
-local UICorner_17 = Instance.new("UICorner")
-local ImageLabel_9 = Instance.new("ImageLabel")
-local ScrollingFrame = Instance.new("ScrollingFrame")
-local UICorner_18 = Instance.new("UICorner")
-local TextBox = Instance.new("TextBox")
-local UIPadding_4 = Instance.new("UIPadding")
-local TextLabel_3 = Instance.new("TextLabel")
-local settings_2 = Instance.new("Frame")
-local UICorner_19 = Instance.new("UICorner")
-local UIPadding_5 = Instance.new("UIPadding")
-local main_2 = Instance.new("TextLabel")
-local rgb = Instance.new("TextLabel")
-local switch = Instance.new("TextButton")
-local UICorner_20 = Instance.new("UICorner")
-local Frame = Instance.new("Frame")
-local UICorner_21 = Instance.new("UICorner")
-local TextLabel_4 = Instance.new("TextLabel")
-local credits_2 = Instance.new("Frame")
-local UICorner_22 = Instance.new("UICorner")
-local UIPadding_6 = Instance.new("UIPadding")
-local TextLabel_5 = Instance.new("TextLabel")
-local Discord_2 = Instance.new("TextButton")
-local UIPadding_7 = Instance.new("UIPadding")
-local UICorner_23 = Instance.new("UICorner")
-local dclogo_2 = Instance.new("ImageLabel")
-local scripthub_2 = Instance.new("Frame")
-local UICorner_24 = Instance.new("UICorner")
-local UIPadding_8 = Instance.new("UIPadding")
-local TextBox_2 = Instance.new("TextBox")
-local UICorner_25 = Instance.new("UICorner")
-local UIPadding_9 = Instance.new("UIPadding")
-local ScrollingFrame_2 = Instance.new("ScrollingFrame")
-local scriptdummy = Instance.new("Frame")
-local UICorner_26 = Instance.new("UICorner")
-local ImageLabel_10 = Instance.new("ImageLabel")
-local TextLabel_6 = Instance.new("TextLabel")
-local UIListLayout_3 = Instance.new("UIListLayout")
-local UIPadding_10 = Instance.new("UIPadding")
-local scriptdummy_2 = Instance.new("Frame")
-local UICorner_27 = Instance.new("UICorner")
-local ImageLabel_11 = Instance.new("ImageLabel")
-local TextLabel_7 = Instance.new("TextLabel")
-local scriptdummy_3 = Instance.new("Frame")
-local UICorner_28 = Instance.new("UICorner")
-local ImageLabel_12 = Instance.new("ImageLabel")
-local TextLabel_8 = Instance.new("TextLabel")
-local StatusBar = Instance.new("TextLabel")
-local UICorner_29 = Instance.new("UICorner")
-local logo_2 = Instance.new("ImageLabel")
-local UICorner_30 = Instance.new("UICorner")
-local version = Instance.new("TextLabel")
-local timeanddate = Instance.new("TextLabel")
-local BackframeShine = Instance.new("ImageLabel")
-local UICorner_31 = Instance.new("UICorner")
-local mainctrls = Instance.new("Frame")
-local UICorner_32 = Instance.new("UICorner")
-local UIListLayout_4 = Instance.new("UIListLayout")
-local Close = Instance.new("TextButton")
-local UICorner_33 = Instance.new("UICorner")
-local UIPadding_11 = Instance.new("UIPadding")
-local UIScale = Instance.new("UIScale")
-local open = Instance.new("Frame")
-local ImageButton = Instance.new("ImageButton")
-local UICorner_34 = Instance.new("UICorner")
-local UICorner_35 = Instance.new("UICorner")
-
---Properties:
-
-fluxusz.Name = "fluxusz"
-fluxusz.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-fluxusz.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-main.Name = "main"
-main.Parent = fluxusz
-main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-main.BackgroundTransparency = 0.200
-main.BorderColor3 = Color3.fromRGB(0, 0, 0)
-main.BorderSizePixel = 0
-main.Position = UDim2.new(0.143416926, 0, 0.198160172, 0)
-main.Selectable = true
-main.Size = UDim2.new(0, 514, 0, 302)
-
-UICorner.CornerRadius = UDim.new(0, 32)
-UICorner.Parent = main
-
-tabsbar.Name = "tabsbar"
-tabsbar.Parent = main
-tabsbar.Active = true
-tabsbar.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
-tabsbar.BackgroundTransparency = 0.100
-tabsbar.BorderColor3 = Color3.fromRGB(0, 0, 0)
-tabsbar.BorderSizePixel = 0
-tabsbar.ClipsDescendants = false
-tabsbar.Position = UDim2.new(0.0311284047, 0, 0.0529801324, 0)
-tabsbar.Size = UDim2.new(0, 46, 0, 270)
-tabsbar.ScrollingEnabled = false
-
-UICorner_2.CornerRadius = UDim.new(0, 24)
-UICorner_2.Parent = tabsbar
-
-home.Name = "home"
-home.Parent = tabsbar
-home.BackgroundColor3 = Color3.fromRGB(0, 132, 255)
-home.BorderColor3 = Color3.fromRGB(0, 0, 0)
-home.BorderSizePixel = 0
-home.LayoutOrder = 1
-home.Position = UDim2.new(0.0750002638, 0, 0.0222222228, 0)
-home.Size = UDim2.new(0.850000024, 0, 0.0649999976, 0)
-home.Font = Enum.Font.Gotham
-home.Text = ""
-home.TextColor3 = Color3.fromRGB(255, 255, 255)
-home.TextSize = 10.000
-home.TextWrapped = true
-
-UICorner_3.CornerRadius = UDim.new(0, 24)
-UICorner_3.Parent = home
-
-ImageLabel.Parent = home
-ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel.BackgroundTransparency = 1.000
-ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ImageLabel.BorderSizePixel = 0
-ImageLabel.Position = UDim2.new(0.100000001, 0, 0.100000001, 0)
-ImageLabel.Size = UDim2.new(0.800000012, 0, 0.800000012, 0)
-ImageLabel.Image = "rbxassetid://11347112400"
-ImageLabel.ScaleType = Enum.ScaleType.Fit
-
-credits.Name = "credits"
-credits.Parent = tabsbar
-credits.BackgroundColor3 = Color3.fromRGB(0, 132, 255)
-credits.BorderColor3 = Color3.fromRGB(0, 0, 0)
-credits.BorderSizePixel = 0
-credits.LayoutOrder = 3
-credits.Position = UDim2.new(0.075000003, 0, 0.375, 0)
-credits.Size = UDim2.new(0.850000024, 0, 0.0649999976, 0)
-credits.Font = Enum.Font.Gotham
-credits.Text = ""
-credits.TextColor3 = Color3.fromRGB(255, 255, 255)
-credits.TextSize = 10.000
-credits.TextWrapped = true
-
-UICorner_4.CornerRadius = UDim.new(0, 24)
-UICorner_4.Parent = credits
-
-ImageLabel_2.Parent = credits
-ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel_2.BackgroundTransparency = 1.000
-ImageLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ImageLabel_2.BorderSizePixel = 0
-ImageLabel_2.Position = UDim2.new(0.100000001, 0, 0.100000001, 0)
-ImageLabel_2.Size = UDim2.new(0.800000012, 0, 0.800000012, 0)
-ImageLabel_2.Image = "rbxassetid://2614876855"
-ImageLabel_2.ScaleType = Enum.ScaleType.Fit
-
-editor.Name = "editor"
-editor.Parent = tabsbar
-editor.BackgroundColor3 = Color3.fromRGB(0, 132, 255)
-editor.BorderColor3 = Color3.fromRGB(0, 0, 0)
-editor.BorderSizePixel = 0
-editor.LayoutOrder = 2
-editor.Position = UDim2.new(0.0750002638, 0, 0.0853333399, 0)
-editor.Size = UDim2.new(0.850000024, 0, 0.0649999976, 0)
-editor.Font = Enum.Font.Gotham
-editor.Text = ""
-editor.TextColor3 = Color3.fromRGB(255, 255, 255)
-editor.TextSize = 10.000
-editor.TextWrapped = true
-
-UICorner_5.CornerRadius = UDim.new(0, 24)
-UICorner_5.Parent = editor
-
-ImageLabel_3.Parent = editor
-ImageLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel_3.BackgroundTransparency = 1.000
-ImageLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ImageLabel_3.BorderSizePixel = 0
-ImageLabel_3.Position = UDim2.new(0.100000001, 0, 0.100000001, 0)
-ImageLabel_3.Size = UDim2.new(0.800000012, 0, 0.800000012, 0)
-ImageLabel_3.Image = "rbxassetid://91033953850956"
-ImageLabel_3.ScaleType = Enum.ScaleType.Fit
-
-UIListLayout.Parent = tabsbar
-UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout.Padding = UDim.new(0.00999999978, 0)
-
-UIPadding.Parent = tabsbar
-UIPadding.PaddingTop = UDim.new(0.00999999978, 0)
-
-settings.Name = "settings"
-settings.Parent = tabsbar
-settings.BackgroundColor3 = Color3.fromRGB(0, 132, 255)
-settings.BorderColor3 = Color3.fromRGB(0, 0, 0)
-settings.BorderSizePixel = 0
-settings.LayoutOrder = 4
-settings.Position = UDim2.new(0.075000003, 0, 0.375, 0)
-settings.Size = UDim2.new(0.850000024, 0, 0.0649999976, 0)
-settings.Font = Enum.Font.Gotham
-settings.Text = ""
-settings.TextColor3 = Color3.fromRGB(255, 255, 255)
-settings.TextSize = 10.000
-settings.TextWrapped = true
-
-UICorner_6.CornerRadius = UDim.new(0, 24)
-UICorner_6.Parent = settings
-
-ImageLabel_4.Parent = settings
-ImageLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel_4.BackgroundTransparency = 1.000
-ImageLabel_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ImageLabel_4.BorderSizePixel = 0
-ImageLabel_4.Position = UDim2.new(0.100000001, 0, 0.100000001, 0)
-ImageLabel_4.Size = UDim2.new(0.800000012, 0, 0.800000012, 0)
-ImageLabel_4.Image = "rbxassetid://7059346373"
-ImageLabel_4.ScaleType = Enum.ScaleType.Fit
-
-scripthub.Name = "scripthub"
-scripthub.Parent = tabsbar
-scripthub.BackgroundColor3 = Color3.fromRGB(0, 132, 255)
-scripthub.BorderColor3 = Color3.fromRGB(0, 0, 0)
-scripthub.BorderSizePixel = 0
-scripthub.LayoutOrder = 5
-scripthub.Position = UDim2.new(0.075000003, 0, 0.375, 0)
-scripthub.Size = UDim2.new(0.850000024, 0, 0.0649999976, 0)
-scripthub.Font = Enum.Font.Gotham
-scripthub.Text = ""
-scripthub.TextColor3 = Color3.fromRGB(255, 255, 255)
-scripthub.TextSize = 10.000
-scripthub.TextWrapped = true
-
-UICorner_7.CornerRadius = UDim.new(0, 24)
-UICorner_7.Parent = scripthub
-
-ImageLabel_5.Parent = scripthub
-ImageLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel_5.BackgroundTransparency = 1.000
-ImageLabel_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ImageLabel_5.BorderSizePixel = 0
-ImageLabel_5.Position = UDim2.new(0.100000001, 0, 0.100000001, 0)
-ImageLabel_5.Size = UDim2.new(0.800000012, 0, 0.800000012, 0)
-ImageLabel_5.Image = "rbxassetid://137254287379933"
-ImageLabel_5.ScaleType = Enum.ScaleType.Fit
-
-tabs.Name = "tabs"
-tabs.Parent = main
-
-home_2.Name = "home"
-home_2.Parent = tabs
-home_2.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
-home_2.BackgroundTransparency = 0.100
-home_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-home_2.BorderSizePixel = 0
-home_2.Position = UDim2.new(0.143968865, 0, 0.0728476793, 0)
-home_2.Size = UDim2.new(0, 423, 0, 264)
-
-UICorner_8.CornerRadius = UDim.new(0, 32)
-UICorner_8.Parent = home_2
-
-logo.Name = "logo"
-logo.Parent = home_2
-logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-logo.BackgroundTransparency = 1.000
-logo.BorderColor3 = Color3.fromRGB(0, 0, 0)
-logo.BorderSizePixel = 0
-logo.Position = UDim2.new(0.0250000004, 0, 0.0379999988, 0)
-logo.Size = UDim2.new(0, 100, 0, 100)
-logo.Image = "rbxassetid://133613329257288"
-logo.ScaleType = Enum.ScaleType.Fit
-
-UICorner_9.CornerRadius = UDim.new(0, 24)
-UICorner_9.Parent = logo
-
-TextContainer.Name = "TextContainer"
-TextContainer.Parent = home_2
-TextContainer.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-TextContainer.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextContainer.BorderSizePixel = 0
-TextContainer.Position = UDim2.new(0.278959811, 0, 0.037878789, 0)
-TextContainer.Size = UDim2.new(0, 295, 0, 244)
-
-UICorner_10.CornerRadius = UDim.new(0, 32)
-UICorner_10.Parent = TextContainer
-
-TextLabel.Parent = TextContainer
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(0, 0, -7.81700251e-08, 0)
-TextLabel.Size = UDim2.new(0, 267, 0, 219)
-TextLabel.Font = Enum.Font.Gotham
-TextLabel.Text = "Introducing Fluxus Z - One of the leading executors for Roblox Android and Now with a new and clean UI."
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextSize = 15.000
-TextLabel.TextWrapped = true
-TextLabel.TextXAlignment = Enum.TextXAlignment.Left
-TextLabel.TextYAlignment = Enum.TextYAlignment.Top
-
-UIPadding_2.Parent = TextContainer
-UIPadding_2.PaddingLeft = UDim.new(0.0500000007, 0)
-UIPadding_2.PaddingTop = UDim.new(0.0500000007, 0)
-
-TextLabel_2.Parent = TextContainer
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.BackgroundTransparency = 1.000
-TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_2.BorderSizePixel = 0
-TextLabel_2.Position = UDim2.new(0, 0, 0.552200079, 0)
-TextLabel_2.Size = UDim2.new(0, 267, 0, 91)
-TextLabel_2.Font = Enum.Font.Gotham
-TextLabel_2.Text = ""
-TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.TextSize = 15.000
-TextLabel_2.TextWrapped = true
-TextLabel_2.TextXAlignment = Enum.TextXAlignment.Right
-TextLabel_2.TextYAlignment = Enum.TextYAlignment.Bottom
-
--- Smoothed FPS updater
-local RunService = game:GetService("RunService")
-local lastTime = tick()
-local fps = 60
-local alpha = 0.1 -- smoothing factor (lower = smoother, slower updates)
-
-RunService.RenderStepped:Connect(function()
-	local now = tick()
-	local currentFps = 1 / (now - lastTime)
-	lastTime = now
-
-	-- simple exponential moving average
-	fps = fps + (currentFps - fps) * alpha
-
-	TextLabel_2.Text = "FPS: " .. math.floor(fps)
-end)
-
-Discord.Name = "Discord"
-Discord.Parent = home_2
-Discord.BackgroundColor3 = Color3.fromRGB(88, 101, 242)
-Discord.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Discord.BorderSizePixel = 0
-Discord.Position = UDim2.new(0.0236406624, 0, 0.454545468, 0)
-Discord.Size = UDim2.new(0, 100, 0, 38)
-Discord.Font = Enum.Font.Gotham
-Discord.Text = "Discord"
-Discord.TextColor3 = Color3.fromRGB(255, 255, 255)
-Discord.TextSize = 13.000
-Discord.TextXAlignment = Enum.TextXAlignment.Right
-
-UIPadding_3.Parent = Discord
-UIPadding_3.PaddingRight = UDim.new(0.174999997, 0)
-
-UICorner_11.CornerRadius = UDim.new(0, 24)
-UICorner_11.Parent = Discord
-
-dclogo.Name = "dclogo"
-dclogo.Parent = Discord
-dclogo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-dclogo.BackgroundTransparency = 1.000
-dclogo.BorderColor3 = Color3.fromRGB(0, 0, 0)
-dclogo.BorderSizePixel = 0
-dclogo.Position = UDim2.new(0.181818187, 0, 0.236842111, 0)
-dclogo.Size = UDim2.new(0, 20, 0, 20)
-dclogo.Image = "rbxassetid://10367063073"
-dclogo.ScaleType = Enum.ScaleType.Crop
-
-editor_2.Name = "editor"
-editor_2.Parent = tabs
-editor_2.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
-editor_2.BackgroundTransparency = 0.100
-editor_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-editor_2.BorderSizePixel = 0
-editor_2.Position = UDim2.new(0.143968865, 0, 0.0728476793, 0)
-editor_2.Size = UDim2.new(0, 423, 0, 264)
-editor_2.Visible = false
-
-UICorner_12.CornerRadius = UDim.new(0, 32)
-UICorner_12.Parent = editor_2
-
-Controls.Name = "Controls"
-Controls.Parent = editor_2
-Controls.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-Controls.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Controls.BorderSizePixel = 0
-Controls.Position = UDim2.new(0.638179541, 0, 0.834848583, 0)
-Controls.Size = UDim2.new(0, 143, 0, 36)
-
-UICorner_13.CornerRadius = UDim.new(0, 32)
-UICorner_13.Parent = Controls
-
-UIListLayout_2.Parent = Controls
-UIListLayout_2.FillDirection = Enum.FillDirection.Horizontal
-UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout_2.VerticalAlignment = Enum.VerticalAlignment.Center
-UIListLayout_2.Padding = UDim.new(0.0199999996, 0)
-
-Clear.Name = "Clear"
-Clear.Parent = Controls
-Clear.BackgroundColor3 = Color3.fromRGB(0, 132, 255)
-Clear.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Clear.BorderSizePixel = 0
-Clear.LayoutOrder = 3
-Clear.Position = UDim2.new(0.590909064, 0, -0.888888896, 0)
-Clear.Size = UDim2.new(0, 32, 0, 32)
-Clear.ScaleType = Enum.ScaleType.Slice
-Clear.SliceScale = 0.500
-Clear.TileSize = UDim2.new(0.5, 0, 0.5, 0)
-
-UICorner_14.CornerRadius = UDim.new(0, 32)
-UICorner_14.Parent = Clear
-
-ImageLabel_6.Parent = Clear
-ImageLabel_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel_6.BackgroundTransparency = 1.000
-ImageLabel_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ImageLabel_6.BorderSizePixel = 0
-ImageLabel_6.Position = UDim2.new(0.25, 0, 0.25, 0)
-ImageLabel_6.Size = UDim2.new(0.5, 0, 0.5, 0)
-ImageLabel_6.Image = "rbxassetid://105955025341798"
-
-Run.Name = "Run"
-Run.Parent = Controls
-Run.BackgroundColor3 = Color3.fromRGB(0, 132, 255)
-Run.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Run.BorderSizePixel = 0
-Run.LayoutOrder = 4
-Run.Position = UDim2.new(0.590909064, 0, -0.888888896, 0)
-Run.Size = UDim2.new(0, 32, 0, 32)
-Run.ScaleType = Enum.ScaleType.Slice
-Run.SliceScale = 0.500
-Run.TileSize = UDim2.new(0.5, 0, 0.5, 0)
-
-UICorner_15.CornerRadius = UDim.new(0, 32)
-UICorner_15.Parent = Run
-
-ImageLabel_7.Parent = Run
-ImageLabel_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel_7.BackgroundTransparency = 1.000
-ImageLabel_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ImageLabel_7.BorderSizePixel = 0
-ImageLabel_7.Position = UDim2.new(0.25, 0, 0.25, 0)
-ImageLabel_7.Size = UDim2.new(0.5, 0, 0.5, 0)
-ImageLabel_7.Image = "rbxassetid://8517323790"
-
-Copy.Name = "Copy"
-Copy.Parent = Controls
-Copy.BackgroundColor3 = Color3.fromRGB(0, 132, 255)
-Copy.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Copy.BorderSizePixel = 0
-Copy.LayoutOrder = 2
-Copy.Position = UDim2.new(0.590909064, 0, -0.888888896, 0)
-Copy.Size = UDim2.new(0, 32, 0, 32)
-Copy.ScaleType = Enum.ScaleType.Slice
-Copy.SliceScale = 0.500
-Copy.TileSize = UDim2.new(0.5, 0, 0.5, 0)
-
-UICorner_16.CornerRadius = UDim.new(0, 32)
-UICorner_16.Parent = Copy
-
-ImageLabel_8.Parent = Copy
-ImageLabel_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel_8.BackgroundTransparency = 1.000
-ImageLabel_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ImageLabel_8.BorderSizePixel = 0
-ImageLabel_8.Position = UDim2.new(0.25, 0, 0.25, 0)
-ImageLabel_8.Size = UDim2.new(0.5, 0, 0.5, 0)
-ImageLabel_8.Image = "rbxassetid://10169282923"
-
-Paste.Name = "Paste"
-Paste.Parent = Controls
-Paste.BackgroundColor3 = Color3.fromRGB(0, 132, 255)
-Paste.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Paste.BorderSizePixel = 0
-Paste.LayoutOrder = 1
-Paste.Position = UDim2.new(0.590909064, 0, -0.888888896, 0)
-Paste.Size = UDim2.new(0, 32, 0, 32)
-Paste.ScaleType = Enum.ScaleType.Slice
-Paste.SliceScale = 0.500
-Paste.TileSize = UDim2.new(0.5, 0, 0.5, 0)
-
-UICorner_17.CornerRadius = UDim.new(0, 32)
-UICorner_17.Parent = Paste
-
-ImageLabel_9.Parent = Paste
-ImageLabel_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel_9.BackgroundTransparency = 1.000
-ImageLabel_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ImageLabel_9.BorderSizePixel = 0
-ImageLabel_9.Position = UDim2.new(0.25, 0, 0.25, 0)
-ImageLabel_9.Size = UDim2.new(0.5, 0, 0.5, 0)
-ImageLabel_9.Image = "rbxassetid://137254287379933"
-
-ScrollingFrame.Parent = editor_2
-ScrollingFrame.Active = true
-ScrollingFrame.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ScrollingFrame.BorderSizePixel = 0
-ScrollingFrame.Position = UDim2.new(0.0212765951, 0, 0.0340909101, 0)
-ScrollingFrame.Size = UDim2.new(0, 405, 0, 202)
-
-UICorner_18.CornerRadius = UDim.new(0, 32)
-UICorner_18.Parent = ScrollingFrame
-
-TextBox.Parent = ScrollingFrame
-TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextBox.BackgroundTransparency = 1.000
-TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextBox.BorderSizePixel = 0
-TextBox.Position = UDim2.new(7.53520482e-08, 0, 0, 0)
-TextBox.Size = UDim2.new(0.969728231, 0, 2.61386132, 0)
-TextBox.ClearTextOnFocus = false
-TextBox.Font = Enum.Font.SourceSans
-TextBox.MultiLine = true
-TextBox.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
-TextBox.PlaceholderText = "Script Here..."
-TextBox.Text = "FluxusZ On Top!"
-TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextBox.TextSize = 14.000
-TextBox.TextXAlignment = Enum.TextXAlignment.Left
-TextBox.TextYAlignment = Enum.TextYAlignment.Top
-TextBox.ClearTextOnFocus = true
-
-UIPadding_4.Parent = TextBox
-UIPadding_4.PaddingLeft = UDim.new(0.0399999991, 0)
-UIPadding_4.PaddingTop = UDim.new(0.00999999978, 0)
-
-TextLabel_3.Parent = TextBox
-TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_3.BackgroundTransparency = 1.000
-TextLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_3.BorderSizePixel = 0
-TextLabel_3.Position = UDim2.new(-0.0350000001, 0, 0, 0)
-TextLabel_3.Size = UDim2.new(0, 13, 1, 0)
-TextLabel_3.Font = Enum.Font.SourceSans
-TextLabel_3.Text = "1\\n2\\n3"
-TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_3.TextSize = 14.000
-TextLabel_3.TextYAlignment = Enum.TextYAlignment.Top
-
-settings_2.Name = "settings"
-settings_2.Parent = tabs
-settings_2.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
-settings_2.BackgroundTransparency = 0.100
-settings_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-settings_2.BorderSizePixel = 0
-settings_2.Position = UDim2.new(0.143968865, 0, 0.0728476793, 0)
-settings_2.Size = UDim2.new(0, 423, 0, 264)
-settings_2.Visible = false
-
-UICorner_19.CornerRadius = UDim.new(0, 32)
-UICorner_19.Parent = settings_2
-
-UIPadding_5.Parent = settings_2
-UIPadding_5.PaddingLeft = UDim.new(0.0500000007, 0)
-UIPadding_5.PaddingTop = UDim.new(0.0500000007, 0)
-
-main_2.Name = "main"
-main_2.Parent = settings_2
-main_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-main_2.BackgroundTransparency = 1.000
-main_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-main_2.BorderSizePixel = 0
-main_2.Position = UDim2.new(-0.0199080668, 0, -3.54902703e-08, 0)
-main_2.Size = UDim2.new(0, 396, 0, 237)
-main_2.Font = Enum.Font.Gotham
-main_2.Text = "Here you can toggle settings for this menu!"
-main_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-main_2.TextSize = 15.000
-main_2.TextWrapped = true
-main_2.TextXAlignment = Enum.TextXAlignment.Left
-main_2.TextYAlignment = Enum.TextYAlignment.Top
-
-rgb.Name = "rgb"
-rgb.Parent = settings_2
-rgb.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-rgb.BackgroundTransparency = 1.000
-rgb.BorderColor3 = Color3.fromRGB(0, 0, 0)
-rgb.BorderSizePixel = 0
-rgb.Position = UDim2.new(-0.0199080165, 0, 0.166297361, 0)
-rgb.Size = UDim2.new(0, 396, 0, 17)
-rgb.Font = Enum.Font.Gotham
-rgb.Text = "RGB Menu"
-rgb.TextColor3 = Color3.fromRGB(255, 255, 255)
-rgb.TextSize = 15.000
-rgb.TextWrapped = true
-rgb.TextXAlignment = Enum.TextXAlignment.Left
-rgb.TextYAlignment = Enum.TextYAlignment.Top
-
-switch.Name = "switch"
-switch.Parent = rgb
-switch.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-switch.BorderColor3 = Color3.fromRGB(0, 0, 0)
-switch.BorderSizePixel = 0
-switch.Position = UDim2.new(0, 78, 0, -3)
-switch.Size = UDim2.new(0, 50, 0, 24)
-switch.Font = Enum.Font.SourceSans
-switch.Text = ""
-switch.TextColor3 = Color3.fromRGB(0, 0, 0)
-switch.TextSize = 14.000
-
-UICorner_20.CornerRadius = UDim.new(0, 32)
-UICorner_20.Parent = switch
-
-Frame.Parent = switch
-Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Frame.BorderSizePixel = 0
-Frame.Position = UDim2.new(0.113445461, 0, 0.190476194, 0)
-Frame.Size = UDim2.new(0.313283205, 0, 0.62656641, 0)
-
-UICorner_21.CornerRadius = UDim.new(99, 0)
-UICorner_21.Parent = Frame
-
-TextLabel_4.Parent = rgb
-TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_4.BorderSizePixel = 0
-TextLabel_4.Position = UDim2.new(0.370796621, 0, -0.205401704, 0)
-TextLabel_4.Size = UDim2.new(0, 101, 0, 24)
-TextLabel_4.Font = Enum.Font.SourceSans
-TextLabel_4.Text = "Its bad trust me."
-TextLabel_4.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_4.TextSize = 14.000
-
-credits_2.Name = "credits"
-credits_2.Parent = tabs
-credits_2.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
-credits_2.BackgroundTransparency = 0.100
-credits_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-credits_2.BorderSizePixel = 0
-credits_2.Position = UDim2.new(0.143968865, 0, 0.0728476793, 0)
-credits_2.Size = UDim2.new(0, 423, 0, 264)
-credits_2.Visible = false
-
-UICorner_22.CornerRadius = UDim.new(0, 32)
-UICorner_22.Parent = credits_2
-
-UIPadding_6.Parent = credits_2
-UIPadding_6.PaddingLeft = UDim.new(0.0500000007, 0)
-UIPadding_6.PaddingTop = UDim.new(0.0500000007, 0)
-
-TextLabel_5.Parent = credits_2
-TextLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_5.BackgroundTransparency = 1.000
-TextLabel_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_5.BorderSizePixel = 0
-TextLabel_5.Position = UDim2.new(-0.0199080165, 0, -7.22480564e-08, 0)
-TextLabel_5.Size = UDim2.new(0, 396, 0, 237)
-TextLabel_5.Font = Enum.Font.Gotham
-TextLabel_5.Text = "Huge thanks to our ui developer Kaizo and our owner:"
-TextLabel_5.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_5.TextSize = 15.000
-TextLabel_5.TextWrapped = true
-TextLabel_5.TextXAlignment = Enum.TextXAlignment.Left
-TextLabel_5.TextYAlignment = Enum.TextYAlignment.Top
-
-Discord_2.Name = "Discord"
-Discord_2.Parent = TextLabel_5
-Discord_2.BackgroundColor3 = Color3.fromRGB(88, 101, 242)
-Discord_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Discord_2.BorderSizePixel = 0
-Discord_2.Position = UDim2.new(0.322483569, 0, 0.181138426, 0)
-Discord_2.Size = UDim2.new(0, 145, 0, 15)
-Discord_2.Font = Enum.Font.Gotham
-Discord_2.Text = "Jake (.kallmejake)"
-Discord_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Discord_2.TextScaled = true
-Discord_2.TextSize = 13.000
-Discord_2.TextWrapped = true
-Discord_2.TextXAlignment = Enum.TextXAlignment.Right
-
-UIPadding_7.Parent = Discord_2
-UIPadding_7.PaddingRight = UDim.new(0.0350000001, 0)
-
-UICorner_23.CornerRadius = UDim.new(0, 24)
-UICorner_23.Parent = Discord_2
-
-dclogo_2.Name = "dclogo"
-dclogo_2.Parent = Discord_2
-dclogo_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-dclogo_2.BackgroundTransparency = 1.000
-dclogo_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-dclogo_2.BorderSizePixel = 0
-dclogo_2.Position = UDim2.new(0.075000003, 0, 0.200000003, 0)
-dclogo_2.Size = UDim2.new(0, 10, 0, 10)
-dclogo_2.Image = "rbxassetid://10367063073"
-dclogo_2.ScaleType = Enum.ScaleType.Crop
-
-scripthub_2.Name = "scripthub"
-scripthub_2.Parent = tabs
-scripthub_2.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
-scripthub_2.BackgroundTransparency = 0.100
-scripthub_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-scripthub_2.BorderSizePixel = 0
-scripthub_2.Position = UDim2.new(0.143968865, 0, 0.0728476793, 0)
-scripthub_2.Size = UDim2.new(0, 423, 0, 264)
-scripthub_2.Visible = false
-
-UICorner_24.CornerRadius = UDim.new(0, 32)
-UICorner_24.Parent = scripthub_2
-
-UIPadding_8.Parent = scripthub_2
-UIPadding_8.PaddingLeft = UDim.new(0.0500000007, 0)
-UIPadding_8.PaddingTop = UDim.new(0.0500000007, 0)
-
-TextBox_2.Parent = scripthub_2
-TextBox_2.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
-TextBox_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextBox_2.BorderSizePixel = 0
-TextBox_2.Position = UDim2.new(0.51344794, 0, -1.10706537e-07, 0)
-TextBox_2.Size = UDim2.new(0, 183, 0, 31)
-TextBox_2.Font = Enum.Font.SourceSans
-TextBox_2.PlaceholderText = "Script Name..."
-TextBox_2.Text = ""
-TextBox_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextBox_2.TextSize = 14.000
-TextBox_2.TextXAlignment = Enum.TextXAlignment.Left
-
-UICorner_25.CornerRadius = UDim.new(0, 32)
-UICorner_25.Parent = TextBox_2
-
-UIPadding_9.Parent = TextBox_2
-UIPadding_9.PaddingLeft = UDim.new(0.0500000007, 0)
-
-ScrollingFrame_2.Parent = scripthub_2
-ScrollingFrame_2.Active = true
-ScrollingFrame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ScrollingFrame_2.BackgroundTransparency = 1.000
-ScrollingFrame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ScrollingFrame_2.BorderSizePixel = 0
-ScrollingFrame_2.Position = UDim2.new(-0.0526316315, 0, 0.123604327, 0)
-ScrollingFrame_2.Size = UDim2.new(1.05263162, 0, 0.876395583, 0)
-ScrollingFrame_2.CanvasSize = UDim2.new(0, 0, 99, 0)
-
-scriptdummy.Name = "scriptdummy"
-scriptdummy.Parent = ScrollingFrame_2
-scriptdummy.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
-scriptdummy.BorderColor3 = Color3.fromRGB(0, 0, 0)
-scriptdummy.BorderSizePixel = 0
-scriptdummy.Position = UDim2.new(0.03827231, 0, 0.104491577, 0)
-scriptdummy.Size = UDim2.new(0, 100, 0, 130)
-
-UICorner_26.CornerRadius = UDim.new(0, 24)
-UICorner_26.Parent = scriptdummy
-
-ImageLabel_10.Parent = scriptdummy
-ImageLabel_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel_10.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ImageLabel_10.BorderSizePixel = 0
-ImageLabel_10.Position = UDim2.new(0.0886075944, 0, 0.12658228, 0)
-ImageLabel_10.Size = UDim2.new(0.800000012, 0, 0.600000024, 0)
-ImageLabel_10.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
-
-TextLabel_6.Parent = scriptdummy
-TextLabel_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_6.BackgroundTransparency = 1.000
-TextLabel_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_6.BorderSizePixel = 0
-TextLabel_6.Position = UDim2.new(0.0886075944, 0, 0.69133395, 0)
-TextLabel_6.Size = UDim2.new(0.800000012, 0, 0, 39)
-TextLabel_6.Font = Enum.Font.Gotham
-TextLabel_6.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_6.TextSize = 14.000
-
-UIListLayout_3.Parent = ScrollingFrame_2
-UIListLayout_3.FillDirection = Enum.FillDirection.Horizontal
-UIListLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout_3.Padding = UDim.new(0.075000003, 0)
-
-UIPadding_10.Parent = ScrollingFrame_2
-UIPadding_10.PaddingLeft = UDim.new(0.075000003, 0)
-UIPadding_10.PaddingTop = UDim.new(0, 10)
-
-scriptdummy_2.Name = "scriptdummy"
-scriptdummy_2.Parent = ScrollingFrame_2
-scriptdummy_2.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
-scriptdummy_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-scriptdummy_2.BorderSizePixel = 0
-scriptdummy_2.Position = UDim2.new(0.03827231, 0, 0.104491577, 0)
-scriptdummy_2.Size = UDim2.new(0, 100, 0, 130)
-
-UICorner_27.CornerRadius = UDim.new(0, 24)
-UICorner_27.Parent = scriptdummy_2
-
-ImageLabel_11.Parent = scriptdummy_2
-ImageLabel_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel_11.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ImageLabel_11.BorderSizePixel = 0
-ImageLabel_11.Position = UDim2.new(0.0886075944, 0, 0.12658228, 0)
-ImageLabel_11.Size = UDim2.new(0.800000012, 0, 0.600000024, 0)
-ImageLabel_11.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
-
-TextLabel_7.Parent = scriptdummy_2
-TextLabel_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_7.BackgroundTransparency = 1.000
-TextLabel_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_7.BorderSizePixel = 0
-TextLabel_7.Position = UDim2.new(0.0886075944, 0, 0.69133395, 0)
-TextLabel_7.Size = UDim2.new(0.800000012, 0, 0, 39)
-TextLabel_7.Font = Enum.Font.Gotham
-TextLabel_7.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_7.TextSize = 14.000
-
-scriptdummy_3.Name = "scriptdummy"
-scriptdummy_3.Parent = ScrollingFrame_2
-scriptdummy_3.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
-scriptdummy_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-scriptdummy_3.BorderSizePixel = 0
-scriptdummy_3.Position = UDim2.new(0.03827231, 0, 0.104491577, 0)
-scriptdummy_3.Size = UDim2.new(0, 100, 0, 130)
-
-UICorner_28.CornerRadius = UDim.new(0, 24)
-UICorner_28.Parent = scriptdummy_3
-
-ImageLabel_12.Parent = scriptdummy_3
-ImageLabel_12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel_12.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ImageLabel_12.BorderSizePixel = 0
-ImageLabel_12.Position = UDim2.new(0.0886075944, 0, 0.12658228, 0)
-ImageLabel_12.Size = UDim2.new(0.800000012, 0, 0.600000024, 0)
-ImageLabel_12.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
-
-TextLabel_8.Parent = scriptdummy_3
-TextLabel_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_8.BackgroundTransparency = 1.000
-TextLabel_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_8.BorderSizePixel = 0
-TextLabel_8.Position = UDim2.new(0.0886075944, 0, 0.69133395, 0)
-TextLabel_8.Size = UDim2.new(0.800000012, 0, 0, 39)
-TextLabel_8.Font = Enum.Font.Gotham
-TextLabel_8.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_8.TextSize = 14.000
-
-StatusBar.Name = "StatusBar"
-StatusBar.Parent = main
-StatusBar.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-StatusBar.BackgroundTransparency = 0.200
-StatusBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
-StatusBar.BorderSizePixel = 0
-StatusBar.ClipsDescendants = true
-StatusBar.Position = UDim2.new(0, 0, -0.129139066, 0)
-StatusBar.Size = UDim2.new(0, 514, 0, 32)
-StatusBar.Font = Enum.Font.Gotham
-StatusBar.Text = "Fluxus Z"
-StatusBar.TextColor3 = Color3.fromRGB(255, 255, 255)
-StatusBar.TextSize = 14.000
-
-UICorner_29.CornerRadius = UDim.new(0, 32)
-UICorner_29.Parent = StatusBar
-
-logo_2.Name = "logo"
-logo_2.Parent = StatusBar
-logo_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-logo_2.BackgroundTransparency = 1.000
-logo_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-logo_2.BorderSizePixel = 0
-logo_2.Position = UDim2.new(0.371303469, 0, 0.100499988, 0)
-logo_2.Size = UDim2.new(0.0480000004, 0, 0.75, 0)
-logo_2.Image = "rbxassetid://133613329257288"
-logo_2.ScaleType = Enum.ScaleType.Fit
-
-UICorner_30.CornerRadius = UDim.new(0, 24)
-UICorner_30.Parent = logo_2
-
-version.Name = "version"
-version.Parent = StatusBar
-version.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-version.BackgroundTransparency = 1.000
-version.BorderColor3 = Color3.fromRGB(0, 0, 0)
-version.BorderSizePixel = 0
-version.Position = UDim2.new(0.822723508, 0, 0.0312498808, 0)
-version.Size = UDim2.new(0, 89, 0, 27)
-version.Font = Enum.Font.Gotham
-version.Text = "Version:  V1"
-version.TextColor3 = Color3.fromRGB(255, 255, 255)
-version.TextSize = 14.000
-
-timeanddate.Name = "timeanddate"
-timeanddate.Parent = StatusBar
-timeanddate.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-timeanddate.BackgroundTransparency = 1.000
-timeanddate.BorderColor3 = Color3.fromRGB(0, 0, 0)
-timeanddate.BorderSizePixel = 0
-timeanddate.Position = UDim2.new(0.0172760375, 0, 0.0312498808, 0)
-timeanddate.Size = UDim2.new(0, 157, 0, 27)
-timeanddate.Font = Enum.Font.Gotham
-timeanddate.Text = "T & D: hh:mm:ss | dd/mm"
-timeanddate.TextColor3 = Color3.fromRGB(255, 255, 255)
-timeanddate.TextSize = 14.000
-timeanddate.TextXAlignment = Enum.TextXAlignment.Left
-
-BackframeShine.Name = "BackframeShine"
-BackframeShine.Parent = main
-BackframeShine.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-BackframeShine.BackgroundTransparency = 1.000
-BackframeShine.BorderColor3 = Color3.fromRGB(0, 0, 0)
-BackframeShine.BorderSizePixel = 0
-BackframeShine.Size = UDim2.new(0, 514, 0, 302)
-BackframeShine.ZIndex = 0
-BackframeShine.Image = "rbxassetid://159602101"
-BackframeShine.ImageTransparency = 0.680
-
-UICorner_31.CornerRadius = UDim.new(0, 32)
-UICorner_31.Parent = BackframeShine
-
-mainctrls.Name = "mainctrls"
-mainctrls.Parent = main
-mainctrls.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
-mainctrls.BackgroundTransparency = 0.200
-mainctrls.BorderColor3 = Color3.fromRGB(0, 0, 0)
-mainctrls.BorderSizePixel = 0
-mainctrls.Position = UDim2.new(1.0154171, 0, -0.00280344603, 0)
-mainctrls.Size = UDim2.new(0, 49, 0, 151)
-
-UICorner_32.CornerRadius = UDim.new(0, 32)
-UICorner_32.Parent = mainctrls
-
-UIListLayout_4.Parent = mainctrls
-UIListLayout_4.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout_4.Padding = UDim.new(0.0299999993, 0)
-
-Close.Name = "Close"
-Close.Parent = mainctrls
-Close.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Close.BackgroundTransparency = 0.200
-Close.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Close.BorderSizePixel = 0
-Close.Position = UDim2.new(-0.256122202, 0, -0.0396026708, 0)
-Close.Size = UDim2.new(0.899999976, 0, 0.300000012, 0)
-Close.Font = Enum.Font.Nunito
-Close.Text = "-"
-Close.TextColor3 = Color3.fromRGB(255, 255, 255)
-Close.TextSize = 90.000
-Close.TextWrapped = true
-
-UICorner_33.CornerRadius = UDim.new(0, 24)
-UICorner_33.Parent = Close
-
-UIPadding_11.Parent = mainctrls
-UIPadding_11.PaddingTop = UDim.new(0, 4)
-
-UIScale.Parent = fluxusz
-UIScale.Scale = 0.790
-
-open.Name = "open"
-open.Parent = fluxusz
-open.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
-open.BorderColor3 = Color3.fromRGB(0, 0, 0)
-open.BorderSizePixel = 0
-open.Position = UDim2.new(0.466353685, 0, 0.0668523684, 0)
-open.Size = UDim2.new(0, 50, 0, 50)
-open.Visible = false
-
-ImageButton.Parent = open
-ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageButton.BackgroundTransparency = 1.000
-ImageButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ImageButton.BorderSizePixel = 0
-ImageButton.Size = UDim2.new(1, 0, 1, 0)
-ImageButton.Image = "rbxassetid://133613329257288"
-
-UICorner_34.CornerRadius = UDim.new(0, 99)
-UICorner_34.Parent = ImageButton
-
-UICorner_35.CornerRadius = UDim.new(0, 99)
-UICorner_35.Parent = open
-
--- Scripts:
-
-local function SHLDQTA_fake_script() -- fluxusz.TabToggleController 
-	local script = Instance.new('LocalScript', fluxusz)
-
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+]=]
+
+-- Instances: 177 | Scripts: 21 | Modules: 0 | Tags: 0
+local G2L = {};
+
+-- StarterGui.frostware
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["SafeAreaCompatibility"] = Enum.SafeAreaCompatibility.None;
+G2L["1"]["IgnoreGuiInset"] = true;
+G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.None;
+G2L["1"]["ClipToDeviceSafeArea"] = false;
+G2L["1"]["Name"] = [[frostware]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+G2L["1"]["ResetOnSpawn"] = false;
+
+
+-- StarterGui.frostware.TabToggleController
+G2L["2"] = Instance.new("LocalScript", G2L["1"]);
+G2L["2"]["Name"] = [[TabToggleController]];
+
+
+-- StarterGui.frostware.Animator_OpenClose
+G2L["3"] = Instance.new("LocalScript", G2L["1"]);
+G2L["3"]["Name"] = [[Animator_OpenClose]];
+
+
+-- StarterGui.frostware.open
+G2L["4"] = Instance.new("Frame", G2L["1"]);
+G2L["4"]["Visible"] = false;
+G2L["4"]["BorderSizePixel"] = 0;
+G2L["4"]["BackgroundColor3"] = Color3.fromRGB(27, 27, 27);
+G2L["4"]["Size"] = UDim2.new(0, 50, 0, 50);
+G2L["4"]["Position"] = UDim2.new(0.46635, 0, 0.06685, 0);
+G2L["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4"]["Name"] = [[open]];
+
+
+-- StarterGui.frostware.open.ImageButton
+G2L["5"] = Instance.new("ImageButton", G2L["4"]);
+G2L["5"]["BorderSizePixel"] = 0;
+G2L["5"]["BackgroundTransparency"] = 1;
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5"]["Image"] = [[rbxassetid://133613329257288]];
+G2L["5"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+
+-- StarterGui.frostware.open.ImageButton.UICorner
+G2L["6"] = Instance.new("UICorner", G2L["5"]);
+G2L["6"]["CornerRadius"] = UDim.new(0, 99);
+
+
+-- StarterGui.frostware.open.UICorner
+G2L["7"] = Instance.new("UICorner", G2L["4"]);
+G2L["7"]["CornerRadius"] = UDim.new(0, 99);
+
+
+-- StarterGui.frostware.main
+G2L["8"] = Instance.new("Frame", G2L["1"]);
+G2L["8"]["BorderSizePixel"] = 0;
+G2L["8"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["Selectable"] = true;
+G2L["8"]["Size"] = UDim2.new(0, 514, 0, 302);
+G2L["8"]["Position"] = UDim2.new(0.18211, 0, 0.21299, 0);
+G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["Name"] = [[main]];
+G2L["8"]["BackgroundTransparency"] = 0.2;
+
+
+-- StarterGui.frostware.main.tabsbar
+G2L["9"] = Instance.new("ScrollingFrame", G2L["8"]);
+G2L["9"]["Active"] = true;
+G2L["9"]["BorderSizePixel"] = 0;
+G2L["9"]["ScrollingEnabled"] = false;
+G2L["9"]["BackgroundColor3"] = Color3.fromRGB(27, 27, 27);
+G2L["9"]["Name"] = [[tabsbar]];
+G2L["9"]["ScrollBarImageTransparency"] = 1;
+G2L["9"]["ClipsDescendants"] = false;
+G2L["9"]["Size"] = UDim2.new(0, 46, 0, 270);
+G2L["9"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9"]["Position"] = UDim2.new(0.03113, 0, 0.05298, 0);
+G2L["9"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9"]["BackgroundTransparency"] = 0.1;
+
+
+-- StarterGui.frostware.main.tabsbar.home
+G2L["a"] = Instance.new("TextButton", G2L["9"]);
+G2L["a"]["TextWrapped"] = true;
+G2L["a"]["BorderSizePixel"] = 0;
+G2L["a"]["TextSize"] = 10;
+G2L["a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a"]["BackgroundColor3"] = Color3.fromRGB(45, 45, 45);
+G2L["a"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["a"]["Size"] = UDim2.new(0.85, 0, 0.065, 0);
+G2L["a"]["LayoutOrder"] = 1;
+G2L["a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a"]["Text"] = [[]];
+G2L["a"]["Name"] = [[home]];
+G2L["a"]["Position"] = UDim2.new(0.075, 0, 0.02222, 0);
+
+
+-- StarterGui.frostware.main.tabsbar.home.UICorner
+G2L["b"] = Instance.new("UICorner", G2L["a"]);
+G2L["b"]["CornerRadius"] = UDim.new(0, 24);
+
+
+-- StarterGui.frostware.main.tabsbar.home.ImageLabel
+G2L["c"] = Instance.new("ImageLabel", G2L["a"]);
+G2L["c"]["BorderSizePixel"] = 0;
+G2L["c"]["ScaleType"] = Enum.ScaleType.Fit;
+G2L["c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["c"]["Image"] = [[rbxassetid://11347112400]];
+G2L["c"]["Size"] = UDim2.new(0.6, 0, 0.6, 0);
+G2L["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["c"]["BackgroundTransparency"] = 1;
+G2L["c"]["Position"] = UDim2.new(0.2, 0, 0.2, 0);
+
+
+-- StarterGui.frostware.main.tabsbar.editor
+G2L["d"] = Instance.new("TextButton", G2L["9"]);
+G2L["d"]["TextWrapped"] = true;
+G2L["d"]["BorderSizePixel"] = 0;
+G2L["d"]["TextSize"] = 10;
+G2L["d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["d"]["BackgroundColor3"] = Color3.fromRGB(45, 45, 45);
+G2L["d"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["d"]["Size"] = UDim2.new(0.85, 0, 0.065, 0);
+G2L["d"]["LayoutOrder"] = 2;
+G2L["d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["d"]["Text"] = [[]];
+G2L["d"]["Name"] = [[editor]];
+G2L["d"]["Position"] = UDim2.new(0.075, 0, 0.08533, 0);
+
+
+-- StarterGui.frostware.main.tabsbar.editor.UICorner
+G2L["e"] = Instance.new("UICorner", G2L["d"]);
+G2L["e"]["CornerRadius"] = UDim.new(0, 24);
+
+
+-- StarterGui.frostware.main.tabsbar.editor.ImageLabel
+G2L["f"] = Instance.new("ImageLabel", G2L["d"]);
+G2L["f"]["BorderSizePixel"] = 0;
+G2L["f"]["ScaleType"] = Enum.ScaleType.Fit;
+G2L["f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["f"]["Image"] = [[rbxassetid://91033953850956]];
+G2L["f"]["Size"] = UDim2.new(0.6, 0, 0.6, 0);
+G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["f"]["BackgroundTransparency"] = 1;
+G2L["f"]["Position"] = UDim2.new(0.2, 0, 0.2, 0);
+
+
+-- StarterGui.frostware.main.tabsbar.settings
+G2L["10"] = Instance.new("TextButton", G2L["9"]);
+G2L["10"]["TextWrapped"] = true;
+G2L["10"]["BorderSizePixel"] = 0;
+G2L["10"]["TextSize"] = 10;
+G2L["10"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["10"]["BackgroundColor3"] = Color3.fromRGB(45, 45, 45);
+G2L["10"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["10"]["Size"] = UDim2.new(0.85, 0, 0.065, 0);
+G2L["10"]["LayoutOrder"] = 5;
+G2L["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["10"]["Text"] = [[]];
+G2L["10"]["Name"] = [[settings]];
+G2L["10"]["Position"] = UDim2.new(0.075, 0, 0.375, 0);
+
+
+-- StarterGui.frostware.main.tabsbar.settings.UICorner
+G2L["11"] = Instance.new("UICorner", G2L["10"]);
+G2L["11"]["CornerRadius"] = UDim.new(0, 24);
+
+
+-- StarterGui.frostware.main.tabsbar.settings.ImageLabel
+G2L["12"] = Instance.new("ImageLabel", G2L["10"]);
+G2L["12"]["BorderSizePixel"] = 0;
+G2L["12"]["ScaleType"] = Enum.ScaleType.Fit;
+G2L["12"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["12"]["Image"] = [[rbxassetid://7059346373]];
+G2L["12"]["Size"] = UDim2.new(0.6, 0, 0.6, 0);
+G2L["12"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["12"]["BackgroundTransparency"] = 1;
+G2L["12"]["Position"] = UDim2.new(0.2, 0, 0.2, 0);
+
+
+-- StarterGui.frostware.main.tabsbar.scripthub
+G2L["13"] = Instance.new("TextButton", G2L["9"]);
+G2L["13"]["TextWrapped"] = true;
+G2L["13"]["BorderSizePixel"] = 0;
+G2L["13"]["TextSize"] = 10;
+G2L["13"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["13"]["BackgroundColor3"] = Color3.fromRGB(45, 45, 45);
+G2L["13"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["13"]["Size"] = UDim2.new(0.85, 0, 0.065, 0);
+G2L["13"]["LayoutOrder"] = 3;
+G2L["13"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["13"]["Text"] = [[]];
+G2L["13"]["Name"] = [[scripthub]];
+G2L["13"]["Position"] = UDim2.new(0.075, 0, 0.375, 0);
+
+
+-- StarterGui.frostware.main.tabsbar.scripthub.UICorner
+G2L["14"] = Instance.new("UICorner", G2L["13"]);
+G2L["14"]["CornerRadius"] = UDim.new(0, 24);
+
+
+-- StarterGui.frostware.main.tabsbar.scripthub.ImageLabel
+G2L["15"] = Instance.new("ImageLabel", G2L["13"]);
+G2L["15"]["BorderSizePixel"] = 0;
+G2L["15"]["ScaleType"] = Enum.ScaleType.Fit;
+G2L["15"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["15"]["Image"] = [[rbxassetid://11570895459]];
+G2L["15"]["Size"] = UDim2.new(0.6, 0, 0.6, 0);
+G2L["15"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["15"]["BackgroundTransparency"] = 1;
+G2L["15"]["Position"] = UDim2.new(0.2, 0, 0.2, 0);
+
+
+-- StarterGui.frostware.main.tabsbar.UICorner
+G2L["16"] = Instance.new("UICorner", G2L["9"]);
+G2L["16"]["CornerRadius"] = UDim.new(0, 24);
+
+
+-- StarterGui.frostware.main.tabsbar.UIListLayout
+G2L["17"] = Instance.new("UIListLayout", G2L["9"]);
+G2L["17"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+G2L["17"]["Padding"] = UDim.new(0.01, 0);
+G2L["17"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- StarterGui.frostware.main.tabsbar.UIPadding
+G2L["18"] = Instance.new("UIPadding", G2L["9"]);
+G2L["18"]["PaddingTop"] = UDim.new(0.01, 0);
+
+
+-- StarterGui.frostware.main.tabsbar.UIStroke
+G2L["19"] = Instance.new("UIStroke", G2L["9"]);
+G2L["19"]["Transparency"] = 0.68;
+G2L["19"]["Thickness"] = 3.4;
+
+
+-- StarterGui.frostware.main.tabsbar.console
+G2L["1a"] = Instance.new("TextButton", G2L["9"]);
+G2L["1a"]["TextWrapped"] = true;
+G2L["1a"]["BorderSizePixel"] = 0;
+G2L["1a"]["TextSize"] = 10;
+G2L["1a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1a"]["BackgroundColor3"] = Color3.fromRGB(45, 45, 45);
+G2L["1a"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1a"]["Size"] = UDim2.new(0.85, 0, 0.065, 0);
+G2L["1a"]["LayoutOrder"] = 4;
+G2L["1a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1a"]["Text"] = [[]];
+G2L["1a"]["Name"] = [[console]];
+G2L["1a"]["Position"] = UDim2.new(0.075, 0, 0.375, 0);
+
+
+-- StarterGui.frostware.main.tabsbar.console.UICorner
+G2L["1b"] = Instance.new("UICorner", G2L["1a"]);
+G2L["1b"]["CornerRadius"] = UDim.new(0, 24);
+
+
+-- StarterGui.frostware.main.tabsbar.console.ImageLabel
+G2L["1c"] = Instance.new("ImageLabel", G2L["1a"]);
+G2L["1c"]["BorderSizePixel"] = 0;
+G2L["1c"]["ScaleType"] = Enum.ScaleType.Fit;
+G2L["1c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["1c"]["Image"] = [[rbxassetid://16149184217]];
+G2L["1c"]["Size"] = UDim2.new(0.6, 0, 0.6, 0);
+G2L["1c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1c"]["BackgroundTransparency"] = 1;
+G2L["1c"]["Position"] = UDim2.new(0.2, 0, 0.2, 0);
+
+
+-- StarterGui.frostware.main.tabs
+G2L["1d"] = Instance.new("Folder", G2L["8"]);
+G2L["1d"]["Name"] = [[tabs]];
+
+
+-- StarterGui.frostware.main.tabs.home
+G2L["1e"] = Instance.new("Frame", G2L["1d"]);
+G2L["1e"]["Visible"] = false;
+G2L["1e"]["BorderSizePixel"] = 0;
+G2L["1e"]["BackgroundColor3"] = Color3.fromRGB(27, 27, 27);
+G2L["1e"]["Size"] = UDim2.new(0, 423, 0, 264);
+G2L["1e"]["Position"] = UDim2.new(0.14981, 0, 0.06291, 0);
+G2L["1e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1e"]["Name"] = [[home]];
+G2L["1e"]["BackgroundTransparency"] = 0.1;
+
+
+-- StarterGui.frostware.main.tabs.home.logo
+G2L["1f"] = Instance.new("ImageLabel", G2L["1e"]);
+G2L["1f"]["BorderSizePixel"] = 0;
+G2L["1f"]["ScaleType"] = Enum.ScaleType.Fit;
+G2L["1f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["1f"]["Image"] = [[rbxassetid://133613329257288]];
+G2L["1f"]["Size"] = UDim2.new(0, 100, 0, 100);
+G2L["1f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1f"]["BackgroundTransparency"] = 1;
+G2L["1f"]["Name"] = [[logo]];
+G2L["1f"]["Position"] = UDim2.new(0.025, 0, 0.038, 0);
+
+
+-- StarterGui.frostware.main.tabs.home.logo.UICorner
+G2L["20"] = Instance.new("UICorner", G2L["1f"]);
+G2L["20"]["CornerRadius"] = UDim.new(0, 24);
+
+
+-- StarterGui.frostware.main.tabs.home.logo.UIStroke
+G2L["21"] = Instance.new("UIStroke", G2L["1f"]);
+G2L["21"]["Transparency"] = 0.68;
+G2L["21"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["21"]["Thickness"] = 3.4;
+
+
+-- StarterGui.frostware.main.tabs.home.TextContainer
+G2L["22"] = Instance.new("Frame", G2L["1e"]);
+G2L["22"]["BorderSizePixel"] = 0;
+G2L["22"]["BackgroundColor3"] = Color3.fromRGB(37, 37, 37);
+G2L["22"]["Size"] = UDim2.new(0, 292, 0, 148);
+G2L["22"]["Position"] = UDim2.new(0.28485, 0, 0.03788, 0);
+G2L["22"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["22"]["Name"] = [[TextContainer]];
+
+
+-- StarterGui.frostware.main.tabs.home.TextContainer.TextLabel
+G2L["23"] = Instance.new("TextLabel", G2L["22"]);
+G2L["23"]["TextWrapped"] = true;
+G2L["23"]["BorderSizePixel"] = 0;
+G2L["23"]["TextSize"] = 15;
+G2L["23"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["23"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["23"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["23"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["23"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["23"]["BackgroundTransparency"] = 1;
+G2L["23"]["Size"] = UDim2.new(0, 267, 0, 47);
+G2L["23"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["23"]["Text"] = [[Introducing Fluxus Z - One of the leading executors for Roblox Android and Now with a new and clean UI.]];
+G2L["23"]["Position"] = UDim2.new(0, 0, -0, 0);
+
+
+-- StarterGui.frostware.main.tabs.home.TextContainer.UICorner
+G2L["24"] = Instance.new("UICorner", G2L["22"]);
+G2L["24"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.home.TextContainer.UIPadding
+G2L["25"] = Instance.new("UIPadding", G2L["22"]);
+G2L["25"]["PaddingTop"] = UDim.new(0.05, 0);
+G2L["25"]["PaddingLeft"] = UDim.new(0.05, 0);
+
+
+-- StarterGui.frostware.main.tabs.home.TextContainer.TextLabel
+G2L["26"] = Instance.new("TextLabel", G2L["22"]);
+G2L["26"]["TextWrapped"] = true;
+G2L["26"]["BorderSizePixel"] = 0;
+G2L["26"]["TextSize"] = 15;
+G2L["26"]["TextXAlignment"] = Enum.TextXAlignment.Right;
+G2L["26"]["TextYAlignment"] = Enum.TextYAlignment.Bottom;
+G2L["26"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["26"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["26"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["26"]["BackgroundTransparency"] = 1;
+G2L["26"]["Size"] = UDim2.new(0, 267, 0, 12);
+G2L["26"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["26"]["Text"] = [[- Kaiso]];
+G2L["26"]["Position"] = UDim2.new(-0.01438, 0, 0.84835, 0);
+
+
+-- StarterGui.frostware.main.tabs.home.TextContainer.UIStroke
+G2L["27"] = Instance.new("UIStroke", G2L["22"]);
+G2L["27"]["Transparency"] = 0.68;
+G2L["27"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["27"]["Thickness"] = 3.4;
+
+
+-- StarterGui.frostware.main.tabs.home.Discord
+G2L["28"] = Instance.new("TextButton", G2L["1e"]);
+G2L["28"]["BorderSizePixel"] = 0;
+G2L["28"]["TextXAlignment"] = Enum.TextXAlignment.Right;
+G2L["28"]["TextSize"] = 13;
+G2L["28"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["28"]["BackgroundColor3"] = Color3.fromRGB(89, 102, 243);
+G2L["28"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["28"]["Size"] = UDim2.new(0, 100, 0, 38);
+G2L["28"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["28"]["Text"] = [[Discord]];
+G2L["28"]["Name"] = [[Discord]];
+G2L["28"]["Position"] = UDim2.new(0.02364, 0, 0.45455, 0);
+
+
+-- StarterGui.frostware.main.tabs.home.Discord.LocalScript
+G2L["29"] = Instance.new("LocalScript", G2L["28"]);
+
+
+
+-- StarterGui.frostware.main.tabs.home.Discord.UIPadding
+G2L["2a"] = Instance.new("UIPadding", G2L["28"]);
+G2L["2a"]["PaddingRight"] = UDim.new(0.175, 0);
+
+
+-- StarterGui.frostware.main.tabs.home.Discord.UICorner
+G2L["2b"] = Instance.new("UICorner", G2L["28"]);
+G2L["2b"]["CornerRadius"] = UDim.new(0, 24);
+
+
+-- StarterGui.frostware.main.tabs.home.Discord.dclogo
+G2L["2c"] = Instance.new("ImageLabel", G2L["28"]);
+G2L["2c"]["BorderSizePixel"] = 0;
+G2L["2c"]["ScaleType"] = Enum.ScaleType.Crop;
+G2L["2c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["2c"]["Image"] = [[rbxassetid://10367063073]];
+G2L["2c"]["Size"] = UDim2.new(0, 20, 0, 20);
+G2L["2c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2c"]["BackgroundTransparency"] = 1;
+G2L["2c"]["Name"] = [[dclogo]];
+G2L["2c"]["Position"] = UDim2.new(0.18182, 0, 0.23684, 0);
+
+
+-- StarterGui.frostware.main.tabs.home.Discord.UIStroke
+G2L["2d"] = Instance.new("UIStroke", G2L["28"]);
+G2L["2d"]["Transparency"] = 0.68;
+G2L["2d"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["2d"]["Thickness"] = 3.4;
+
+
+-- StarterGui.frostware.main.tabs.home.TextLabel
+G2L["2e"] = Instance.new("TextLabel", G2L["1e"]);
+G2L["2e"]["TextWrapped"] = true;
+G2L["2e"]["BorderSizePixel"] = 0;
+G2L["2e"]["TextSize"] = 15;
+G2L["2e"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["2e"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["2e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2e"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2e"]["BackgroundTransparency"] = 1;
+G2L["2e"]["Size"] = UDim2.new(0, 122, 0, 19);
+G2L["2e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2e"]["Text"] = [[Featured Scripts]];
+G2L["2e"]["Position"] = UDim2.new(0.0248, 0, 0.66653, 0);
+
+
+-- StarterGui.frostware.main.tabs.home.Infinite Yield
+G2L["2f"] = Instance.new("TextButton", G2L["1e"]);
+G2L["2f"]["BorderSizePixel"] = 0;
+G2L["2f"]["TextXAlignment"] = Enum.TextXAlignment.Right;
+G2L["2f"]["TextSize"] = 10;
+G2L["2f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2f"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2f"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2f"]["Size"] = UDim2.new(0, 100, 0, 38);
+G2L["2f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2f"]["Text"] = [[Infinite Yield]];
+G2L["2f"]["Name"] = [[Infinite Yield]];
+G2L["2f"]["Position"] = UDim2.new(0.02364, 0, 0.77273, 0);
+
+
+-- StarterGui.frostware.main.tabs.home.Infinite Yield.LocalScript
+G2L["30"] = Instance.new("LocalScript", G2L["2f"]);
+
+
+
+-- StarterGui.frostware.main.tabs.home.Infinite Yield.UIPadding
+G2L["31"] = Instance.new("UIPadding", G2L["2f"]);
+G2L["31"]["PaddingRight"] = UDim.new(0.125, 0);
+
+
+-- StarterGui.frostware.main.tabs.home.Infinite Yield.UICorner
+G2L["32"] = Instance.new("UICorner", G2L["2f"]);
+G2L["32"]["CornerRadius"] = UDim.new(0, 24);
+
+
+-- StarterGui.frostware.main.tabs.home.Infinite Yield.dclogo
+G2L["33"] = Instance.new("ImageLabel", G2L["2f"]);
+G2L["33"]["BorderSizePixel"] = 0;
+G2L["33"]["ScaleType"] = Enum.ScaleType.Crop;
+G2L["33"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["33"]["Image"] = [[rbxassetid://114384494769093]];
+G2L["33"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["33"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["33"]["BackgroundTransparency"] = 1;
+G2L["33"]["Name"] = [[dclogo]];
+G2L["33"]["Position"] = UDim2.new(0.09143, 0, 0, 0);
+
+
+-- StarterGui.frostware.main.tabs.home.Infinite Yield.dclogo.UICorner
+G2L["34"] = Instance.new("UICorner", G2L["33"]);
+G2L["34"]["CornerRadius"] = UDim.new(0, 24);
+
+
+-- StarterGui.frostware.main.tabs.home.Infinite Yield.UIStroke
+G2L["35"] = Instance.new("UIStroke", G2L["2f"]);
+G2L["35"]["Transparency"] = 0.68;
+G2L["35"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["35"]["Thickness"] = 3.4;
+
+
+-- StarterGui.frostware.main.tabs.home.UICorner
+G2L["36"] = Instance.new("UICorner", G2L["1e"]);
+G2L["36"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.home.Dex
+G2L["37"] = Instance.new("TextButton", G2L["1e"]);
+G2L["37"]["TextWrapped"] = true;
+G2L["37"]["BorderSizePixel"] = 0;
+G2L["37"]["TextSize"] = 18;
+G2L["37"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["37"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["37"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["37"]["Size"] = UDim2.new(0, 100, 0, 38);
+G2L["37"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["37"]["Text"] = [[Dex]];
+G2L["37"]["Name"] = [[Dex]];
+G2L["37"]["Position"] = UDim2.new(0.27423, 0, 0.77273, 0);
+
+
+-- StarterGui.frostware.main.tabs.home.Dex.LocalScript
+G2L["38"] = Instance.new("LocalScript", G2L["37"]);
+
+
+
+-- StarterGui.frostware.main.tabs.home.Dex.UICorner
+G2L["39"] = Instance.new("UICorner", G2L["37"]);
+G2L["39"]["CornerRadius"] = UDim.new(0, 24);
+
+
+-- StarterGui.frostware.main.tabs.home.Dex.UIStroke
+G2L["3a"] = Instance.new("UIStroke", G2L["37"]);
+G2L["3a"]["Transparency"] = 0.68;
+G2L["3a"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["3a"]["Thickness"] = 3.4;
+
+
+-- StarterGui.frostware.main.tabs.editor
+G2L["3b"] = Instance.new("Frame", G2L["1d"]);
+G2L["3b"]["Visible"] = false;
+G2L["3b"]["BorderSizePixel"] = 0;
+G2L["3b"]["BackgroundColor3"] = Color3.fromRGB(27, 27, 27);
+G2L["3b"]["Size"] = UDim2.new(0, 421, 0, 231);
+G2L["3b"]["Position"] = UDim2.new(0.15195, 0, 0.17594, 0);
+G2L["3b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3b"]["Name"] = [[editor]];
+G2L["3b"]["BackgroundTransparency"] = 0.1;
+
+
+-- StarterGui.frostware.main.tabs.editor.Controls
+G2L["3c"] = Instance.new("Frame", G2L["3b"]);
+G2L["3c"]["BorderSizePixel"] = 0;
+G2L["3c"]["BackgroundColor3"] = Color3.fromRGB(37, 37, 37);
+G2L["3c"]["Size"] = UDim2.new(0, 143, 0, 36);
+G2L["3c"]["Position"] = UDim2.new(0.63818, 0, 0.83485, 0);
+G2L["3c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3c"]["Name"] = [[Controls]];
+
+
+-- StarterGui.frostware.main.tabs.editor.Controls.Clear
+G2L["3d"] = Instance.new("ImageButton", G2L["3c"]);
+G2L["3d"]["SliceScale"] = 0.5;
+G2L["3d"]["BorderSizePixel"] = 0;
+G2L["3d"]["ScaleType"] = Enum.ScaleType.Slice;
+G2L["3d"]["BackgroundColor3"] = Color3.fromRGB(0, 133, 255);
+G2L["3d"]["TileSize"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["3d"]["Size"] = UDim2.new(0, 32, 0, 32);
+G2L["3d"]["LayoutOrder"] = 3;
+G2L["3d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3d"]["Name"] = [[Clear]];
+G2L["3d"]["Position"] = UDim2.new(0.59091, 0, -0.88889, 0);
+
+
+-- StarterGui.frostware.main.tabs.editor.Controls.Clear.LocalScript
+G2L["3e"] = Instance.new("LocalScript", G2L["3d"]);
+
+
+
+-- StarterGui.frostware.main.tabs.editor.Controls.Clear.UICorner
+G2L["3f"] = Instance.new("UICorner", G2L["3d"]);
+G2L["3f"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.editor.Controls.Clear.ImageLabel
+G2L["40"] = Instance.new("ImageLabel", G2L["3d"]);
+G2L["40"]["BorderSizePixel"] = 0;
+G2L["40"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["40"]["Image"] = [[rbxassetid://105955025341798]];
+G2L["40"]["Size"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["40"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["40"]["BackgroundTransparency"] = 1;
+G2L["40"]["Position"] = UDim2.new(0.25, 0, 0.25, 0);
+
+
+-- StarterGui.frostware.main.tabs.editor.Controls.Run
+G2L["41"] = Instance.new("ImageButton", G2L["3c"]);
+G2L["41"]["SliceScale"] = 0.5;
+G2L["41"]["BorderSizePixel"] = 0;
+G2L["41"]["ScaleType"] = Enum.ScaleType.Slice;
+G2L["41"]["BackgroundColor3"] = Color3.fromRGB(0, 133, 255);
+G2L["41"]["TileSize"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["41"]["Size"] = UDim2.new(0, 32, 0, 32);
+G2L["41"]["LayoutOrder"] = 4;
+G2L["41"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["41"]["Name"] = [[Run]];
+G2L["41"]["Position"] = UDim2.new(0.59091, 0, -0.88889, 0);
+
+
+-- StarterGui.frostware.main.tabs.editor.Controls.Run.LocalScript
+G2L["42"] = Instance.new("LocalScript", G2L["41"]);
+
+
+
+-- StarterGui.frostware.main.tabs.editor.Controls.Run.UICorner
+G2L["43"] = Instance.new("UICorner", G2L["41"]);
+G2L["43"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.editor.Controls.Run.ImageLabel
+G2L["44"] = Instance.new("ImageLabel", G2L["41"]);
+G2L["44"]["BorderSizePixel"] = 0;
+G2L["44"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["44"]["Image"] = [[rbxassetid://8517323790]];
+G2L["44"]["Size"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["44"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["44"]["BackgroundTransparency"] = 1;
+G2L["44"]["Position"] = UDim2.new(0.25, 0, 0.25, 0);
+
+
+-- StarterGui.frostware.main.tabs.editor.Controls.Copy
+G2L["45"] = Instance.new("ImageButton", G2L["3c"]);
+G2L["45"]["SliceScale"] = 0.5;
+G2L["45"]["BorderSizePixel"] = 0;
+G2L["45"]["ScaleType"] = Enum.ScaleType.Slice;
+G2L["45"]["BackgroundColor3"] = Color3.fromRGB(0, 133, 255);
+G2L["45"]["TileSize"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["45"]["Size"] = UDim2.new(0, 32, 0, 32);
+G2L["45"]["LayoutOrder"] = 2;
+G2L["45"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["45"]["Name"] = [[Copy]];
+G2L["45"]["Position"] = UDim2.new(0.59091, 0, -0.88889, 0);
+
+
+-- StarterGui.frostware.main.tabs.editor.Controls.Copy.LocalScript
+G2L["46"] = Instance.new("LocalScript", G2L["45"]);
+
+
+
+-- StarterGui.frostware.main.tabs.editor.Controls.Copy.UICorner
+G2L["47"] = Instance.new("UICorner", G2L["45"]);
+G2L["47"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.editor.Controls.Copy.ImageLabel
+G2L["48"] = Instance.new("ImageLabel", G2L["45"]);
+G2L["48"]["BorderSizePixel"] = 0;
+G2L["48"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["48"]["Image"] = [[rbxassetid://10169282923]];
+G2L["48"]["Size"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["48"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["48"]["BackgroundTransparency"] = 1;
+G2L["48"]["Position"] = UDim2.new(0.25, 0, 0.25, 0);
+
+
+-- StarterGui.frostware.main.tabs.editor.Controls.UICorner
+G2L["49"] = Instance.new("UICorner", G2L["3c"]);
+G2L["49"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.editor.Controls.UIListLayout
+G2L["4a"] = Instance.new("UIListLayout", G2L["3c"]);
+G2L["4a"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+G2L["4a"]["Padding"] = UDim.new(0.02, 0);
+G2L["4a"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
+G2L["4a"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+G2L["4a"]["FillDirection"] = Enum.FillDirection.Horizontal;
+
+
+-- StarterGui.frostware.main.tabs.editor.Controls.Paste
+G2L["4b"] = Instance.new("ImageButton", G2L["3c"]);
+G2L["4b"]["SliceScale"] = 0.5;
+G2L["4b"]["BorderSizePixel"] = 0;
+G2L["4b"]["ScaleType"] = Enum.ScaleType.Slice;
+G2L["4b"]["BackgroundColor3"] = Color3.fromRGB(0, 133, 255);
+G2L["4b"]["TileSize"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["4b"]["Size"] = UDim2.new(0, 32, 0, 32);
+G2L["4b"]["LayoutOrder"] = 1;
+G2L["4b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4b"]["Name"] = [[Paste]];
+G2L["4b"]["Position"] = UDim2.new(0.59091, 0, -0.88889, 0);
+
+
+-- StarterGui.frostware.main.tabs.editor.Controls.Paste.LocalScript
+G2L["4c"] = Instance.new("LocalScript", G2L["4b"]);
+
+
+
+-- StarterGui.frostware.main.tabs.editor.Controls.Paste.UICorner
+G2L["4d"] = Instance.new("UICorner", G2L["4b"]);
+G2L["4d"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.editor.Controls.Paste.ImageLabel
+G2L["4e"] = Instance.new("ImageLabel", G2L["4b"]);
+G2L["4e"]["BorderSizePixel"] = 0;
+G2L["4e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["4e"]["Image"] = [[rbxassetid://137254287379933]];
+G2L["4e"]["Size"] = UDim2.new(0.5, 0, 0.5, 0);
+G2L["4e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4e"]["BackgroundTransparency"] = 1;
+G2L["4e"]["Position"] = UDim2.new(0.25, 0, 0.25, 0);
+
+
+-- StarterGui.frostware.main.tabs.editor.Controls.UIStroke
+G2L["4f"] = Instance.new("UIStroke", G2L["3c"]);
+G2L["4f"]["Transparency"] = 0.68;
+G2L["4f"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["4f"]["Thickness"] = 3.4;
+
+
+-- StarterGui.frostware.main.tabs.editor.ScrollingFrame
+G2L["50"] = Instance.new("ScrollingFrame", G2L["3b"]);
+G2L["50"]["Active"] = true;
+G2L["50"]["BorderSizePixel"] = 0;
+G2L["50"]["BackgroundColor3"] = Color3.fromRGB(37, 37, 37);
+G2L["50"]["ScrollBarImageTransparency"] = 1;
+G2L["50"]["Size"] = UDim2.new(0, 405, 0, 178);
+G2L["50"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["50"]["Position"] = UDim2.new(0.02128, 0, 0.03409, 0);
+G2L["50"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+
+-- StarterGui.frostware.main.tabs.editor.ScrollingFrame.UICorner
+G2L["51"] = Instance.new("UICorner", G2L["50"]);
+G2L["51"]["CornerRadius"] = UDim.new(0, 24);
+
+
+-- StarterGui.frostware.main.tabs.editor.ScrollingFrame.TextBox
+G2L["52"] = Instance.new("TextBox", G2L["50"]);
+G2L["52"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["52"]["PlaceholderColor3"] = Color3.fromRGB(179, 179, 179);
+G2L["52"]["BorderSizePixel"] = 0;
+G2L["52"]["TextSize"] = 14;
+G2L["52"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["52"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["52"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["52"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["52"]["MultiLine"] = true;
+G2L["52"]["ClearTextOnFocus"] = false;
+G2L["52"]["PlaceholderText"] = [[Script Here...]];
+G2L["52"]["Size"] = UDim2.new(0.96973, 0, 2.61386, 0);
+G2L["52"]["Position"] = UDim2.new(0, 0, 0, 0);
+G2L["52"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["52"]["Text"] = [[print'FluxusZ On Top']];
+G2L["52"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.frostware.main.tabs.editor.ScrollingFrame.TextBox.LocalScript
+G2L["53"] = Instance.new("LocalScript", G2L["52"]);
+
+
+
+-- StarterGui.frostware.main.tabs.editor.ScrollingFrame.TextBox.UIPadding
+G2L["54"] = Instance.new("UIPadding", G2L["52"]);
+G2L["54"]["PaddingTop"] = UDim.new(0.01, 0);
+G2L["54"]["PaddingLeft"] = UDim.new(0.04, 0);
+
+
+-- StarterGui.frostware.main.tabs.editor.ScrollingFrame.TextBox.TextLabel
+G2L["55"] = Instance.new("TextLabel", G2L["52"]);
+G2L["55"]["BorderSizePixel"] = 0;
+G2L["55"]["TextSize"] = 14;
+G2L["55"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["55"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["55"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["55"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["55"]["BackgroundTransparency"] = 1;
+G2L["55"]["Size"] = UDim2.new(0, 13, 1, 0);
+G2L["55"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["55"]["Text"] = [[1]];
+G2L["55"]["Position"] = UDim2.new(-0.035, 0, 0, 0);
+
+
+-- StarterGui.frostware.main.tabs.editor.ScrollingFrame.UIStroke
+G2L["56"] = Instance.new("UIStroke", G2L["50"]);
+G2L["56"]["Transparency"] = 0.68;
+G2L["56"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["56"]["Thickness"] = 3.4;
+
+
+-- StarterGui.frostware.main.tabs.editor.UICorner
+G2L["57"] = Instance.new("UICorner", G2L["3b"]);
+G2L["57"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.editor.tabs
+G2L["58"] = Instance.new("Frame", G2L["3b"]);
+G2L["58"]["BorderSizePixel"] = 0;
+G2L["58"]["BackgroundColor3"] = Color3.fromRGB(29, 29, 29);
+G2L["58"]["Size"] = UDim2.new(0, 423, 0, 35);
+G2L["58"]["Position"] = UDim2.new(0, 0, -0.16379, 0);
+G2L["58"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["58"]["Name"] = [[tabs]];
+
+
+-- StarterGui.frostware.main.tabs.editor.tabs.UICorner
+G2L["59"] = Instance.new("UICorner", G2L["58"]);
+G2L["59"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.editor.tabs.ScrollingFrame
+G2L["5a"] = Instance.new("ScrollingFrame", G2L["58"]);
+G2L["5a"]["Active"] = true;
+G2L["5a"]["ScrollingDirection"] = Enum.ScrollingDirection.X;
+G2L["5a"]["BorderSizePixel"] = 0;
+G2L["5a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5a"]["ScrollBarImageTransparency"] = 1;
+G2L["5a"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["5a"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5a"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.frostware.main.tabs.editor.tabs.ScrollingFrame.UIListLayout
+G2L["5b"] = Instance.new("UIListLayout", G2L["5a"]);
+G2L["5b"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- StarterGui.frostware.main.tabs.editor.tabs.ScrollingFrame.TextButton
+G2L["5c"] = Instance.new("TextButton", G2L["5a"]);
+G2L["5c"]["BorderSizePixel"] = 0;
+G2L["5c"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["5c"]["TextSize"] = 14;
+G2L["5c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5c"]["BackgroundColor3"] = Color3.fromRGB(37, 37, 37);
+G2L["5c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["5c"]["Size"] = UDim2.new(0, 80, 0.419, 0);
+G2L["5c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5c"]["Text"] = [[Tab 1]];
+G2L["5c"]["Position"] = UDim2.new(0.19622, 0, 0.05714, 0);
+
+
+-- StarterGui.frostware.main.tabs.editor.tabs.ScrollingFrame.TextButton.UICorner
+G2L["5d"] = Instance.new("UICorner", G2L["5c"]);
+G2L["5d"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.editor.tabs.ScrollingFrame.TextButton.UIPadding
+G2L["5e"] = Instance.new("UIPadding", G2L["5c"]);
+G2L["5e"]["PaddingLeft"] = UDim.new(0.2, 0);
+
+
+-- StarterGui.frostware.main.tabs.editor.tabs.ScrollingFrame.TextButton.ImageButton
+G2L["5f"] = Instance.new("ImageButton", G2L["5c"]);
+G2L["5f"]["BorderSizePixel"] = 0;
+G2L["5f"]["ScaleType"] = Enum.ScaleType.Fit;
+G2L["5f"]["BackgroundTransparency"] = 1;
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["5f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5f"]["Image"] = [[rbxassetid://74120900238837]];
+G2L["5f"]["Size"] = UDim2.new(0.2875, 0, 0.62055, 0);
+G2L["5f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5f"]["Position"] = UDim2.new(0.54688, 0, 0.17945, 0);
+
+
+-- StarterGui.frostware.main.tabs.editor.tabs.ScrollingFrame.UIPadding
+G2L["60"] = Instance.new("UIPadding", G2L["5a"]);
+G2L["60"]["PaddingTop"] = UDim.new(0.05, 0);
+G2L["60"]["PaddingLeft"] = UDim.new(0.01, 0);
+
+
+-- StarterGui.frostware.main.tabs.editor.tabs.UIStroke
+G2L["61"] = Instance.new("UIStroke", G2L["58"]);
+G2L["61"]["Transparency"] = 0.68;
+G2L["61"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["61"]["Thickness"] = 3.4;
+
+
+-- StarterGui.frostware.main.tabs.settings
+G2L["62"] = Instance.new("Frame", G2L["1d"]);
+G2L["62"]["Visible"] = false;
+G2L["62"]["BorderSizePixel"] = 0;
+G2L["62"]["BackgroundColor3"] = Color3.fromRGB(27, 27, 27);
+G2L["62"]["Size"] = UDim2.new(0, 423, 0, 264);
+G2L["62"]["Position"] = UDim2.new(0.15, 0, 0.063, 0);
+G2L["62"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["62"]["Name"] = [[settings]];
+G2L["62"]["BackgroundTransparency"] = 0.1;
+
+
+-- StarterGui.frostware.main.tabs.settings.main
+G2L["63"] = Instance.new("TextLabel", G2L["62"]);
+G2L["63"]["TextWrapped"] = true;
+G2L["63"]["BorderSizePixel"] = 0;
+G2L["63"]["TextSize"] = 15;
+G2L["63"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["63"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["63"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["63"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["63"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["63"]["BackgroundTransparency"] = 1;
+G2L["63"]["Size"] = UDim2.new(0, 396, 0, 237);
+G2L["63"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["63"]["Text"] = [[Here you can toggle settings for this menu!]];
+G2L["63"]["Name"] = [[main]];
+G2L["63"]["Position"] = UDim2.new(-0.01991, 0, -0, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.rgb
+G2L["64"] = Instance.new("TextLabel", G2L["62"]);
+G2L["64"]["TextWrapped"] = true;
+G2L["64"]["BorderSizePixel"] = 0;
+G2L["64"]["TextSize"] = 15;
+G2L["64"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["64"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["64"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["64"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["64"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["64"]["BackgroundTransparency"] = 1;
+G2L["64"]["Size"] = UDim2.new(0, 396, 0, 17);
+G2L["64"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["64"]["Text"] = [[RGB Menu]];
+G2L["64"]["Name"] = [[rgb]];
+G2L["64"]["Position"] = UDim2.new(-0.01991, 0, 0.1663, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.rgb.switch
+G2L["65"] = Instance.new("TextButton", G2L["64"]);
+G2L["65"]["BorderSizePixel"] = 0;
+G2L["65"]["TextSize"] = 14;
+G2L["65"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["65"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["65"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["65"]["Size"] = UDim2.new(0, 50, 0, 24);
+G2L["65"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["65"]["Text"] = [[]];
+G2L["65"]["Name"] = [[switch]];
+G2L["65"]["Position"] = UDim2.new(0, 78, 0, -3);
+
+
+-- StarterGui.frostware.main.tabs.settings.rgb.switch.LocalScript
+G2L["66"] = Instance.new("LocalScript", G2L["65"]);
+
+
+
+-- StarterGui.frostware.main.tabs.settings.rgb.switch.rgbfunc
+G2L["67"] = Instance.new("LocalScript", G2L["65"]);
+G2L["67"]["Name"] = [[rgbfunc]];
+
+
+-- StarterGui.frostware.main.tabs.settings.rgb.switch.UICorner
+G2L["68"] = Instance.new("UICorner", G2L["65"]);
+G2L["68"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.settings.rgb.switch.Frame
+G2L["69"] = Instance.new("Frame", G2L["65"]);
+G2L["69"]["BorderSizePixel"] = 0;
+G2L["69"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["69"]["Size"] = UDim2.new(0.31328, 0, 0.62657, 0);
+G2L["69"]["Position"] = UDim2.new(0.11345, 0, 0.19048, 0);
+G2L["69"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.rgb.switch.Frame.UICorner
+G2L["6a"] = Instance.new("UICorner", G2L["69"]);
+G2L["6a"]["CornerRadius"] = UDim.new(99, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.rgb.switch.UIStroke
+G2L["6b"] = Instance.new("UIStroke", G2L["65"]);
+G2L["6b"]["Transparency"] = 0.68;
+G2L["6b"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["6b"]["Thickness"] = 3.4;
+
+
+-- StarterGui.frostware.main.tabs.settings.rgb.TextLabel
+G2L["6c"] = Instance.new("TextLabel", G2L["64"]);
+G2L["6c"]["BorderSizePixel"] = 0;
+G2L["6c"]["TextSize"] = 14;
+G2L["6c"]["BackgroundColor3"] = Color3.fromRGB(44, 44, 44);
+G2L["6c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["6c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6c"]["Size"] = UDim2.new(0, 132, 0, 24);
+G2L["6c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6c"]["Text"] = [[Now better than before!!!]];
+G2L["6c"]["Position"] = UDim2.new(0.3708, 0, -0.2054, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.rgb.TextLabel.UICorner
+G2L["6d"] = Instance.new("UICorner", G2L["6c"]);
+G2L["6d"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.settings.UICorner
+G2L["6e"] = Instance.new("UICorner", G2L["62"]);
+G2L["6e"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.settings.UIPadding
+G2L["6f"] = Instance.new("UIPadding", G2L["62"]);
+G2L["6f"]["PaddingTop"] = UDim.new(0.05, 0);
+G2L["6f"]["PaddingLeft"] = UDim.new(0.05, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.tdf
+G2L["70"] = Instance.new("TextLabel", G2L["62"]);
+G2L["70"]["TextWrapped"] = true;
+G2L["70"]["BorderSizePixel"] = 0;
+G2L["70"]["TextSize"] = 15;
+G2L["70"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["70"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["70"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["70"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["70"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["70"]["BackgroundTransparency"] = 1;
+G2L["70"]["Size"] = UDim2.new(0, 396, 0, 17);
+G2L["70"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["70"]["Text"] = [[Time Date And FPS]];
+G2L["70"]["Name"] = [[tdf]];
+G2L["70"]["Position"] = UDim2.new(-0.01991, 0, 0.27794, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.tdf.switch
+G2L["71"] = Instance.new("TextButton", G2L["70"]);
+G2L["71"]["BorderSizePixel"] = 0;
+G2L["71"]["TextSize"] = 14;
+G2L["71"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["71"]["BackgroundColor3"] = Color3.fromRGB(0, 133, 255);
+G2L["71"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["71"]["Size"] = UDim2.new(0, 50, 0, 24);
+G2L["71"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["71"]["Text"] = [[]];
+G2L["71"]["Name"] = [[switch]];
+G2L["71"]["Position"] = UDim2.new(0, 137, 0, -4);
+
+
+-- StarterGui.frostware.main.tabs.settings.tdf.switch.LocalScript
+G2L["72"] = Instance.new("LocalScript", G2L["71"]);
+
+
+
+-- StarterGui.frostware.main.tabs.settings.tdf.switch.tdffunc
+G2L["73"] = Instance.new("LocalScript", G2L["71"]);
+G2L["73"]["Name"] = [[tdffunc]];
+
+
+-- StarterGui.frostware.main.tabs.settings.tdf.switch.UICorner
+G2L["74"] = Instance.new("UICorner", G2L["71"]);
+G2L["74"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.settings.tdf.switch.Frame
+G2L["75"] = Instance.new("Frame", G2L["71"]);
+G2L["75"]["BorderSizePixel"] = 0;
+G2L["75"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["75"]["Size"] = UDim2.new(0.31328, 0, 0.62657, 0);
+G2L["75"]["Position"] = UDim2.new(0.59, 0, 0.19, 0);
+G2L["75"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.tdf.switch.Frame.UICorner
+G2L["76"] = Instance.new("UICorner", G2L["75"]);
+G2L["76"]["CornerRadius"] = UDim.new(99, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.tdf.switch.UIStroke
+G2L["77"] = Instance.new("UIStroke", G2L["71"]);
+G2L["77"]["Transparency"] = 0.68;
+G2L["77"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["77"]["Thickness"] = 3.4;
+
+
+-- StarterGui.frostware.main.tabs.settings.tdf.TextLabel
+G2L["78"] = Instance.new("TextLabel", G2L["70"]);
+G2L["78"]["BorderSizePixel"] = 0;
+G2L["78"]["TextSize"] = 14;
+G2L["78"]["BackgroundColor3"] = Color3.fromRGB(44, 44, 44);
+G2L["78"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["78"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["78"]["RichText"] = true;
+G2L["78"]["Size"] = UDim2.new(0, 137, 0, 24);
+G2L["78"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["78"]["Text"] = [[why would you disable...]];
+G2L["78"]["Position"] = UDim2.new(0.51979, 0, -0.26422, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.tdf.TextLabel.UICorner
+G2L["79"] = Instance.new("UICorner", G2L["78"]);
+G2L["79"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.settings.cv
+G2L["7a"] = Instance.new("TextLabel", G2L["62"]);
+G2L["7a"]["TextWrapped"] = true;
+G2L["7a"]["BorderSizePixel"] = 0;
+G2L["7a"]["TextSize"] = 15;
+G2L["7a"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["7a"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["7a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7a"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["7a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7a"]["BackgroundTransparency"] = 1;
+G2L["7a"]["Size"] = UDim2.new(0, 396, 0, 17);
+G2L["7a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7a"]["Text"] = [[Coloured Vignette]];
+G2L["7a"]["Name"] = [[cv]];
+G2L["7a"]["Position"] = UDim2.new(-0.01991, 0, 0.40154, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.cv.switch
+G2L["7b"] = Instance.new("TextButton", G2L["7a"]);
+G2L["7b"]["BorderSizePixel"] = 0;
+G2L["7b"]["TextSize"] = 14;
+G2L["7b"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7b"]["BackgroundColor3"] = Color3.fromRGB(0, 133, 255);
+G2L["7b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["7b"]["Size"] = UDim2.new(0, 50, 0, 24);
+G2L["7b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7b"]["Text"] = [[]];
+G2L["7b"]["Name"] = [[switch]];
+G2L["7b"]["Position"] = UDim2.new(0, 137, 0, -4);
+
+
+-- StarterGui.frostware.main.tabs.settings.cv.switch.LocalScript
+G2L["7c"] = Instance.new("LocalScript", G2L["7b"]);
+
+
+
+-- StarterGui.frostware.main.tabs.settings.cv.switch.cvfunc
+G2L["7d"] = Instance.new("LocalScript", G2L["7b"]);
+G2L["7d"]["Name"] = [[cvfunc]];
+
+
+-- StarterGui.frostware.main.tabs.settings.cv.switch.UICorner
+G2L["7e"] = Instance.new("UICorner", G2L["7b"]);
+G2L["7e"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.settings.cv.switch.Frame
+G2L["7f"] = Instance.new("Frame", G2L["7b"]);
+G2L["7f"]["BorderSizePixel"] = 0;
+G2L["7f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7f"]["Size"] = UDim2.new(0.31328, 0, 0.62657, 0);
+G2L["7f"]["Position"] = UDim2.new(0.59, 0, 0.19, 0);
+G2L["7f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.cv.switch.Frame.UICorner
+G2L["80"] = Instance.new("UICorner", G2L["7f"]);
+G2L["80"]["CornerRadius"] = UDim.new(99, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.cv.switch.UIStroke
+G2L["81"] = Instance.new("UIStroke", G2L["7b"]);
+G2L["81"]["Transparency"] = 0.68;
+G2L["81"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["81"]["Thickness"] = 3.4;
+
+
+-- StarterGui.frostware.main.tabs.settings.cv.TextLabel
+G2L["82"] = Instance.new("TextLabel", G2L["7a"]);
+G2L["82"]["BorderSizePixel"] = 0;
+G2L["82"]["TextSize"] = 14;
+G2L["82"]["BackgroundColor3"] = Color3.fromRGB(44, 44, 44);
+G2L["82"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["82"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["82"]["RichText"] = true;
+G2L["82"]["Size"] = UDim2.new(0, 156, 0, 24);
+G2L["82"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["82"]["Text"] = [[i dont like it too unless its rgb]];
+G2L["82"]["Position"] = UDim2.new(0.51979, 0, -0.26422, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.cv.TextLabel.UICorner
+G2L["83"] = Instance.new("UICorner", G2L["82"]);
+G2L["83"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.scripthub
+G2L["84"] = Instance.new("Frame", G2L["1d"]);
+G2L["84"]["Visible"] = false;
+G2L["84"]["BorderSizePixel"] = 0;
+G2L["84"]["BackgroundColor3"] = Color3.fromRGB(27, 27, 27);
+G2L["84"]["Size"] = UDim2.new(0, 423, 0, 264);
+G2L["84"]["Position"] = UDim2.new(0.15, 0, 0.063, 0);
+G2L["84"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["84"]["Name"] = [[scripthub]];
+G2L["84"]["BackgroundTransparency"] = 0.1;
+
+
+-- StarterGui.frostware.main.tabs.scripthub.ScrollingFrame
+G2L["85"] = Instance.new("ScrollingFrame", G2L["84"]);
+G2L["85"]["Active"] = true;
+G2L["85"]["BorderSizePixel"] = 0;
+G2L["85"]["CanvasSize"] = UDim2.new(0, 0, 99, 0);
+G2L["85"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["85"]["ScrollBarImageTransparency"] = 1;
+G2L["85"]["Size"] = UDim2.new(1.05263, 0, 0.8764, 0);
+G2L["85"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["85"]["Position"] = UDim2.new(-0.05263, 0, 0.1236, 0);
+G2L["85"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["85"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.frostware.main.tabs.scripthub.ScrollingFrame.UIPadding
+G2L["86"] = Instance.new("UIPadding", G2L["85"]);
+G2L["86"]["PaddingTop"] = UDim.new(0, 5);
+G2L["86"]["PaddingLeft"] = UDim.new(0, 5);
+
+
+-- StarterGui.frostware.main.tabs.scripthub.ScrollingFrame.UIGridLayout
+G2L["87"] = Instance.new("UIGridLayout", G2L["85"]);
+G2L["87"]["CellSize"] = UDim2.new(0, 100, 0, 130);
+G2L["87"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- StarterGui.frostware.main.tabs.scripthub.scriptdummy
+G2L["88"] = Instance.new("Frame", G2L["84"]);
+G2L["88"]["BorderSizePixel"] = 0;
+G2L["88"]["BackgroundColor3"] = Color3.fromRGB(49, 49, 49);
+G2L["88"]["Size"] = UDim2.new(0, 100, 0, 116);
+G2L["88"]["Position"] = UDim2.new(0.03827, 0, 0.15734, 0);
+G2L["88"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["88"]["Name"] = [[scriptdummy]];
+
+
+-- StarterGui.frostware.main.tabs.scripthub.scriptdummy.TextLabel
+G2L["89"] = Instance.new("TextLabel", G2L["88"]);
+G2L["89"]["BorderSizePixel"] = 0;
+G2L["89"]["TextSize"] = 14;
+G2L["89"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["89"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["89"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["89"]["BackgroundTransparency"] = 1;
+G2L["89"]["Size"] = UDim2.new(0.8, 0, -0.12371, 39);
+G2L["89"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["89"]["Position"] = UDim2.new(0.1, 0, 0.7875, 0);
+
+
+-- StarterGui.frostware.main.tabs.scripthub.scriptdummy.UICorner
+G2L["8a"] = Instance.new("UICorner", G2L["88"]);
+G2L["8a"]["CornerRadius"] = UDim.new(0, 24);
+
+
+-- StarterGui.frostware.main.tabs.scripthub.scriptdummy.ImageButton
+G2L["8b"] = Instance.new("ImageButton", G2L["88"]);
+G2L["8b"]["BorderSizePixel"] = 0;
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["8b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8b"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
+G2L["8b"]["Size"] = UDim2.new(0.8, 0, 0.7, 0);
+G2L["8b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8b"]["Position"] = UDim2.new(0.1, 0, 0.0875, 0);
+
+
+-- StarterGui.frostware.main.tabs.scripthub.TextBox
+G2L["8c"] = Instance.new("TextBox", G2L["84"]);
+G2L["8c"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["8c"]["BorderSizePixel"] = 0;
+G2L["8c"]["TextSize"] = 14;
+G2L["8c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8c"]["BackgroundColor3"] = Color3.fromRGB(18, 18, 18);
+G2L["8c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["8c"]["PlaceholderText"] = [[Script Name...]];
+G2L["8c"]["Size"] = UDim2.new(0, 183, 0, 31);
+G2L["8c"]["Position"] = UDim2.new(0.51345, 0, -0, 0);
+G2L["8c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8c"]["Text"] = [[]];
+
+
+-- StarterGui.frostware.main.tabs.scripthub.TextBox.UICorner
+G2L["8d"] = Instance.new("UICorner", G2L["8c"]);
+G2L["8d"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.scripthub.TextBox.UIPadding
+G2L["8e"] = Instance.new("UIPadding", G2L["8c"]);
+G2L["8e"]["PaddingLeft"] = UDim.new(0.05, 0);
+
+
+-- StarterGui.frostware.main.tabs.scripthub.LocalScript
+G2L["8f"] = Instance.new("LocalScript", G2L["84"]);
+
+
+
+-- StarterGui.frostware.main.tabs.scripthub.UICorner
+G2L["90"] = Instance.new("UICorner", G2L["84"]);
+G2L["90"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.scripthub.UIPadding
+G2L["91"] = Instance.new("UIPadding", G2L["84"]);
+G2L["91"]["PaddingTop"] = UDim.new(0.05, 0);
+G2L["91"]["PaddingLeft"] = UDim.new(0.05, 0);
+
+
+-- StarterGui.frostware.main.tabs.scripthub.TextLabel
+G2L["92"] = Instance.new("TextLabel", G2L["84"]);
+G2L["92"]["BorderSizePixel"] = 0;
+G2L["92"]["TextSize"] = 14;
+G2L["92"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["92"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["92"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["92"]["Size"] = UDim2.new(0, 261, 0, 24);
+G2L["92"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["92"]["Text"] = [[This Section Is Under Work...]];
+G2L["92"]["Position"] = UDim2.new(0.14682, 0, -0.12839, 0);
+
+
+-- StarterGui.frostware.main.tabs.console
+G2L["93"] = Instance.new("Frame", G2L["1d"]);
+G2L["93"]["BorderSizePixel"] = 0;
+G2L["93"]["BackgroundColor3"] = Color3.fromRGB(27, 27, 27);
+G2L["93"]["Size"] = UDim2.new(0, 423, 0, 264);
+G2L["93"]["Position"] = UDim2.new(0.15, 0, 0.063, 0);
+G2L["93"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["93"]["Name"] = [[console]];
+G2L["93"]["BackgroundTransparency"] = 0.1;
+
+
+-- StarterGui.frostware.main.tabs.console.UICorner
+G2L["94"] = Instance.new("UICorner", G2L["93"]);
+G2L["94"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.console.UIPadding
+G2L["95"] = Instance.new("UIPadding", G2L["93"]);
+G2L["95"]["PaddingTop"] = UDim.new(0.05, 0);
+G2L["95"]["PaddingLeft"] = UDim.new(0.05, 0);
+
+
+-- StarterGui.frostware.main.tabs.console.ScrollingFrame
+G2L["96"] = Instance.new("ScrollingFrame", G2L["93"]);
+G2L["96"]["Active"] = true;
+G2L["96"]["BorderSizePixel"] = 0;
+G2L["96"]["CanvasSize"] = UDim2.new(0, 0, 999999, 0);
+G2L["96"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["96"]["Size"] = UDim2.new(0.99, 0, 0.99, 0);
+G2L["96"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["96"]["Position"] = UDim2.new(-0.0224, 0, -0.02392, 0);
+G2L["96"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["96"]["ScrollBarThickness"] = 8;
+G2L["96"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.frostware.main.tabs.console.ScrollingFrame.UIPadding
+G2L["97"] = Instance.new("UIPadding", G2L["96"]);
+G2L["97"]["PaddingTop"] = UDim.new(0, 10);
+G2L["97"]["PaddingLeft"] = UDim.new(0, 10);
+
+
+-- StarterGui.frostware.main.tabs.console.ScrollingFrame.TextLabel
+G2L["98"] = Instance.new("TextLabel", G2L["96"]);
+G2L["98"]["TextWrapped"] = true;
+G2L["98"]["TextTruncate"] = Enum.TextTruncate.AtEnd;
+G2L["98"]["BorderSizePixel"] = 0;
+G2L["98"]["TextSize"] = 14;
+G2L["98"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["98"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["98"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["98"]["FontFace"] = Font.new([[rbxasset://fonts/families/RobotoMono.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["98"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["98"]["BackgroundTransparency"] = 1;
+G2L["98"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["98"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["98"]["Text"] = [[gng tf]];
+
+
+-- StarterGui.frostware.main.tabs.console.ScrollingFrame.TextLabel.LocalScript
+G2L["99"] = Instance.new("LocalScript", G2L["98"]);
+
+
+
+-- StarterGui.frostware.main.StatusBar
+G2L["9a"] = Instance.new("TextLabel", G2L["8"]);
+G2L["9a"]["BorderSizePixel"] = 0;
+G2L["9a"]["TextSize"] = 14;
+G2L["9a"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9a"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["9a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9a"]["BackgroundTransparency"] = 0.2;
+G2L["9a"]["Size"] = UDim2.new(0, 514, 0, 32);
+G2L["9a"]["ClipsDescendants"] = true;
+G2L["9a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9a"]["Text"] = [[Fluxus Z]];
+G2L["9a"]["Name"] = [[StatusBar]];
+G2L["9a"]["Position"] = UDim2.new(0, 0, -0.14238, 0);
+
+
+-- StarterGui.frostware.main.StatusBar.logo
+G2L["9b"] = Instance.new("ImageLabel", G2L["9a"]);
+G2L["9b"]["BorderSizePixel"] = 0;
+G2L["9b"]["ScaleType"] = Enum.ScaleType.Fit;
+G2L["9b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["9b"]["Image"] = [[rbxassetid://133613329257288]];
+G2L["9b"]["Size"] = UDim2.new(0.048, 0, 0.75, 0);
+G2L["9b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9b"]["BackgroundTransparency"] = 1;
+G2L["9b"]["Name"] = [[logo]];
+G2L["9b"]["Position"] = UDim2.new(0.3713, 0, 0.1005, 0);
+
+
+-- StarterGui.frostware.main.StatusBar.logo.UICorner
+G2L["9c"] = Instance.new("UICorner", G2L["9b"]);
+G2L["9c"]["CornerRadius"] = UDim.new(0, 24);
+
+
+-- StarterGui.frostware.main.StatusBar.version
+G2L["9d"] = Instance.new("TextLabel", G2L["9a"]);
+G2L["9d"]["BorderSizePixel"] = 0;
+G2L["9d"]["TextSize"] = 14;
+G2L["9d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9d"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["9d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9d"]["BackgroundTransparency"] = 1;
+G2L["9d"]["Size"] = UDim2.new(0, 89, 0, 27);
+G2L["9d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9d"]["Text"] = [[Version:  V5]];
+G2L["9d"]["Name"] = [[version]];
+G2L["9d"]["Position"] = UDim2.new(0.82272, 0, 0.03125, 0);
+
+
+-- StarterGui.frostware.main.StatusBar.tdf
+G2L["9e"] = Instance.new("TextLabel", G2L["9a"]);
+G2L["9e"]["BorderSizePixel"] = 0;
+G2L["9e"]["TextSize"] = 14;
+G2L["9e"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["9e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9e"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["9e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9e"]["BackgroundTransparency"] = 1;
+G2L["9e"]["Size"] = UDim2.new(0, 157, 0, 27);
+G2L["9e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9e"]["Text"] = [[time date and fps]];
+G2L["9e"]["Name"] = [[tdf]];
+G2L["9e"]["Position"] = UDim2.new(0.01728, 0, 0.03125, 0);
+
+
+-- StarterGui.frostware.main.StatusBar.tdf.LocalScript
+G2L["9f"] = Instance.new("LocalScript", G2L["9e"]);
+
+
+
+-- StarterGui.frostware.main.StatusBar.UICorner
+G2L["a0"] = Instance.new("UICorner", G2L["9a"]);
+G2L["a0"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.StatusBar.UIStroke
+G2L["a1"] = Instance.new("UIStroke", G2L["9a"]);
+G2L["a1"]["Transparency"] = 0.68;
+G2L["a1"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["a1"]["Thickness"] = 3.4;
+
+
+-- StarterGui.frostware.main.mainctrls
+G2L["a2"] = Instance.new("Frame", G2L["8"]);
+G2L["a2"]["BorderSizePixel"] = 0;
+G2L["a2"]["BackgroundColor3"] = Color3.fromRGB(29, 29, 29);
+G2L["a2"]["Size"] = UDim2.new(0, 49, 0, 151);
+G2L["a2"]["Position"] = UDim2.new(1.02904, 0, -0.0028, 0);
+G2L["a2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a2"]["Name"] = [[mainctrls]];
+G2L["a2"]["BackgroundTransparency"] = 0.2;
+
+
+-- StarterGui.frostware.main.mainctrls.Close
+G2L["a3"] = Instance.new("TextButton", G2L["a2"]);
+G2L["a3"]["TextWrapped"] = true;
+G2L["a3"]["BorderSizePixel"] = 0;
+G2L["a3"]["TextSize"] = 90;
+G2L["a3"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a3"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a3"]["FontFace"] = Font.new([[rbxasset://fonts/families/Nunito.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["a3"]["BackgroundTransparency"] = 0.2;
+G2L["a3"]["Size"] = UDim2.new(0.9, 0, 0.3, 0);
+G2L["a3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a3"]["Text"] = [[-]];
+G2L["a3"]["Name"] = [[Close]];
+G2L["a3"]["Position"] = UDim2.new(-0.25612, 0, -0.0396, 0);
+
+
+-- StarterGui.frostware.main.mainctrls.Close.UICorner
+G2L["a4"] = Instance.new("UICorner", G2L["a3"]);
+G2L["a4"]["CornerRadius"] = UDim.new(0, 24);
+
+
+-- StarterGui.frostware.main.mainctrls.UICorner
+G2L["a5"] = Instance.new("UICorner", G2L["a2"]);
+G2L["a5"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.mainctrls.UIListLayout
+G2L["a6"] = Instance.new("UIListLayout", G2L["a2"]);
+G2L["a6"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+G2L["a6"]["Padding"] = UDim.new(0.03, 0);
+G2L["a6"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- StarterGui.frostware.main.mainctrls.UIPadding
+G2L["a7"] = Instance.new("UIPadding", G2L["a2"]);
+G2L["a7"]["PaddingTop"] = UDim.new(0, 4);
+
+
+-- StarterGui.frostware.main.mainctrls.UIStroke
+G2L["a8"] = Instance.new("UIStroke", G2L["a2"]);
+G2L["a8"]["Transparency"] = 0.68;
+G2L["a8"]["Thickness"] = 3.4;
+
+
+-- StarterGui.frostware.main.UICorner
+G2L["a9"] = Instance.new("UICorner", G2L["8"]);
+G2L["a9"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.UIStroke
+G2L["aa"] = Instance.new("UIStroke", G2L["8"]);
+G2L["aa"]["Transparency"] = 0.68;
+G2L["aa"]["Thickness"] = 3.4;
+
+
+-- StarterGui.frostware.main.BackframeShine
+G2L["ab"] = Instance.new("ImageLabel", G2L["8"]);
+G2L["ab"]["ZIndex"] = 0;
+G2L["ab"]["BorderSizePixel"] = 0;
+G2L["ab"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["ab"]["ImageTransparency"] = 0.68;
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["ab"]["Image"] = [[rbxassetid://159602101]];
+G2L["ab"]["Size"] = UDim2.new(0, 514, 0, 302);
+G2L["ab"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["ab"]["BackgroundTransparency"] = 1;
+G2L["ab"]["Name"] = [[BackframeShine]];
+
+
+-- StarterGui.frostware.main.BackframeShine.UICorner
+G2L["ac"] = Instance.new("UICorner", G2L["ab"]);
+G2L["ac"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.cooleffect
+G2L["ad"] = Instance.new("Frame", G2L["1"]);
+G2L["ad"]["ZIndex"] = -1;
+G2L["ad"]["BorderSizePixel"] = 0;
+G2L["ad"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["ad"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["ad"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["ad"]["Name"] = [[cooleffect]];
+G2L["ad"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.frostware.cooleffect.ImageLabel
+G2L["ae"] = Instance.new("ImageLabel", G2L["ad"]);
+G2L["ae"]["BorderSizePixel"] = 0;
+G2L["ae"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["ae"]["ImageColor3"] = Color3.fromRGB(38, 71, 28);
+G2L["ae"]["Image"] = [[rbxassetid://104226737053945]];
+G2L["ae"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["ae"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["ae"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.frostware.StartupScript__Useless
+G2L["af"] = Instance.new("LocalScript", G2L["1"]);
+G2L["af"]["Name"] = [[StartupScript__Useless]];
+
+
+-- StarterGui.frostware.__Parenter
+G2L["b0"] = Instance.new("LocalScript", G2L["1"]);
+G2L["b0"]["Name"] = [[__Parenter]];
+
+
+-- StarterGui.frostware.UIScale
+G2L["b1"] = Instance.new("UIScale", G2L["1"]);
+G2L["b1"]["Scale"] = 0.79;
+
+
+-- StarterGui.frostware.TabToggleController
+local function C_2()
+local script = G2L["2"];
 	local TweenService = game:GetService("TweenService")
 	local gui = script.Parent.main
 	local btn = script.Parent.open
@@ -1172,19 +1746,158 @@ local function SHLDQTA_fake_script() -- fluxusz.TabToggleController
 	
 	btn.Active = true
 	btn.Draggable = true
-end
-coroutine.wrap(SHLDQTA_fake_script)()
-local function EENHX_fake_script() -- Discord.LocalScript 
-	local script = Instance.new('LocalScript', Discord)
-
+end;
+task.spawn(C_2);
+-- StarterGui.frostware.Animator_OpenClose
+local function C_3()
+local script = G2L["3"];
+	local TweenService = game:GetService("TweenService")
+	local main = script.Parent.main
+	local cool = script.Parent:FindFirstChild("cooleffect")
+	local closeBtn = main.mainctrls.Close
+	local openBtn = script.Parent.open.ImageButton
+	local stored = {}
+	
+	local function isGui(obj)
+		return obj:IsA("GuiObject")
+	end
+	
+	local function getProps(obj)
+		local props = {}
+		if obj.BackgroundTransparency ~= nil then props.BackgroundTransparency = obj.BackgroundTransparency end
+		if obj:IsA("ImageLabel") or obj:IsA("ImageButton") then props.ImageTransparency = obj.ImageTransparency end
+		if obj:IsA("TextLabel") or obj:IsA("TextButton") or obj:IsA("TextBox") then props.TextTransparency = obj.TextTransparency end
+		local stroke = obj:FindFirstChildOfClass("UIStroke")
+		if stroke then props.UIStrokeTransparency = stroke.Transparency end
+		return props
+	end
+	
+	local function getAllGui(root)
+		local list = {}
+		if isGui(root) then table.insert(list, root) end
+		for _,d in ipairs(root:GetDescendants()) do
+			if isGui(d) then table.insert(list, d) end
+		end
+		return list
+	end
+	
+	local function recordCurrent(...)
+		stored = {}
+		local roots = {...}
+		for _,root in ipairs(roots) do
+			if root then
+				for _,obj in ipairs(getAllGui(root)) do
+					stored[obj] = getProps(obj)
+				end
+			end
+		end
+	end
+	
+	local function playTweens(tuples, duration, onComplete)
+		local remaining = 0
+		local function dec()
+			remaining = remaining - 1
+			if remaining == 0 and onComplete then onComplete() end
+		end
+		for _,t in ipairs(tuples) do
+			local objProps = {}
+			if t.props.BackgroundTransparency ~= nil then objProps.BackgroundTransparency = t.props.BackgroundTransparency end
+			if t.props.ImageTransparency ~= nil then objProps.ImageTransparency = t.props.ImageTransparency end
+			if t.props.TextTransparency ~= nil then objProps.TextTransparency = t.props.TextTransparency end
+			if next(objProps) then
+				remaining = remaining + 1
+				local tween = TweenService:Create(t.obj, TweenInfo.new(duration), objProps)
+				tween.Completed:Connect(dec)
+				tween:Play()
+			end
+			if t.props.UIStrokeTransparency ~= nil then
+				local stroke = t.obj:FindFirstChildOfClass("UIStroke")
+				if stroke then
+					remaining = remaining + 1
+					local stween = TweenService:Create(stroke, TweenInfo.new(duration), {Transparency = t.props.UIStrokeTransparency})
+					stween.Completed:Connect(dec)
+					stween:Play()
+				end
+			end
+		end
+		if remaining == 0 and onComplete then onComplete() end
+	end
+	
+	local function hideMain()
+		recordCurrent(main, cool)
+		local tuples = {}
+		for _,root in ipairs({main, cool}) do
+			if root then
+				for _,obj in ipairs(getAllGui(root)) do
+					local props = {}
+					if obj.BackgroundTransparency ~= nil then props.BackgroundTransparency = 1 end
+					if obj:IsA("ImageLabel") or obj:IsA("ImageButton") then props.ImageTransparency = 1 end
+					if obj:IsA("TextLabel") or obj:IsA("TextButton") or obj:IsA("TextBox") then props.TextTransparency = 1 end
+					local stroke = obj:FindFirstChildOfClass("UIStroke")
+					if stroke then props.UIStrokeTransparency = 1 end
+					if next(props) then table.insert(tuples, {obj = obj, props = props}) end
+				end
+			end
+		end
+		playTweens(tuples, 0.35, function()
+			if main then main.Visible = false end
+			if cool then cool.Visible = false end
+			openBtn.Parent.Visible = true
+			local props = {}
+			if openBtn.BackgroundTransparency ~= nil then props.BackgroundTransparency = 0 end
+			if openBtn:IsA("ImageLabel") or openBtn:IsA("ImageButton") then props.ImageTransparency = 0 end
+			playTweens({{obj = openBtn, props = props}}, 0.25)
+		end)
+	end
+	
+	local function showMain()
+		openBtn.Parent.Visible = false
+		if main then main.Visible = true end
+		if cool then cool.Visible = true end
+		local tuples = {}
+		for obj, orig in pairs(stored) do
+			local props = {}
+			if orig.BackgroundTransparency ~= nil then props.BackgroundTransparency = orig.BackgroundTransparency end
+			if orig.ImageTransparency ~= nil then props.ImageTransparency = orig.ImageTransparency end
+			if orig.TextTransparency ~= nil then props.TextTransparency = orig.TextTransparency end
+			if orig.UIStrokeTransparency ~= nil then props.UIStrokeTransparency = orig.UIStrokeTransparency end
+			if next(props) then table.insert(tuples, {obj = obj, props = props}) end
+		end
+		playTweens(tuples, 0.35)
+	end
+	
+	closeBtn.MouseButton1Click:Connect(hideMain)
+	openBtn.MouseButton1Click:Connect(showMain)
+	
+end;
+task.spawn(C_3);
+-- StarterGui.frostware.main.tabs.home.Discord.LocalScript
+local function C_29()
+local script = G2L["29"];
 	script.Parent.MouseButton1Click:Connect(function()
 	setclipboard('https://discord.gg/3jq72pdbHH')
 	end)
-end
-coroutine.wrap(EENHX_fake_script)()
-local function LFJUVM_fake_script() -- Clear.LocalScript 
-	local script = Instance.new('LocalScript', Clear)
-
+end;
+task.spawn(C_29);
+-- StarterGui.frostware.main.tabs.home.Infinite Yield.LocalScript
+local function C_30()
+local script = G2L["30"];
+	script.Parent.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+	end)
+end;
+task.spawn(C_30);
+-- StarterGui.frostware.main.tabs.home.Dex.LocalScript
+local function C_38()
+local script = G2L["38"];
+	script.Parent.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Artifacttx/YumeHub/refs/heads/main/Universal/DarkDex_Mobile", true))()
+	end)
+end;
+task.spawn(C_38);
+-- StarterGui.frostware.main.tabs.editor.Controls.Clear.LocalScript
+local function C_3e()
+local script = G2L["3e"];
 	local clearButton = script.Parent
 	local editor = clearButton.Parent.Parent
 	local scrolligframe = editor:FindFirstChild("ScrollingFrame")
@@ -1198,11 +1911,11 @@ local function LFJUVM_fake_script() -- Clear.LocalScript
 	end
 	
 	
-end
--- Removed unnecessary coroutine wrap
-local function INEXCDA_fake_script() -- Run.LocalScript 
-	local script = Instance.new('LocalScript', Run)
-
+end;
+task.spawn(C_3e);
+-- StarterGui.frostware.main.tabs.editor.Controls.Run.LocalScript
+local function C_42()
+local script = G2L["42"];
 	local Button = script.Parent
 	local editor = Button.Parent.Parent
 	local scrollingFrame = editor:FindFirstChild("ScrollingFrame")
@@ -1210,34 +1923,33 @@ local function INEXCDA_fake_script() -- Run.LocalScript
 	if scrollingFrame then
 		local tbox = scrollingFrame:FindFirstChild("TextBox")
 		if tbox and tbox:IsA("TextBox") then
-			-- Prevent double connections
-			if not Button:GetAttribute("Connected") then
-				Button.MouseButton1Click:Connect(function()
-					local success, result = pcall(function()
-						local func
-						if dtc and dtc.schedule then
-							func = dtc.schedule(tbox.Text)
-						end
-
-						if func then
-							func()
-						end
-					end)
-
-					if not success then
-						warn("Error executing code:", result)
+			Button.MouseButton1Click:Connect(function()
+				local success, result = pcall(function()
+					local func
+					if dtc and dtc.schedule then
+						func = dtc.schedule(tbox.Text)
+					end
+	
+					if func then
+						func()
+					else
+						local f = loadstring(tbox.Text)
+						if f then f() end
 					end
 				end)
-
-				Button:SetAttribute("Connected", true)
-			end
+	
+				if not success then
+					warn("Error executing code:", result)
+				end
+			end)
 		end
 	end
-end
-coroutine.wrap(INEXCDA_fake_script)()
-local function KCED_fake_script() -- Copy.LocalScript 
-	local script = Instance.new('LocalScript', Copy)
-
+	
+end;
+task.spawn(C_42);
+-- StarterGui.frostware.main.tabs.editor.Controls.Copy.LocalScript
+local function C_46()
+local script = G2L["46"];
 	local Button = script.Parent
 	local editor = Button.Parent.Parent
 	local scrolligframe = editor:FindFirstChild("ScrollingFrame")
@@ -1251,11 +1963,11 @@ local function KCED_fake_script() -- Copy.LocalScript
 	end
 	
 	
-end
-coroutine.wrap(KCED_fake_script)()
-local function SXFBH_fake_script() -- Paste.LocalScript 
-	local script = Instance.new('LocalScript', Paste)
-
+end;
+task.spawn(C_46);
+-- StarterGui.frostware.main.tabs.editor.Controls.Paste.LocalScript
+local function C_4c()
+local script = G2L["4c"];
 	local Button = script.Parent
 	local editor = Button.Parent.Parent
 	local scrolligframe = editor:FindFirstChild("ScrollingFrame")
@@ -1267,13 +1979,13 @@ local function SXFBH_fake_script() -- Paste.LocalScript
 			end)
 		end
 	end
-
-
-end
-coroutine.wrap(SXFBH_fake_script)()
-local function DXVRJG_fake_script() -- TextBox.LocalScript 
-	local script = Instance.new('LocalScript', TextBox)
-
+	
+	
+end;
+task.spawn(C_4c);
+-- StarterGui.frostware.main.tabs.editor.ScrollingFrame.TextBox.LocalScript
+local function C_53()
+local script = G2L["53"];
 	local textService = game:GetService("TextService")
 	local textBox = script.Parent
 	local label = script.Parent.TextLabel
@@ -1296,12 +2008,11 @@ local function DXVRJG_fake_script() -- TextBox.LocalScript
 	
 	textBox:GetPropertyChangedSignal("Text"):Connect(updateLines)
 	updateLines()
-	
-end
-coroutine.wrap(DXVRJG_fake_script)()
-local function VDNS_fake_script() -- switch.LocalScript 
-	local script = Instance.new('LocalScript', switch)
-
+end;
+task.spawn(C_53);
+-- StarterGui.frostware.main.tabs.settings.rgb.switch.LocalScript
+local function C_66()
+local script = G2L["66"];
 	local TweenService = game:GetService("TweenService")
 	local button = script.Parent
 	local frame = button:FindFirstChildOfClass("Frame")
@@ -1362,222 +2073,501 @@ local function VDNS_fake_script() -- switch.LocalScript
 	end)
 	
 	
-end
-coroutine.wrap(VDNS_fake_script)()
-local function RXQCNZC_fake_script() -- switch.rgbfunc 
-	local script = Instance.new('LocalScript', switch)
-
-	local Players=game:GetService("Players")
-	local RunService=game:GetService("RunService")
-	local player=Players.LocalPlayer
-	local gui=player:WaitForChild("PlayerGui"):WaitForChild("fluxusz")
-	local main=gui:WaitForChild("main")
-	local button=script.Parent
+end;
+task.spawn(C_66);
+-- StarterGui.frostware.main.tabs.settings.rgb.switch.rgbfunc
+local function C_67()
+local script = G2L["67"];
+	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
+	local player = Players.LocalPlayer
+	local gui = player:WaitForChild("PlayerGui"):WaitForChild("frostware")
+	local main = gui:WaitForChild("main")
+	local coolEffect = gui:WaitForChild("cooleffect") -- your RGB image frame
+	local button = script.Parent
 	
-	local enabled=false
+	local enabled = false
 	local updateConn
 	local descendantConn
-	local targets={}
+	local strokes = {}
 	
-	local function nameOffset(name)
-		local s=0
-		for i=1,#name do s=s+string.byte(name,i) end
-		return (s % 360)/360
-	end
-	
-	local function addTarget(obj)
-		if not obj then return end
-		if obj:IsA("TextLabel") or obj:IsA("TextButton") or obj:IsA("TextBox") then
-			local ok,orig=pcall(function() return obj.TextColor3 end)
-			if ok then table.insert(targets,{obj=obj,prop="TextColor3",orig=orig,offset=nameOffset(obj:GetFullName())}) end
-			return
-		end
-		if obj:IsA("ImageLabel") or obj:IsA("ImageButton") then
-			local ok,orig=pcall(function() return obj.ImageColor3 end)
-			if ok then table.insert(targets,{obj=obj,prop="ImageColor3",orig=orig,offset=nameOffset(obj:GetFullName())}) end
-			return
-		end
-		if obj:IsA("UIStroke") then
-			local ok,orig=pcall(function() return obj.Color end)
-			if ok then table.insert(targets,{obj=obj,prop="Color",orig=orig,offset=nameOffset(obj:GetFullName())}) end
-			return
-		end
-		if obj:IsA("GuiObject") then
-			local ok,orig=pcall(function() return obj.BackgroundColor3 end)
-			if ok then table.insert(targets,{obj=obj,prop="BackgroundColor3",orig=orig,offset=nameOffset(obj:GetFullName())}) end
+	local function addStroke(obj)
+		if obj:IsA("UIStroke") and not obj:IsDescendantOf(coolEffect) then
+			local ok1, origColor = pcall(function() return obj.Color end)
+			local ok2, origTrans = pcall(function() return obj.Transparency end)
+			if ok1 and ok2 then
+				table.insert(strokes, {obj = obj, origColor = origColor, origTrans = origTrans})
+			end
 		end
 	end
 	
-	local function collectTargets()
-		targets={}
-		for _,v in pairs(main:GetDescendants()) do addTarget(v) end
+	local function collectStrokes()
+		strokes = {}
+		for _, v in pairs(main:GetDescendants()) do
+			addStroke(v)
+		end
 	end
 	
 	local function restore()
-		for _,t in pairs(targets) do
+		for _, t in pairs(strokes) do
 			if t.obj and t.obj.Parent then
-				pcall(function() t.obj[t.prop]=t.orig end)
+				pcall(function()
+					t.obj.Color = t.origColor
+					t.obj.Transparency = t.origTrans
+				end)
 			end
 		end
 	end
 	
-	local speed=0.22
-	local sat=0.6
-	local val=0.9
-	local fade=0.22
+	local speed = 0.125
 	
 	local function start()
-		collectTargets()
-		descendantConn=main.DescendantAdded:Connect(function(d) addTarget(d) end)
-		updateConn=RunService.Heartbeat:Connect(function()
-			local time=tick()
-			for i=#targets,1,-1 do
-				local t=targets[i]
-				if not t.obj or not t.obj.Parent then table.remove(targets,i) else
-					local hue=(time*speed + t.offset) % 1
-					local col=Color3.fromHSV(hue,sat,val)
-					local ok,orig=pcall(function() return t.orig end)
-					if not ok or not orig then orig=Color3.new(1,1,1) end
-					local final=orig:lerp(col,fade)
-					pcall(function() t.obj[t.prop]=final end)
+		collectStrokes()
+		descendantConn = main.DescendantAdded:Connect(addStroke)
+		updateConn = RunService.Heartbeat:Connect(function()
+			local time = tick()
+			local hue = time * speed % 1
+			local col = Color3.fromHSV(hue, 1, 1)
+			for i = #strokes, 1, -1 do
+				local t = strokes[i]
+				if not t.obj or not t.obj.Parent then
+					table.remove(strokes, i)
+				else
+					pcall(function()
+						t.obj.Color = col
+						t.obj.Transparency = 0
+					end)
 				end
 			end
+			pcall(function()
+				if coolEffect and coolEffect:IsA("Frame") then
+					local img = coolEffect:FindFirstChildWhichIsA("ImageLabel") or coolEffect:FindFirstChildWhichIsA("ImageButton")
+					if img then img.ImageColor3 = col end
+				end
+			end)
 		end)
 	end
 	
 	local function stop()
-		if descendantConn then descendantConn:Disconnect() descendantConn=nil end
-		if updateConn then updateConn:Disconnect() updateConn=nil end
+		if descendantConn then descendantConn:Disconnect() descendantConn = nil end
+		if updateConn then updateConn:Disconnect() updateConn = nil end
 		restore()
-		targets={}
-	end
-	
-	button.Activated:Connect(function()
-		enabled=not enabled
-		if enabled then start() else stop() end
-		pcall(function() button:SetAttribute("rgb_enabled",enabled) end)
-	end)
-	
-end
-coroutine.wrap(RXQCNZC_fake_script)()
-local function TDKGHV_fake_script() -- Discord_2.LocalScript 
-	local script = Instance.new('LocalScript', Discord_2)
-
-	script.Parent.MouseButton1Click:Connect(function()
-	setclipboard('.kallmejake')
-	end)
-end
-coroutine.wrap(TDKGHV_fake_script)()
-local function ATJOAE_fake_script() -- timeanddate.LocalScript 
-	local script = Instance.new('LocalScript', timeanddate)
-
-	local label = script.Parent
-	
-	-- Specify your desired format here, e.g. "%H:%M:%S %d/%m/%Y"
-	local format = "T&D: %H:%M:%S | %d/%m/%Y"
-	
-	while true do
-	    local currentTime = os.date(format)
-	    label.Text = currentTime
-	    task.wait(1)
-	end
-	
-	
-end
-coroutine.wrap(ATJOAE_fake_script)()
-local function JLYVKG_fake_script() -- fluxusz.LocalScript 
-	local script = Instance.new('LocalScript', fluxusz)
-
-	local TweenService = game:GetService("TweenService")
-	local main = script.Parent.main
-	local closeBtn = main.mainctrls.Close
-	local openBtn = script.Parent.open.ImageButton
-	local stored = {}
-	
-	local function isGui(obj)
-		return obj:IsA("GuiObject")
-	end
-	
-	local function getProps(obj)
-		local props = {}
-		if obj.BackgroundTransparency ~= nil then props.BackgroundTransparency = obj.BackgroundTransparency end
-		if obj:IsA("ImageLabel") or obj:IsA("ImageButton") then props.ImageTransparency = obj.ImageTransparency end
-		if obj:IsA("TextLabel") or obj:IsA("TextButton") or obj:IsA("TextBox") then props.TextTransparency = obj.TextTransparency end
-		return props
-	end
-	
-	local function getAllGui(root)
-		local list = {}
-		if isGui(root) then table.insert(list, root) end
-		for _,d in ipairs(root:GetDescendants()) do
-			if isGui(d) then table.insert(list, d) end
-		end
-		return list
-	end
-	
-	local function recordCurrent(root)
-		stored = {}
-		for _,obj in ipairs(getAllGui(root)) do
-			stored[obj] = getProps(obj)
-		end
-	end
-	
-	local function playTweens(tuples, duration, onComplete)
-		local remaining = #tuples
-		if remaining == 0 then
-			if onComplete then onComplete() end
-			return
-		end
-		for _,t in ipairs(tuples) do
-			local tween = TweenService:Create(t.obj, TweenInfo.new(duration), t.props)
-			tween.Completed:Connect(function()
-				remaining = remaining - 1
-				if remaining == 0 and onComplete then onComplete() end
-			end)
-			tween:Play()
-		end
-	end
-	
-	local function hideMain()
-		recordCurrent(main)
-		local tuples = {}
-		for _,obj in ipairs(getAllGui(main)) do
-			local props = {}
-			if obj.BackgroundTransparency ~= nil then props.BackgroundTransparency = 1 end
-			if obj:IsA("ImageLabel") or obj:IsA("ImageButton") then props.ImageTransparency = 1 end
-			if obj:IsA("TextLabel") or obj:IsA("TextButton") or obj:IsA("TextBox") then props.TextTransparency = 1 end
-			if next(props) then table.insert(tuples, {obj = obj, props = props}) end
-		end
-		playTweens(tuples, 0.35, function()
-			main.Visible = false
-			openBtn.Parent.Visible = true
-			local props = {}
-			if openBtn.BackgroundTransparency ~= nil then props.BackgroundTransparency = 0 end
-			if openBtn:IsA("ImageLabel") or openBtn:IsA("ImageButton") then props.ImageTransparency = 0 end
-			playTweens({{obj = openBtn, props = props}}, 0.25)
+		strokes = {}
+		pcall(function()
+			local img = coolEffect:FindFirstChildWhichIsA("ImageLabel") or coolEffect:FindFirstChildWhichIsA("ImageButton")
+			if img then img.ImageColor3 = Color3.new(0.145098, 0.27451, 0.105882) end
 		end)
 	end
 	
-	local function showMain()
-		openBtn.Parent.Visible = false
-		main.Visible = true
-		local tuples = {}
-		for obj, orig in pairs(stored) do
-			local props = {}
-			if orig.BackgroundTransparency ~= nil then props.BackgroundTransparency = orig.BackgroundTransparency end
-			if orig.ImageTransparency ~= nil then props.ImageTransparency = orig.ImageTransparency end
-			if orig.TextTransparency ~= nil then props.TextTransparency = orig.TextTransparency end
-			if next(props) then table.insert(tuples, {obj = obj, props = props}) end
+	button.Activated:Connect(function()
+		enabled = not enabled
+		if enabled then start() else stop() end
+		pcall(function() button:SetAttribute("rgb_enabled", enabled) end)
+	end)
+	
+end;
+task.spawn(C_67);
+-- StarterGui.frostware.main.tabs.settings.tdf.switch.LocalScript
+local function C_72()
+local script = G2L["72"];
+	local TweenService = game:GetService("TweenService")
+	local button = script.Parent
+	local frame = button:FindFirstChildOfClass("Frame")
+	
+	local debounce = false
+	local toggled = false
+	
+	-- Store original properties
+	local originalBgColor = button.BackgroundColor3
+	local originalFramePos = frame and frame.Position or nil
+	
+	local targetBgColor = Color3.fromRGB(0, 0, 0)
+	local targetFramePos = UDim2.new(0.113, 0, 0.19, 0)
+	button.MouseButton1Click:Connect(function()
+	    if debounce then return end
+	    debounce = true
+	
+	    if not toggled then
+	        -- Tween to target properties
+	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	        local bgGoal = {
+	            BackgroundColor3 = targetBgColor
+	        }
+	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
+	        bgTween:Play()
+	
+	        if frame and targetFramePos then
+	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	            local frameGoal = {
+	                Position = targetFramePos
+	            }
+	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
+	            frameTween:Play()
+	        end
+	        toggled = true
+	    else
+	        -- Tween back to original properties
+	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	        local bgGoal = {
+	            BackgroundColor3 = originalBgColor
+	        }
+	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
+	        bgTween:Play()
+	
+	        if frame and originalFramePos then
+	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	            local frameGoal = {
+	                Position = originalFramePos
+	            }
+	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
+	            frameTween:Play()
+	        end
+	        toggled = false
+	    end
+	
+	    task.wait(0.125)
+	    debounce = false
+	end)
+	
+	
+end;
+task.spawn(C_72);
+-- StarterGui.frostware.main.tabs.settings.tdf.switch.tdffunc
+local function C_73()
+local script = G2L["73"];
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.Parent.Parent.StatusBar.tdf.Visible = not script.Parent.Parent.Parent.Parent.Parent.StatusBar.tdf.Visible
+	end)
+end;
+task.spawn(C_73);
+-- StarterGui.frostware.main.tabs.settings.cv.switch.LocalScript
+local function C_7c()
+local script = G2L["7c"];
+	local TweenService = game:GetService("TweenService")
+	local button = script.Parent
+	local frame = button:FindFirstChildOfClass("Frame")
+	
+	local debounce = false
+	local toggled = false
+	
+	-- Store original properties
+	local originalBgColor = button.BackgroundColor3
+	local originalFramePos = frame and frame.Position or nil
+	
+	local targetBgColor = Color3.fromRGB(0, 0, 0)
+	local targetFramePos = UDim2.new(0.113, 0, 0.19, 0)
+	button.MouseButton1Click:Connect(function()
+	    if debounce then return end
+	    debounce = true
+	
+	    if not toggled then
+	        -- Tween to target properties
+	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	        local bgGoal = {
+	            BackgroundColor3 = targetBgColor
+	        }
+	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
+	        bgTween:Play()
+	
+	        if frame and targetFramePos then
+	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	            local frameGoal = {
+	                Position = targetFramePos
+	            }
+	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
+	            frameTween:Play()
+	        end
+	        toggled = true
+	    else
+	        -- Tween back to original properties
+	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	        local bgGoal = {
+	            BackgroundColor3 = originalBgColor
+	        }
+	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
+	        bgTween:Play()
+	
+	        if frame and originalFramePos then
+	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	            local frameGoal = {
+	                Position = originalFramePos
+	            }
+	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
+	            frameTween:Play()
+	        end
+	        toggled = false
+	    end
+	
+	    task.wait(0.125)
+	    debounce = false
+	end)
+	
+	
+end;
+task.spawn(C_7c);
+-- StarterGui.frostware.main.tabs.settings.cv.switch.cvfunc
+local function C_7d()
+local script = G2L["7d"];
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.Parent.Parent.Parent.cooleffect.Visible = not script.Parent.Parent.Parent.Parent.Parent.Parent.cooleffect.Visible
+	end)
+end;
+task.spawn(C_7d);
+-- StarterGui.frostware.main.tabs.scripthub.LocalScript
+local function C_8f()
+local script = G2L["8f"];
+	local HttpService = game:GetService("HttpService")
+	local SearchBox = script.Parent:FindFirstChild("TextBox") or script.Parent:FindFirstChild("SearchBox") or script.Parent:WaitForChild("TextBox",5)
+	local ResultsContainer = script.Parent:FindFirstChild("ScrollingFrame") or script.Parent:FindFirstChild("ResultsContainer") or script.Parent:WaitForChild("ScrollingFrame",5)
+	local Template = script.Parent:FindFirstChild("scriptdummy") or script.Parent:FindFirstChild("DummyTemplate") or script.Parent:WaitForChild("scriptdummy",5)
+	if not SearchBox then error("SearchBox not found") end
+	if not ResultsContainer then error("ResultsContainer not found") end
+	if not Template then error("Template not found") end
+	Template.Visible = false
+	local debounce = false
+	local lastQuery = ""
+	
+	local function clearResults()
+		for i,child in ipairs(ResultsContainer:GetChildren()) do
+			if child ~= Template then
+				child:Destroy()
+			end
 		end
-		playTweens(tuples, 0.35)
 	end
 	
-	closeBtn.MouseButton1Click:Connect(hideMain)
-	openBtn.MouseButton1Click:Connect(showMain)
+	local function safeLoadAndRun(code)
+		local runner = loadstring or load
+		if not runner or type(code) ~= "string" or code == "" then
+			print("no code to run")
+			return
+		end
+		local ok,fn = pcall(runner, code)
+		if not ok then
+			print("load error", fn)
+			return
+		end
+		if type(fn) ~= "function" then
+			print("loaded chunk not a function")
+			return
+		end
+		local ok2,err = pcall(fn)
+		if not ok2 then
+			print("runtime error", err)
+		end
+	end
 	
-end
-coroutine.wrap(JLYVKG_fake_script)()
+	local function createResultItem(entry)
+		local clone = Template:Clone()
+		clone.Name = ("Result_%s"):format(tostring(entry.id or math.random()))
+		clone.Parent = ResultsContainer
+		clone.Visible = true
+		clone.Size = Template.Size
+		if clone:IsA("GuiObject") then
+			clone.Position = UDim2.new(0,0,0,0)
+		end
+		local thumb = clone:FindFirstChild("ThumbButton", true) or clone:FindFirstChild("Thumb", true) or clone:FindFirstChild("ImageButton", true)
+		local title = clone:FindFirstChild("Title", true) or clone:FindFirstChildWhichIsA("TextLabel", true)
+		if thumb then
+			if entry.image and entry.image ~= "" then
+				thumb.Image = entry.image
+			else
+				thumb.Image = ""
+			end
+		else
+			print("thumb not found in template for", clone.Name)
+		end
+		if title and entry.title then
+			title.Text = entry.title
+		else
+			print("title missing for", clone.Name)
+		end
+		local scriptText = entry.script or ""
+		thumb.MouseButton1Click:Connect(function()
+			print("thumb clicked for", entry.title or entry.id)
+			if scriptText == "" and entry.id then
+				local url = "https://scriptblox.com/api/script/search?q="..HttpService:UrlEncode(entry.title or "").."&max=1"
+				local ok,raw = pcall(function() return HttpService:GetAsync(url) end)
+				if ok then
+					local parsedOk,data = pcall(function() return HttpService:JSONDecode(raw) end)
+					if parsedOk and data and data.result and data.result.scripts and #data.result.scripts>0 then
+						scriptText = data.result.scripts[1].script or scriptText
+					end
+				else
+					print("fetch on click failed", raw)
+				end
+			end
+			print("executing script length", #scriptText)
+			safeLoadAndRun(scriptText)
+		end)
+	end
+	
+	local function fetchAndDisplay(query)
+		if not query or query == "" then
+			clearResults()
+			return
+		end
+		local url = "https://scriptblox.com/api/script/search?q="..HttpService:UrlEncode(query).."&max=5"
+		local ok,raw = pcall(function() return HttpService:GetAsync(url) end)
+		if not ok then
+			print("Http fetch failed", raw)
+			clearResults()
+			return
+		end
+		print("raw length", #raw)
+		local parsedOk, data = pcall(function() return HttpService:JSONDecode(raw) end)
+		if not parsedOk or not data or not data.result or not data.result.scripts then
+			print("parse failed or no scripts", parsedOk, data)
+			clearResults()
+			return
+		end
+		print("found", #data.result.scripts, "scripts")
+		clearResults()
+		for i=1, math.min(5, #data.result.scripts) do
+			local s = data.result.scripts[i]
+			local entry = {
+				id = s.id,
+				title = s.title or "Untitled",
+				image = s.image or (s.game and s.game.imageUrl) or "",
+				script = s.script or ""
+			}
+			createResultItem(entry)
+		end
+	end
+	
+	SearchBox:GetPropertyChangedSignal("Text"):Connect(function()
+		local q = SearchBox.Text
+		if q == lastQuery then return end
+		lastQuery = q
+		if debounce then return end
+		debounce = true
+		task.spawn(function()
+			task.wait(0.35)
+			local ok,err = pcall(function() fetchAndDisplay(q) end)
+			if not ok then
+				print("fetch error", err)
+			end
+			debounce = false
+		end)
+	end)
+	
+end;
+task.spawn(C_8f);
+-- StarterGui.frostware.main.tabs.console.ScrollingFrame.TextLabel.LocalScript
+local function C_99()
+local script = G2L["99"];
+	wait(3)
+	local label = script.Parent
+	local LogService = game:GetService("LogService")
+	label.RichText = true
+	label.Text = ""
+	local maxLines = 300
+	local buf = {}
+	
+	local function escapeRich(s)
+		s = tostring(s)
+		s = s:gsub("&","&amp;")
+		s = s:gsub("<","&lt;")
+		s = s:gsub(">","&gt;")
+		return s
+	end
+	
+	local function timestamp()
+		return os.date("%H:%M:%S")
+	end
+	
+	local continuation_prefix = "    ↳ "
+	
+	local function appendRichLines(richLines)
+		for _,line in ipairs(richLines) do
+			table.insert(buf, line)
+		end
+		while #buf > maxLines do table.remove(buf,1) end
+		label.Text = table.concat(buf, "\n")
+	end
+	
+	local function makeColoredLines(color, raw)
+		local s = tostring(raw)
+		local lines = {}
+		for line in string.gmatch(s, "[^\r\n]+") do
+			lines[#lines+1] = '<font color="'..color..'">'..escapeRich(line)..'</font>'
+		end
+		if #lines == 0 then lines[1] = '<font color="'..color..'"></font>' end
+		for i=2,#lines do lines[i] = continuation_prefix..lines[i] end
+		lines[1] = "<font color=\"#AAAAAA\">["..timestamp().."] </font>"..lines[1]
+		return lines
+	end
+	
+	local oldPrint, oldWarn, oldError = print, warn, error
+	
+	print = function(...)
+		local parts = {}
+		for i=1,select("#",...) do parts[#parts+1] = tostring(select(i,...)) end
+		local combined = table.concat(parts, "\t")
+		appendRichLines(makeColoredLines("#FFFFFF", combined))
+		oldPrint(...)
+	end
+	
+	warn = function(...)
+		local parts = {}
+		for i=1,select("#",...) do parts[#parts+1] = tostring(select(i,...)) end
+		local combined = "[WARN] "..table.concat(parts, "\t")
+		appendRichLines(makeColoredLines("#FFFF00", combined))
+		oldWarn(...)
+	end
+	
+	error = function(...)
+		local parts = {}
+		for i=1,select("#",...) do parts[#parts+1] = tostring(select(i,...)) end
+		local combined = "[ERROR] "..table.concat(parts, "\t")
+		appendRichLines(makeColoredLines("#FF4444", combined))
+		return oldError(...)
+	end
+	
+	LogService.MessageOut:Connect(function(message, messageType)
+		local color = "#FFFFFF"
+		if messageType == Enum.MessageType.MessageWarning then color = "#FFFF00"
+		elseif messageType == Enum.MessageType.MessageError then color = "#FF4444" end
+		appendRichLines(makeColoredLines(color, message))
+	end)
+	
+end;
+task.spawn(C_99);
+-- StarterGui.frostware.main.StatusBar.tdf.LocalScript
+local function C_9f()
+local script = G2L["9f"];
+	local label = script.Parent
+	local RunService = game:GetService("RunService")
+	
+	local lastUpdate = 0
+	local frames = 0
+	local fps = 0
+	
+	RunService.Heartbeat:Connect(function(dt)
+		frames += 1
+		if tick() - lastUpdate >= 1 then
+			fps = frames
+			frames = 0
+			lastUpdate = tick()
+			local t = os.date("%H:%M:%S %d/%m/%Y")
+			label.Text = t .. " | FPS: " .. fps
+		end
+	end)
+	
+end;
+task.spawn(C_9f);
+-- StarterGui.frostware.StartupScript__Useless
+local function C_af()
+local script = G2L["af"];
+	print("Console Test")
+	warn("Console Test")
+	print("Console Initialised")
+end;
+task.spawn(C_af);
+-- StarterGui.frostware.__Parenter
+local function C_b0()
+local script = G2L["b0"];
+	script.Parent.Parent=game:GetService("CoreGui")
+end;
+task.spawn(C_b0);
 
-
-
-
+return G2L["1"], require;
