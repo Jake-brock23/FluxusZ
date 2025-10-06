@@ -2491,14 +2491,15 @@ task.spawn(C_8a);
 -- StarterGui.frostware.main.tabs.scripthub.LocalScript
 local function C_92()
 local script = G2L["92"];
-	local HttpService = game:GetService("HttpService")
 	local SearchBox = script.Parent:FindFirstChild("TextBox") or script.Parent:FindFirstChild("SearchBox") or script.Parent:WaitForChild("TextBox",5)
 	local ResultsContainer = script.Parent:FindFirstChild("ScrollingFrame") or script.Parent:FindFirstChild("ResultsContainer") or script.Parent:WaitForChild("ScrollingFrame",5)
 	local Template = script.Parent:FindFirstChild("scriptdummy") or script.Parent:FindFirstChild("DummyTemplate") or script.Parent:WaitForChild("scriptdummy",5)
+	
 	if not SearchBox then error("SearchBox not found") end
 	if not ResultsContainer then error("ResultsContainer not found") end
 	if not Template then error("Template not found") end
 	Template.Visible = false
+	
 	local debounce = false
 	local lastQuery = ""
 	
@@ -2531,6 +2532,23 @@ local script = G2L["92"];
 		end
 	end
 	
+	local function httpFetch(url)
+		local funcs = {getgenv().http_get, getgenv().http_request, getgenv().http_post}
+		for _,f in ipairs(funcs) do
+			if type(f) == "function" then
+				local ok,res = pcall(f, url)
+				if ok and res then
+					if type(res) == "table" and res.Body then
+						return res.Body
+					elseif type(res) == "string" then
+						return res
+					end
+				end
+			end
+		end
+		return nil, "no working http function"
+	end
+	
 	local function createResultItem(entry)
 		local clone = Template:Clone()
 		clone.Name = ("Result_%s"):format(tostring(entry.id or math.random()))
@@ -2548,30 +2566,24 @@ local script = G2L["92"];
 			else
 				thumb.Image = ""
 			end
-		else
-			print("thumb not found in template for", clone.Name)
 		end
 		if title and entry.title then
 			title.Text = entry.title
-		else
-			print("title missing for", clone.Name)
 		end
 		local scriptText = entry.script or ""
 		thumb.MouseButton1Click:Connect(function()
-			print("thumb clicked for", entry.title or entry.id)
 			if scriptText == "" and entry.id then
-				local url = "https://scriptblox.com/api/script/search?q="..HttpService:UrlEncode(entry.title or "").."&max=1"
-				local ok,raw = pcall(function() return HttpService:GetAsync(url) end)
-				if ok then
-					local parsedOk,data = pcall(function() return HttpService:JSONDecode(raw) end)
-					if parsedOk and data and data.result and data.result.scripts and #data.result.scripts>0 then
+				local url = "https://scriptblox.com/api/script/search?q="..tostring(entry.title or "").."&max=1"
+				local raw, err = httpFetch(url)
+				if raw then
+					local ok,data = pcall(function() return game:GetService("HttpService"):JSONDecode(raw) end)
+					if ok and data and data.result and data.result.scripts and #data.result.scripts>0 then
 						scriptText = data.result.scripts[1].script or scriptText
 					end
 				else
-					print("fetch on click failed", raw)
+					print("fetch failed", err)
 				end
 			end
-			print("executing script length", #scriptText)
 			safeLoadAndRun(scriptText)
 		end)
 	end
@@ -2581,21 +2593,19 @@ local script = G2L["92"];
 			clearResults()
 			return
 		end
-		local url = "https://scriptblox.com/api/script/search?q="..HttpService:UrlEncode(query).."&max=5"
-		local ok,raw = pcall(function() return HttpService:GetAsync(url) end)
-		if not ok then
-			print("Http fetch failed", raw)
+		local url = "https://scriptblox.com/api/script/search?q="..tostring(query).."&max=5"
+		local raw, err = httpFetch(url)
+		if not raw then
+			print("Http fetch failed", err)
 			clearResults()
 			return
 		end
-		print("raw length", #raw)
-		local parsedOk, data = pcall(function() return HttpService:JSONDecode(raw) end)
-		if not parsedOk or not data or not data.result or not data.result.scripts then
-			print("parse failed or no scripts", parsedOk, data)
+		local ok,data = pcall(function() return game:GetService("HttpService"):JSONDecode(raw) end)
+		if not ok or not data or not data.result or not data.result.scripts then
+			print("parse failed or no scripts")
 			clearResults()
 			return
 		end
-		print("found", #data.result.scripts, "scripts")
 		clearResults()
 		for i=1, math.min(5, #data.result.scripts) do
 			local s = data.result.scripts[i]
