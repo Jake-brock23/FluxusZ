@@ -11,7 +11,7 @@
 local G2L = {};
 
 -- StarterGui.frostware
-G2L["1"] = Instance.new("ScreenGui", game:GetService("CoreGui");
+G2L["1"] = Instance.new("ScreenGui", game:GetService("CoreGui"));
 G2L["1"]["SafeAreaCompatibility"] = Enum.SafeAreaCompatibility.None;
 G2L["1"]["IgnoreGuiInset"] = true;
 G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.None;
@@ -2571,3 +2571,4 @@ end;
 task.spawn(C_a0);
 
 return G2L["1"], require;
+
