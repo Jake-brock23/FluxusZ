@@ -1942,13 +1942,26 @@ local script = G2L["44"];
 		if tbox and tbox:IsA("TextBox") then
 			Button.MouseButton1Click:Connect(function()
 				local success, result = pcall(function()
-					if dtc and dtc.schedule then
+					if typeof(dtc) == "table" and dtc.schedule then
 						dtc.schedule(tbox.Text)
+					else
+						local loader = loadstring
+						if not loader then
+							error("no loadstring available")
+						end
+						local fn, err = loader(tbox.Text)
+						if not fn then
+							error(err or "failed to compile code")
+						end
+						local ok, res = pcall(fn)
+						if not ok then
+							error(res)
+						end
 					end
 				end)
 	
 				if not success then
-					warn("Error executing code:", result)
+					warn("Error executing code:", tostring(result))
 				end
 			end)
 		end
