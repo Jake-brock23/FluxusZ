@@ -10,6 +10,9 @@
 -- Instances: 176 | Scripts: 20 | Modules: 0 | Tags: 0
 local G2L = {};
 
+while not game:IsLoaded() do
+    task.wait()
+end
 -- StarterGui.frostware
 G2L["1"] = Instance.new("ScreenGui", game:GetService("CoreGui"));
 G2L["1"]["SafeAreaCompatibility"] = Enum.SafeAreaCompatibility.None;
@@ -2571,3 +2574,4 @@ end;
 task.spawn(C_a0);
 
 return G2L["1"], require;
+
