@@ -1338,6 +1338,7 @@ G2L["94"]["PaddingLeft"] = UDim.new(0, 5);
 
 -- StarterGui.frostware.main.tabs.scripthub.ScrollingFrame.UIListLayout
 G2L["95"] = Instance.new("UIListLayout", G2L["93"]);
+G2L["95"]["Wraps"] = true;
 G2L["95"]["Padding"] = UDim.new(0, 50);
 G2L["95"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 G2L["95"]["FillDirection"] = Enum.FillDirection.Horizontal;
@@ -2493,22 +2494,20 @@ local script = G2L["92"];
 	local SearchBox = script.Parent:FindFirstChild("TextBox") or script.Parent:FindFirstChild("SearchBox") or script.Parent:WaitForChild("TextBox",5)
 	local ResultsContainer = script.Parent:FindFirstChild("ScrollingFrame") or script.Parent:FindFirstChild("ResultsContainer") or script.Parent:WaitForChild("ScrollingFrame",5)
 	local Template = script.Parent:FindFirstChild("scriptdummy") or script.Parent:FindFirstChild("DummyTemplate") or script.Parent:WaitForChild("scriptdummy",5)
-	
 	if not SearchBox then error("SearchBox not found") end
 	if not ResultsContainer then error("ResultsContainer not found") end
 	if not Template then error("Template not found") end
-	
-	-- Make template invisible and preserve it
 	Template.Visible = false
 	Template.AnchorPoint = Vector2.new(0,0)
-	
-	-- Add UIListLayout if none exists
 	if not ResultsContainer:FindFirstChildOfClass("UIListLayout") then
 		local layout = Instance.new("UIListLayout")
 		layout.SortOrder = Enum.SortOrder.LayoutOrder
-		layout.Padding = UDim.new(0,5) -- spacing between items
+		layout.Padding = UDim.new(0,5)
 		layout.Parent = ResultsContainer
 	end
+	
+	local hasSetCustom = type(getgenv) == "function" and type(getgenv().setcustomasset) == "function" or type(setcustomasset) == "function"
+	local setCustom = getgenv and getgenv().setcustomasset or setcustomasset
 	
 	local debounce = false
 	local lastQuery = ""
@@ -2523,14 +2522,15 @@ local script = G2L["92"];
 	
 	local function safeLoadAndRun(code)
 		if type(code) ~= "string" or code == "" then return end
-		local ok, fn = pcall(loadstring, code)
+		local ok,fn = pcall(loadstring, code)
 		if ok and type(fn) == "function" then
 			pcall(fn)
 		end
 	end
 	
 	local function httpFetch(url)
-		local funcs = {getgenv().http_get, getgenv().http_request, getgenv().http_post}
+		local env = getgenv and getgenv() or _G
+		local funcs = {env.http_get, env.http_request, env.http_post}
 		for _,f in ipairs(funcs) do
 			if type(f) == "function" then
 				local ok,res = pcall(f, url)
@@ -2543,25 +2543,59 @@ local script = G2L["92"];
 		return nil, "no working http function"
 	end
 	
+	local function applyImage(imgTarget, url)
+		if not imgTarget or not url or url == "" then
+			if imgTarget then imgTarget.Image = "" end
+			return
+		end
+		if hasSetCustom then
+			local ok,asset = pcall(setCustom, url)
+			if ok and asset then
+				imgTarget.Image = asset
+				return
+			end
+		end
+		local ok,err = pcall(function() imgTarget.Image = url end)
+		if not ok then
+			imgTarget.Image = ""
+		end
+	end
+	
 	local function createResultItem(entry)
 		local clone = Template:Clone()
 		clone.Name = ("Result_%s"):format(tostring(entry.id or math.random()))
 		clone.Visible = true
 		clone.Parent = ResultsContainer
 		clone.Size = Template.Size
-	
-		local thumb = clone:FindFirstChild("ThumbButton", true) or clone:FindFirstChild("Thumb", true) or clone:FindFirstChild("ImageButton", true)
+		local thumb = clone:FindFirstChild("ThumbButton", true) or clone:FindFirstChild("Thumb", true) or clone:FindFirstChild("ImageButton", true) or clone:FindFirstChildWhichIsA("ImageLabel", true)
 		local title = clone:FindFirstChild("Title", true) or clone:FindFirstChildWhichIsA("TextLabel", true)
-	
 		if thumb then
-			thumb.Image = entry.image or ""
+			applyImage(thumb, entry.image or "")
 		end
 		if title then
 			title.Text = entry.title or "Untitled"
 		end
-	
-		if thumb then
+		if thumb and thumb:IsA("GuiButton") then
 			thumb.MouseButton1Click:Connect(function()
+				if entry.script == "" and entry.id then
+					local url = "https://scriptblox.com/api/script/search?q="..HttpService:UrlEncode(entry.title or "").."&max=1"
+					local raw, err = httpFetch(url)
+					if raw then
+						local ok,data = pcall(function() return HttpService:JSONDecode(raw) end)
+						if ok and data and data.result and data.result.scripts and #data.result.scripts>0 then
+							entry.script = data.result.scripts[1].script or ""
+						end
+					end
+				end
+				safeLoadAndRun(entry.script)
+			end)
+		elseif thumb and thumb:IsA("ImageLabel") then
+			local btn = Instance.new("TextButton")
+			btn.Size = UDim2.new(1,0,1,0)
+			btn.BackgroundTransparency = 1
+			btn.Text = ""
+			btn.Parent = clone
+			btn.MouseButton1Click:Connect(function()
 				if entry.script == "" and entry.id then
 					local url = "https://scriptblox.com/api/script/search?q="..HttpService:UrlEncode(entry.title or "").."&max=1"
 					local raw, err = httpFetch(url)
@@ -2582,20 +2616,17 @@ local script = G2L["92"];
 			clearResults()
 			return
 		end
-	
 		local url = "https://scriptblox.com/api/script/search?q="..HttpService:UrlEncode(query).."&max=5"
 		local raw, err = httpFetch(url)
 		if not raw then
 			clearResults()
 			return
 		end
-	
-		local ok, data = pcall(function() return HttpService:JSONDecode(raw) end)
+		local ok,data = pcall(function() return HttpService:JSONDecode(raw) end)
 		if not ok or not data or not data.result or not data.result.scripts then
 			clearResults()
 			return
 		end
-	
 		clearResults()
 		for i=1, math.min(5, #data.result.scripts) do
 			local s = data.result.scripts[i]
