@@ -7,13 +7,11 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
 
--- Instances: 196 | Scripts: 22 | Modules: 0 | Tags: 0
+-- Instances: 188 | Scripts: 22 | Modules: 0 | Tags: 0
 local G2L = {};
-while not game:IsLoaded() do
-	task.wait()
-end
+
 -- StarterGui.frostware
-G2L["1"] = Instance.new("ScreenGui", game:GetService("CoreGui"));
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
 G2L["1"]["SafeAreaCompatibility"] = Enum.SafeAreaCompatibility.None;
 G2L["1"]["IgnoreGuiInset"] = true;
 G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.None;
@@ -1338,438 +1336,360 @@ G2L["94"]["PaddingTop"] = UDim.new(0, 5);
 G2L["94"]["PaddingLeft"] = UDim.new(0, 5);
 
 
--- StarterGui.frostware.main.tabs.scripthub.ScrollingFrame.scriptdummy
-G2L["95"] = Instance.new("Frame", G2L["93"]);
-G2L["95"]["BorderSizePixel"] = 0;
-G2L["95"]["BackgroundColor3"] = Color3.fromRGB(49, 49, 49);
-G2L["95"]["Size"] = UDim2.new(0, 100, 0, 116);
-G2L["95"]["Position"] = UDim2.new(0.03827, 0, 0.15734, 0);
-G2L["95"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["95"]["Name"] = [[scriptdummy]];
-
-
--- StarterGui.frostware.main.tabs.scripthub.ScrollingFrame.scriptdummy.TextLabel
-G2L["96"] = Instance.new("TextLabel", G2L["95"]);
-G2L["96"]["BorderSizePixel"] = 0;
-G2L["96"]["TextSize"] = 14;
-G2L["96"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["96"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["96"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["96"]["BackgroundTransparency"] = 1;
-G2L["96"]["Size"] = UDim2.new(0.8, 0, -0.12371, 39);
-G2L["96"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["96"]["Position"] = UDim2.new(0.1, 0, 0.7875, 0);
-
-
--- StarterGui.frostware.main.tabs.scripthub.ScrollingFrame.scriptdummy.UICorner
-G2L["97"] = Instance.new("UICorner", G2L["95"]);
-G2L["97"]["CornerRadius"] = UDim.new(0, 24);
-
-
--- StarterGui.frostware.main.tabs.scripthub.ScrollingFrame.scriptdummy.ImageButton
-G2L["98"] = Instance.new("ImageButton", G2L["95"]);
-G2L["98"]["BorderSizePixel"] = 0;
--- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
-G2L["98"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["98"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
-G2L["98"]["Size"] = UDim2.new(0.8, 0, 0.7, 0);
-G2L["98"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["98"]["Position"] = UDim2.new(0.1, 0, 0.0875, 0);
-
-
 -- StarterGui.frostware.main.tabs.scripthub.ScrollingFrame.UIListLayout
-G2L["99"] = Instance.new("UIListLayout", G2L["93"]);
-G2L["99"]["Padding"] = UDim.new(0, 50);
-G2L["99"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-G2L["99"]["FillDirection"] = Enum.FillDirection.Horizontal;
-
-
--- StarterGui.frostware.main.tabs.scripthub.ScrollingFrame.scriptdummy
-G2L["9a"] = Instance.new("Frame", G2L["93"]);
-G2L["9a"]["BorderSizePixel"] = 0;
-G2L["9a"]["BackgroundColor3"] = Color3.fromRGB(49, 49, 49);
-G2L["9a"]["Size"] = UDim2.new(0, 100, 0, 116);
-G2L["9a"]["Position"] = UDim2.new(0.03827, 0, 0.15734, 0);
-G2L["9a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["9a"]["Name"] = [[scriptdummy]];
-
-
--- StarterGui.frostware.main.tabs.scripthub.ScrollingFrame.scriptdummy.TextLabel
-G2L["9b"] = Instance.new("TextLabel", G2L["9a"]);
-G2L["9b"]["BorderSizePixel"] = 0;
-G2L["9b"]["TextSize"] = 14;
-G2L["9b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["9b"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["9b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["9b"]["BackgroundTransparency"] = 1;
-G2L["9b"]["Size"] = UDim2.new(0.8, 0, -0.12371, 39);
-G2L["9b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["9b"]["Position"] = UDim2.new(0.1, 0, 0.7875, 0);
-
-
--- StarterGui.frostware.main.tabs.scripthub.ScrollingFrame.scriptdummy.UICorner
-G2L["9c"] = Instance.new("UICorner", G2L["9a"]);
-G2L["9c"]["CornerRadius"] = UDim.new(0, 24);
-
-
--- StarterGui.frostware.main.tabs.scripthub.ScrollingFrame.scriptdummy.ImageButton
-G2L["9d"] = Instance.new("ImageButton", G2L["9a"]);
-G2L["9d"]["BorderSizePixel"] = 0;
--- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
-G2L["9d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["9d"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
-G2L["9d"]["Size"] = UDim2.new(0.8, 0, 0.7, 0);
-G2L["9d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["9d"]["Position"] = UDim2.new(0.1, 0, 0.0875, 0);
-
-
--- StarterGui.frostware.main.tabs.scripthub.ScrollingFrame.scriptdummy
-G2L["9e"] = Instance.new("Frame", G2L["93"]);
-G2L["9e"]["BorderSizePixel"] = 0;
-G2L["9e"]["BackgroundColor3"] = Color3.fromRGB(49, 49, 49);
-G2L["9e"]["Size"] = UDim2.new(0, 100, 0, 116);
-G2L["9e"]["Position"] = UDim2.new(0.03827, 0, 0.15734, 0);
-G2L["9e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["9e"]["Name"] = [[scriptdummy]];
-
-
--- StarterGui.frostware.main.tabs.scripthub.ScrollingFrame.scriptdummy.TextLabel
-G2L["9f"] = Instance.new("TextLabel", G2L["9e"]);
-G2L["9f"]["BorderSizePixel"] = 0;
-G2L["9f"]["TextSize"] = 14;
-G2L["9f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["9f"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["9f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["9f"]["BackgroundTransparency"] = 1;
-G2L["9f"]["Size"] = UDim2.new(0.8, 0, -0.12371, 39);
-G2L["9f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["9f"]["Position"] = UDim2.new(0.1, 0, 0.7875, 0);
-
-
--- StarterGui.frostware.main.tabs.scripthub.ScrollingFrame.scriptdummy.UICorner
-G2L["a0"] = Instance.new("UICorner", G2L["9e"]);
-G2L["a0"]["CornerRadius"] = UDim.new(0, 24);
-
-
--- StarterGui.frostware.main.tabs.scripthub.ScrollingFrame.scriptdummy.ImageButton
-G2L["a1"] = Instance.new("ImageButton", G2L["9e"]);
-G2L["a1"]["BorderSizePixel"] = 0;
--- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
-G2L["a1"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["a1"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
-G2L["a1"]["Size"] = UDim2.new(0.8, 0, 0.7, 0);
-G2L["a1"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["a1"]["Position"] = UDim2.new(0.1, 0, 0.0875, 0);
+G2L["95"] = Instance.new("UIListLayout", G2L["93"]);
+G2L["95"]["Padding"] = UDim.new(0, 50);
+G2L["95"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+G2L["95"]["FillDirection"] = Enum.FillDirection.Horizontal;
 
 
 -- StarterGui.frostware.main.tabs.scripthub.TextBox
-G2L["a2"] = Instance.new("TextBox", G2L["91"]);
-G2L["a2"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["a2"]["BorderSizePixel"] = 0;
-G2L["a2"]["TextSize"] = 14;
-G2L["a2"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["a2"]["BackgroundColor3"] = Color3.fromRGB(18, 18, 18);
-G2L["a2"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["a2"]["PlaceholderText"] = [[Script Name...]];
-G2L["a2"]["Size"] = UDim2.new(0, 183, 0, 31);
-G2L["a2"]["Position"] = UDim2.new(0.51345, 0, -0, 0);
-G2L["a2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["a2"]["Text"] = [[]];
+G2L["96"] = Instance.new("TextBox", G2L["91"]);
+G2L["96"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["96"]["BorderSizePixel"] = 0;
+G2L["96"]["TextSize"] = 14;
+G2L["96"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["96"]["BackgroundColor3"] = Color3.fromRGB(18, 18, 18);
+G2L["96"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["96"]["PlaceholderText"] = [[Script Name...]];
+G2L["96"]["Size"] = UDim2.new(0, 183, 0, 31);
+G2L["96"]["Position"] = UDim2.new(0.51345, 0, -0, 0);
+G2L["96"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["96"]["Text"] = [[]];
 
 
 -- StarterGui.frostware.main.tabs.scripthub.TextBox.UICorner
-G2L["a3"] = Instance.new("UICorner", G2L["a2"]);
-G2L["a3"]["CornerRadius"] = UDim.new(0, 32);
+G2L["97"] = Instance.new("UICorner", G2L["96"]);
+G2L["97"]["CornerRadius"] = UDim.new(0, 32);
 
 
 -- StarterGui.frostware.main.tabs.scripthub.TextBox.UIPadding
-G2L["a4"] = Instance.new("UIPadding", G2L["a2"]);
-G2L["a4"]["PaddingLeft"] = UDim.new(0.05, 0);
+G2L["98"] = Instance.new("UIPadding", G2L["96"]);
+G2L["98"]["PaddingLeft"] = UDim.new(0.05, 0);
 
 
 -- StarterGui.frostware.main.tabs.scripthub.UICorner
-G2L["a5"] = Instance.new("UICorner", G2L["91"]);
-G2L["a5"]["CornerRadius"] = UDim.new(0, 32);
+G2L["99"] = Instance.new("UICorner", G2L["91"]);
+G2L["99"]["CornerRadius"] = UDim.new(0, 32);
 
 
 -- StarterGui.frostware.main.tabs.scripthub.UIPadding
-G2L["a6"] = Instance.new("UIPadding", G2L["91"]);
-G2L["a6"]["PaddingTop"] = UDim.new(0.05, 0);
-G2L["a6"]["PaddingLeft"] = UDim.new(0.05, 0);
+G2L["9a"] = Instance.new("UIPadding", G2L["91"]);
+G2L["9a"]["PaddingTop"] = UDim.new(0.05, 0);
+G2L["9a"]["PaddingLeft"] = UDim.new(0.05, 0);
 
 
 -- StarterGui.frostware.main.tabs.scripthub.TextLabel
-G2L["a7"] = Instance.new("TextLabel", G2L["91"]);
-G2L["a7"]["BorderSizePixel"] = 0;
-G2L["a7"]["TextSize"] = 14;
-G2L["a7"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["a7"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["a7"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["a7"]["Size"] = UDim2.new(0, 261, 0, 24);
-G2L["a7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["a7"]["Text"] = [[This Section Is Under Work...]];
-G2L["a7"]["Position"] = UDim2.new(0.14682, 0, -0.12839, 0);
+G2L["9b"] = Instance.new("TextLabel", G2L["91"]);
+G2L["9b"]["BorderSizePixel"] = 0;
+G2L["9b"]["TextSize"] = 14;
+G2L["9b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["9b"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9b"]["Size"] = UDim2.new(0, 261, 0, 24);
+G2L["9b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9b"]["Text"] = [[This Section Is Under Work...]];
+G2L["9b"]["Position"] = UDim2.new(0.14682, 0, -0.12839, 0);
+
+
+-- StarterGui.frostware.main.tabs.scripthub.scriptdummy
+G2L["9c"] = Instance.new("Frame", G2L["91"]);
+G2L["9c"]["BorderSizePixel"] = 0;
+G2L["9c"]["BackgroundColor3"] = Color3.fromRGB(49, 49, 49);
+G2L["9c"]["Size"] = UDim2.new(0, 100, 0, 116);
+G2L["9c"]["Position"] = UDim2.new(0.03827, 0, 0.15734, 0);
+G2L["9c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9c"]["Name"] = [[scriptdummy]];
+
+
+-- StarterGui.frostware.main.tabs.scripthub.scriptdummy.TextLabel
+G2L["9d"] = Instance.new("TextLabel", G2L["9c"]);
+G2L["9d"]["BorderSizePixel"] = 0;
+G2L["9d"]["TextSize"] = 14;
+G2L["9d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9d"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["9d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9d"]["BackgroundTransparency"] = 1;
+G2L["9d"]["Size"] = UDim2.new(0.8, 0, -0.12371, 39);
+G2L["9d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9d"]["Position"] = UDim2.new(0.1, 0, 0.7875, 0);
+
+
+-- StarterGui.frostware.main.tabs.scripthub.scriptdummy.UICorner
+G2L["9e"] = Instance.new("UICorner", G2L["9c"]);
+G2L["9e"]["CornerRadius"] = UDim.new(0, 24);
+
+
+-- StarterGui.frostware.main.tabs.scripthub.scriptdummy.ImageButton
+G2L["9f"] = Instance.new("ImageButton", G2L["9c"]);
+G2L["9f"]["BorderSizePixel"] = 0;
+-- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["9f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9f"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
+G2L["9f"]["Size"] = UDim2.new(0.8, 0, 0.7, 0);
+G2L["9f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9f"]["Position"] = UDim2.new(0.1, 0, 0.0875, 0);
 
 
 -- StarterGui.frostware.main.tabs.console
-G2L["a8"] = Instance.new("Frame", G2L["20"]);
-G2L["a8"]["Visible"] = false;
-G2L["a8"]["BorderSizePixel"] = 0;
-G2L["a8"]["BackgroundColor3"] = Color3.fromRGB(27, 27, 27);
-G2L["a8"]["Size"] = UDim2.new(0, 423, 0, 264);
-G2L["a8"]["Position"] = UDim2.new(0.15, 0, 0.063, 0);
-G2L["a8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["a8"]["Name"] = [[console]];
-G2L["a8"]["BackgroundTransparency"] = 0.1;
+G2L["a0"] = Instance.new("Frame", G2L["20"]);
+G2L["a0"]["Visible"] = false;
+G2L["a0"]["BorderSizePixel"] = 0;
+G2L["a0"]["BackgroundColor3"] = Color3.fromRGB(27, 27, 27);
+G2L["a0"]["Size"] = UDim2.new(0, 423, 0, 264);
+G2L["a0"]["Position"] = UDim2.new(0.15, 0, 0.063, 0);
+G2L["a0"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a0"]["Name"] = [[console]];
+G2L["a0"]["BackgroundTransparency"] = 0.1;
 
 
 -- StarterGui.frostware.main.tabs.console.UICorner
-G2L["a9"] = Instance.new("UICorner", G2L["a8"]);
-G2L["a9"]["CornerRadius"] = UDim.new(0, 32);
+G2L["a1"] = Instance.new("UICorner", G2L["a0"]);
+G2L["a1"]["CornerRadius"] = UDim.new(0, 32);
 
 
 -- StarterGui.frostware.main.tabs.console.UIPadding
-G2L["aa"] = Instance.new("UIPadding", G2L["a8"]);
-G2L["aa"]["PaddingTop"] = UDim.new(0.05, 0);
-G2L["aa"]["PaddingLeft"] = UDim.new(0.05, 0);
+G2L["a2"] = Instance.new("UIPadding", G2L["a0"]);
+G2L["a2"]["PaddingTop"] = UDim.new(0.05, 0);
+G2L["a2"]["PaddingLeft"] = UDim.new(0.05, 0);
 
 
 -- StarterGui.frostware.main.tabs.console.ScrollingFrame
-G2L["ab"] = Instance.new("ScrollingFrame", G2L["a8"]);
-G2L["ab"]["Active"] = true;
-G2L["ab"]["BorderSizePixel"] = 0;
-G2L["ab"]["CanvasSize"] = UDim2.new(0, 0, 999999, 0);
-G2L["ab"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["ab"]["Size"] = UDim2.new(0.99, 0, 0.99, 0);
-G2L["ab"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["ab"]["Position"] = UDim2.new(-0.0224, 0, -0.02392, 0);
-G2L["ab"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["ab"]["ScrollBarThickness"] = 8;
-G2L["ab"]["BackgroundTransparency"] = 1;
+G2L["a3"] = Instance.new("ScrollingFrame", G2L["a0"]);
+G2L["a3"]["Active"] = true;
+G2L["a3"]["BorderSizePixel"] = 0;
+G2L["a3"]["CanvasSize"] = UDim2.new(0, 0, 999999, 0);
+G2L["a3"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a3"]["Size"] = UDim2.new(0.99, 0, 0.99, 0);
+G2L["a3"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a3"]["Position"] = UDim2.new(-0.0224, 0, -0.02392, 0);
+G2L["a3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a3"]["ScrollBarThickness"] = 8;
+G2L["a3"]["BackgroundTransparency"] = 1;
 
 
 -- StarterGui.frostware.main.tabs.console.ScrollingFrame.UIPadding
-G2L["ac"] = Instance.new("UIPadding", G2L["ab"]);
-G2L["ac"]["PaddingTop"] = UDim.new(0, 10);
-G2L["ac"]["PaddingLeft"] = UDim.new(0, 10);
+G2L["a4"] = Instance.new("UIPadding", G2L["a3"]);
+G2L["a4"]["PaddingTop"] = UDim.new(0, 10);
+G2L["a4"]["PaddingLeft"] = UDim.new(0, 10);
 
 
 -- StarterGui.frostware.main.tabs.console.ScrollingFrame.TextLabel
-G2L["ad"] = Instance.new("TextLabel", G2L["ab"]);
-G2L["ad"]["TextWrapped"] = true;
-G2L["ad"]["TextTruncate"] = Enum.TextTruncate.AtEnd;
-G2L["ad"]["BorderSizePixel"] = 0;
-G2L["ad"]["TextSize"] = 14;
-G2L["ad"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["ad"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-G2L["ad"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["ad"]["FontFace"] = Font.new([[rbxasset://fonts/families/RobotoMono.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["ad"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["ad"]["BackgroundTransparency"] = 1;
-G2L["ad"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["ad"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["ad"]["Text"] = [[gng tf]];
+G2L["a5"] = Instance.new("TextLabel", G2L["a3"]);
+G2L["a5"]["TextWrapped"] = true;
+G2L["a5"]["TextTruncate"] = Enum.TextTruncate.AtEnd;
+G2L["a5"]["BorderSizePixel"] = 0;
+G2L["a5"]["TextSize"] = 14;
+G2L["a5"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["a5"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["a5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a5"]["FontFace"] = Font.new([[rbxasset://fonts/families/RobotoMono.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["a5"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a5"]["BackgroundTransparency"] = 1;
+G2L["a5"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["a5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a5"]["Text"] = [[gng tf]];
 
 
 -- StarterGui.frostware.main.tabs.console.ScrollingFrame.TextLabel.LocalScript
-G2L["ae"] = Instance.new("LocalScript", G2L["ad"]);
+G2L["a6"] = Instance.new("LocalScript", G2L["a5"]);
 
 
 
 -- StarterGui.frostware.main.StatusBar
-G2L["af"] = Instance.new("TextLabel", G2L["b"]);
-G2L["af"]["BorderSizePixel"] = 0;
-G2L["af"]["TextSize"] = 14;
-G2L["af"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["af"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["af"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["af"]["BackgroundTransparency"] = 0.2;
-G2L["af"]["Size"] = UDim2.new(0, 514, 0, 32);
-G2L["af"]["ClipsDescendants"] = true;
-G2L["af"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["af"]["Text"] = [[Fluxus Z]];
-G2L["af"]["Name"] = [[StatusBar]];
-G2L["af"]["Position"] = UDim2.new(0, 0, -0.14238, 0);
+G2L["a7"] = Instance.new("TextLabel", G2L["b"]);
+G2L["a7"]["BorderSizePixel"] = 0;
+G2L["a7"]["TextSize"] = 14;
+G2L["a7"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a7"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["a7"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a7"]["BackgroundTransparency"] = 0.2;
+G2L["a7"]["Size"] = UDim2.new(0, 514, 0, 32);
+G2L["a7"]["ClipsDescendants"] = true;
+G2L["a7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a7"]["Text"] = [[Fluxus Z]];
+G2L["a7"]["Name"] = [[StatusBar]];
+G2L["a7"]["Position"] = UDim2.new(0, 0, -0.14238, 0);
 
 
 -- StarterGui.frostware.main.StatusBar.logo
-G2L["b0"] = Instance.new("ImageLabel", G2L["af"]);
-G2L["b0"]["BorderSizePixel"] = 0;
-G2L["b0"]["ScaleType"] = Enum.ScaleType.Fit;
-G2L["b0"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a8"] = Instance.new("ImageLabel", G2L["a7"]);
+G2L["a8"]["BorderSizePixel"] = 0;
+G2L["a8"]["ScaleType"] = Enum.ScaleType.Fit;
+G2L["a8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 -- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
-G2L["b0"]["Image"] = [[rbxassetid://133613329257288]];
-G2L["b0"]["Size"] = UDim2.new(0.048, 0, 0.75, 0);
-G2L["b0"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["b0"]["BackgroundTransparency"] = 1;
-G2L["b0"]["Name"] = [[logo]];
-G2L["b0"]["Position"] = UDim2.new(0.3713, 0, 0.1005, 0);
+G2L["a8"]["Image"] = [[rbxassetid://133613329257288]];
+G2L["a8"]["Size"] = UDim2.new(0.048, 0, 0.75, 0);
+G2L["a8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a8"]["BackgroundTransparency"] = 1;
+G2L["a8"]["Name"] = [[logo]];
+G2L["a8"]["Position"] = UDim2.new(0.3713, 0, 0.1005, 0);
 
 
 -- StarterGui.frostware.main.StatusBar.logo.UICorner
-G2L["b1"] = Instance.new("UICorner", G2L["b0"]);
-G2L["b1"]["CornerRadius"] = UDim.new(0, 24);
+G2L["a9"] = Instance.new("UICorner", G2L["a8"]);
+G2L["a9"]["CornerRadius"] = UDim.new(0, 24);
 
 
 -- StarterGui.frostware.main.StatusBar.version
-G2L["b2"] = Instance.new("TextLabel", G2L["af"]);
-G2L["b2"]["BorderSizePixel"] = 0;
-G2L["b2"]["TextSize"] = 14;
-G2L["b2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["b2"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["b2"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["b2"]["BackgroundTransparency"] = 1;
-G2L["b2"]["Size"] = UDim2.new(0, 89, 0, 27);
-G2L["b2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["b2"]["Text"] = [[Version:  V5]];
-G2L["b2"]["Name"] = [[version]];
-G2L["b2"]["Position"] = UDim2.new(0.82272, 0, 0.03125, 0);
+G2L["aa"] = Instance.new("TextLabel", G2L["a7"]);
+G2L["aa"]["BorderSizePixel"] = 0;
+G2L["aa"]["TextSize"] = 14;
+G2L["aa"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["aa"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["aa"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["aa"]["BackgroundTransparency"] = 1;
+G2L["aa"]["Size"] = UDim2.new(0, 89, 0, 27);
+G2L["aa"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["aa"]["Text"] = [[Version:  V5]];
+G2L["aa"]["Name"] = [[version]];
+G2L["aa"]["Position"] = UDim2.new(0.82272, 0, 0.03125, 0);
 
 
 -- StarterGui.frostware.main.StatusBar.tdf
-G2L["b3"] = Instance.new("TextLabel", G2L["af"]);
-G2L["b3"]["BorderSizePixel"] = 0;
-G2L["b3"]["TextSize"] = 14;
-G2L["b3"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["b3"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["b3"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["b3"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["b3"]["BackgroundTransparency"] = 1;
-G2L["b3"]["Size"] = UDim2.new(0, 157, 0, 27);
-G2L["b3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["b3"]["Text"] = [[time date and fps]];
-G2L["b3"]["Name"] = [[tdf]];
-G2L["b3"]["Position"] = UDim2.new(0.01728, 0, 0.03125, 0);
+G2L["ab"] = Instance.new("TextLabel", G2L["a7"]);
+G2L["ab"]["BorderSizePixel"] = 0;
+G2L["ab"]["TextSize"] = 14;
+G2L["ab"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["ab"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["ab"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["ab"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["ab"]["BackgroundTransparency"] = 1;
+G2L["ab"]["Size"] = UDim2.new(0, 157, 0, 27);
+G2L["ab"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["ab"]["Text"] = [[time date and fps]];
+G2L["ab"]["Name"] = [[tdf]];
+G2L["ab"]["Position"] = UDim2.new(0.01728, 0, 0.03125, 0);
 
 
 -- StarterGui.frostware.main.StatusBar.tdf.LocalScript
-G2L["b4"] = Instance.new("LocalScript", G2L["b3"]);
+G2L["ac"] = Instance.new("LocalScript", G2L["ab"]);
 
 
 
 -- StarterGui.frostware.main.StatusBar.UICorner
-G2L["b5"] = Instance.new("UICorner", G2L["af"]);
-G2L["b5"]["CornerRadius"] = UDim.new(0, 32);
+G2L["ad"] = Instance.new("UICorner", G2L["a7"]);
+G2L["ad"]["CornerRadius"] = UDim.new(0, 32);
 
 
 -- StarterGui.frostware.main.StatusBar.UIStroke
-G2L["b6"] = Instance.new("UIStroke", G2L["af"]);
-G2L["b6"]["Transparency"] = 0.68;
-G2L["b6"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-G2L["b6"]["Thickness"] = 3.4;
+G2L["ae"] = Instance.new("UIStroke", G2L["a7"]);
+G2L["ae"]["Transparency"] = 0.68;
+G2L["ae"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["ae"]["Thickness"] = 3.4;
 
 
 -- StarterGui.frostware.main.mainctrls
-G2L["b7"] = Instance.new("Frame", G2L["b"]);
-G2L["b7"]["BorderSizePixel"] = 0;
-G2L["b7"]["BackgroundColor3"] = Color3.fromRGB(29, 29, 29);
-G2L["b7"]["Size"] = UDim2.new(0, 49, 0, 151);
-G2L["b7"]["Position"] = UDim2.new(1.02904, 0, -0.0028, 0);
-G2L["b7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["b7"]["Name"] = [[mainctrls]];
-G2L["b7"]["BackgroundTransparency"] = 0.2;
+G2L["af"] = Instance.new("Frame", G2L["b"]);
+G2L["af"]["BorderSizePixel"] = 0;
+G2L["af"]["BackgroundColor3"] = Color3.fromRGB(29, 29, 29);
+G2L["af"]["Size"] = UDim2.new(0, 49, 0, 151);
+G2L["af"]["Position"] = UDim2.new(1.02904, 0, -0.0028, 0);
+G2L["af"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["af"]["Name"] = [[mainctrls]];
+G2L["af"]["BackgroundTransparency"] = 0.2;
 
 
 -- StarterGui.frostware.main.mainctrls.Close
-G2L["b8"] = Instance.new("TextButton", G2L["b7"]);
-G2L["b8"]["TextWrapped"] = true;
-G2L["b8"]["BorderSizePixel"] = 0;
-G2L["b8"]["TextSize"] = 90;
-G2L["b8"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["b8"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["b8"]["FontFace"] = Font.new([[rbxasset://fonts/families/Nunito.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["b8"]["BackgroundTransparency"] = 0.2;
-G2L["b8"]["Size"] = UDim2.new(0.9, 0, 0.3, 0);
-G2L["b8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["b8"]["Text"] = [[-]];
-G2L["b8"]["Name"] = [[Close]];
-G2L["b8"]["Position"] = UDim2.new(-0.25612, 0, -0.0396, 0);
+G2L["b0"] = Instance.new("TextButton", G2L["af"]);
+G2L["b0"]["TextWrapped"] = true;
+G2L["b0"]["BorderSizePixel"] = 0;
+G2L["b0"]["TextSize"] = 90;
+G2L["b0"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b0"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["b0"]["FontFace"] = Font.new([[rbxasset://fonts/families/Nunito.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["b0"]["BackgroundTransparency"] = 0.2;
+G2L["b0"]["Size"] = UDim2.new(0.9, 0, 0.3, 0);
+G2L["b0"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["b0"]["Text"] = [[-]];
+G2L["b0"]["Name"] = [[Close]];
+G2L["b0"]["Position"] = UDim2.new(-0.25612, 0, -0.0396, 0);
 
 
 -- StarterGui.frostware.main.mainctrls.Close.UICorner
-G2L["b9"] = Instance.new("UICorner", G2L["b8"]);
-G2L["b9"]["CornerRadius"] = UDim.new(0, 24);
+G2L["b1"] = Instance.new("UICorner", G2L["b0"]);
+G2L["b1"]["CornerRadius"] = UDim.new(0, 24);
 
 
 -- StarterGui.frostware.main.mainctrls.UICorner
-G2L["ba"] = Instance.new("UICorner", G2L["b7"]);
-G2L["ba"]["CornerRadius"] = UDim.new(0, 32);
+G2L["b2"] = Instance.new("UICorner", G2L["af"]);
+G2L["b2"]["CornerRadius"] = UDim.new(0, 32);
 
 
 -- StarterGui.frostware.main.mainctrls.UIListLayout
-G2L["bb"] = Instance.new("UIListLayout", G2L["b7"]);
-G2L["bb"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
-G2L["bb"]["Padding"] = UDim.new(0.03, 0);
-G2L["bb"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+G2L["b3"] = Instance.new("UIListLayout", G2L["af"]);
+G2L["b3"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+G2L["b3"]["Padding"] = UDim.new(0.03, 0);
+G2L["b3"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
 
 -- StarterGui.frostware.main.mainctrls.UIPadding
-G2L["bc"] = Instance.new("UIPadding", G2L["b7"]);
-G2L["bc"]["PaddingTop"] = UDim.new(0, 4);
+G2L["b4"] = Instance.new("UIPadding", G2L["af"]);
+G2L["b4"]["PaddingTop"] = UDim.new(0, 4);
 
 
 -- StarterGui.frostware.main.mainctrls.UIStroke
-G2L["bd"] = Instance.new("UIStroke", G2L["b7"]);
-G2L["bd"]["Transparency"] = 0.68;
-G2L["bd"]["Thickness"] = 3.4;
+G2L["b5"] = Instance.new("UIStroke", G2L["af"]);
+G2L["b5"]["Transparency"] = 0.68;
+G2L["b5"]["Thickness"] = 3.4;
 
 
 -- StarterGui.frostware.main.UICorner
-G2L["be"] = Instance.new("UICorner", G2L["b"]);
-G2L["be"]["CornerRadius"] = UDim.new(0, 32);
+G2L["b6"] = Instance.new("UICorner", G2L["b"]);
+G2L["b6"]["CornerRadius"] = UDim.new(0, 32);
 
 
 -- StarterGui.frostware.main.UIStroke
-G2L["bf"] = Instance.new("UIStroke", G2L["b"]);
-G2L["bf"]["Transparency"] = 0.68;
-G2L["bf"]["Thickness"] = 3.4;
+G2L["b7"] = Instance.new("UIStroke", G2L["b"]);
+G2L["b7"]["Transparency"] = 0.68;
+G2L["b7"]["Thickness"] = 3.4;
 
 
 -- StarterGui.frostware.main.BackframeShine
-G2L["c0"] = Instance.new("ImageLabel", G2L["b"]);
-G2L["c0"]["ZIndex"] = 0;
-G2L["c0"]["BorderSizePixel"] = 0;
-G2L["c0"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["c0"]["ImageTransparency"] = 0.68;
+G2L["b8"] = Instance.new("ImageLabel", G2L["b"]);
+G2L["b8"]["ZIndex"] = 0;
+G2L["b8"]["BorderSizePixel"] = 0;
+G2L["b8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b8"]["ImageTransparency"] = 0.68;
 -- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
-G2L["c0"]["Image"] = [[rbxassetid://159602101]];
-G2L["c0"]["Size"] = UDim2.new(0, 514, 0, 302);
-G2L["c0"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["c0"]["BackgroundTransparency"] = 1;
-G2L["c0"]["Name"] = [[BackframeShine]];
+G2L["b8"]["Image"] = [[rbxassetid://159602101]];
+G2L["b8"]["Size"] = UDim2.new(0, 514, 0, 302);
+G2L["b8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["b8"]["BackgroundTransparency"] = 1;
+G2L["b8"]["Name"] = [[BackframeShine]];
 
 
 -- StarterGui.frostware.main.BackframeShine.UICorner
-G2L["c1"] = Instance.new("UICorner", G2L["c0"]);
-G2L["c1"]["CornerRadius"] = UDim.new(0, 32);
+G2L["b9"] = Instance.new("UICorner", G2L["b8"]);
+G2L["b9"]["CornerRadius"] = UDim.new(0, 32);
 
 
 -- StarterGui.frostware.cooleffect
-G2L["c2"] = Instance.new("Frame", G2L["1"]);
-G2L["c2"]["ZIndex"] = -1;
-G2L["c2"]["BorderSizePixel"] = 0;
-G2L["c2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["c2"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["c2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["c2"]["Name"] = [[cooleffect]];
-G2L["c2"]["BackgroundTransparency"] = 1;
+G2L["ba"] = Instance.new("Frame", G2L["1"]);
+G2L["ba"]["ZIndex"] = -1;
+G2L["ba"]["BorderSizePixel"] = 0;
+G2L["ba"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["ba"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["ba"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["ba"]["Name"] = [[cooleffect]];
+G2L["ba"]["BackgroundTransparency"] = 1;
 
 
 -- StarterGui.frostware.cooleffect.ImageLabel
-G2L["c3"] = Instance.new("ImageLabel", G2L["c2"]);
-G2L["c3"]["BorderSizePixel"] = 0;
-G2L["c3"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["bb"] = Instance.new("ImageLabel", G2L["ba"]);
+G2L["bb"]["BorderSizePixel"] = 0;
+G2L["bb"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 -- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
-G2L["c3"]["ImageColor3"] = Color3.fromRGB(38, 71, 28);
-G2L["c3"]["Image"] = [[rbxassetid://104226737053945]];
-G2L["c3"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["c3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["c3"]["BackgroundTransparency"] = 1;
+G2L["bb"]["ImageColor3"] = Color3.fromRGB(38, 71, 28);
+G2L["bb"]["Image"] = [[rbxassetid://104226737053945]];
+G2L["bb"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["bb"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["bb"]["BackgroundTransparency"] = 1;
 
 
 -- StarterGui.frostware.UIScale
-G2L["c4"] = Instance.new("UIScale", G2L["1"]);
-G2L["c4"]["Scale"] = 0.79;
+G2L["bc"] = Instance.new("UIScale", G2L["1"]);
+G2L["bc"]["Scale"] = 0.79;
 
 
 -- StarterGui.frostware.TabToggleController
@@ -2713,8 +2633,8 @@ local script = G2L["92"];
 end;
 task.spawn(C_92);
 -- StarterGui.frostware.main.tabs.console.ScrollingFrame.TextLabel.LocalScript
-local function C_ae()
-local script = G2L["ae"];
+local function C_a6()
+local script = G2L["a6"];
 	local label = script.Parent
 	local LogService = game:GetService("LogService")
 	label.RichText = true
@@ -2799,10 +2719,10 @@ local script = G2L["ae"];
 	end)
 	
 end;
-task.spawn(C_ae);
+task.spawn(C_a6);
 -- StarterGui.frostware.main.StatusBar.tdf.LocalScript
-local function C_b4()
-local script = G2L["b4"];
+local function C_ac()
+local script = G2L["ac"];
 	local label = script.Parent
 	local RunService = game:GetService("RunService")
 	
@@ -2822,6 +2742,6 @@ local script = G2L["b4"];
 	end)
 	
 end;
-task.spawn(C_b4);
+task.spawn(C_ac);
 
 return G2L["1"], require;
