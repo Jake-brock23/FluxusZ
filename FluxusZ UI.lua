@@ -1877,9 +1877,6 @@ local script = G2L["4"];
 	print("Console Test")
 	warn("Console Test")
 	print("Console Initialised")
-	while not game:IsLoaded() do
-		task.wait()
-	end
 end;
 task.spawn(C_4);
 -- StarterGui.frostware.__Parenter
@@ -2475,7 +2472,6 @@ task.spawn(C_87);
 -- StarterGui.frostware.main.tabs.console.ScrollingFrame.TextLabel.LocalScript
 local function C_9b()
 local script = G2L["9b"];
-	wait(3)
 	local label = script.Parent
 	local LogService = game:GetService("LogService")
 	label.RichText = true
