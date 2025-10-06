@@ -2478,6 +2478,7 @@ local script = G2L["9b"];
 	label.Text = ""
 	local maxLines = 300
 	local buf = {}
+	local suppress_count = 0
 	
 	local function escapeRich(s)
 		s = tostring(s)
@@ -2520,7 +2521,9 @@ local script = G2L["9b"];
 		for i=1,select("#",...) do parts[#parts+1] = tostring(select(i,...)) end
 		local combined = table.concat(parts, "\t")
 		appendRichLines(makeColoredLines("#FFFFFF", combined))
+		suppress_count = suppress_count + 1
 		oldPrint(...)
+		suppress_count = suppress_count - 1
 	end
 	
 	warn = function(...)
@@ -2528,7 +2531,9 @@ local script = G2L["9b"];
 		for i=1,select("#",...) do parts[#parts+1] = tostring(select(i,...)) end
 		local combined = "[WARN] "..table.concat(parts, "\t")
 		appendRichLines(makeColoredLines("#FFFF00", combined))
+		suppress_count = suppress_count + 1
 		oldWarn(...)
+		suppress_count = suppress_count - 1
 	end
 	
 	error = function(...)
@@ -2536,10 +2541,14 @@ local script = G2L["9b"];
 		for i=1,select("#",...) do parts[#parts+1] = tostring(select(i,...)) end
 		local combined = "[ERROR] "..table.concat(parts, "\t")
 		appendRichLines(makeColoredLines("#FF4444", combined))
-		return oldError(...)
+		suppress_count = suppress_count + 1
+		local res = {oldError(...)}
+		suppress_count = suppress_count - 1
+		return table.unpack(res)
 	end
 	
 	LogService.MessageOut:Connect(function(message, messageType)
+		if suppress_count > 0 then return end
 		local color = "#FFFFFF"
 		if messageType == Enum.MessageType.MessageWarning then color = "#FFFF00"
 		elseif messageType == Enum.MessageType.MessageError then color = "#FF4444" end
