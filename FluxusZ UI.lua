@@ -7,11 +7,14 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
 
--- Instances: 188 | Scripts: 22 | Modules: 0 | Tags: 0
+-- Instances: 193 | Scripts: 22 | Modules: 0 | Tags: 0
 local G2L = {};
 
+while not game:IsLoaded() do
+    task.wait()
+end
 -- StarterGui.frostware
-G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"] = Instance.new("ScreenGui", game:GetService("CoreGui"));
 G2L["1"]["SafeAreaCompatibility"] = Enum.SafeAreaCompatibility.None;
 G2L["1"]["IgnoreGuiInset"] = true;
 G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.None;
@@ -1637,62 +1640,114 @@ G2L["b5"]["Transparency"] = 0.68;
 G2L["b5"]["Thickness"] = 3.4;
 
 
+-- StarterGui.frostware.main.mainctrls.Dock
+G2L["b6"] = Instance.new("TextButton", G2L["af"]);
+G2L["b6"]["TextWrapped"] = true;
+G2L["b6"]["BorderSizePixel"] = 0;
+G2L["b6"]["TextSize"] = 44;
+G2L["b6"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b6"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["b6"]["FontFace"] = Font.new([[rbxasset://fonts/families/Nunito.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["b6"]["BackgroundTransparency"] = 0.2;
+G2L["b6"]["Size"] = UDim2.new(0.9, 0, 0.3, 0);
+G2L["b6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["b6"]["Text"] = [[|]];
+G2L["b6"]["Name"] = [[Dock]];
+G2L["b6"]["Position"] = UDim2.new(-0.25612, 0, -0.0396, 0);
+
+
+-- StarterGui.frostware.main.mainctrls.Dock.UICorner
+G2L["b7"] = Instance.new("UICorner", G2L["b6"]);
+G2L["b7"]["CornerRadius"] = UDim.new(0, 24);
+
+
 -- StarterGui.frostware.main.UICorner
-G2L["b6"] = Instance.new("UICorner", G2L["b"]);
-G2L["b6"]["CornerRadius"] = UDim.new(0, 32);
+G2L["b8"] = Instance.new("UICorner", G2L["b"]);
+G2L["b8"]["CornerRadius"] = UDim.new(0, 32);
 
 
 -- StarterGui.frostware.main.UIStroke
-G2L["b7"] = Instance.new("UIStroke", G2L["b"]);
-G2L["b7"]["Transparency"] = 0.68;
-G2L["b7"]["Thickness"] = 3.4;
+G2L["b9"] = Instance.new("UIStroke", G2L["b"]);
+G2L["b9"]["Transparency"] = 0.68;
+G2L["b9"]["Thickness"] = 3.4;
 
 
 -- StarterGui.frostware.main.BackframeShine
-G2L["b8"] = Instance.new("ImageLabel", G2L["b"]);
-G2L["b8"]["ZIndex"] = 0;
-G2L["b8"]["BorderSizePixel"] = 0;
-G2L["b8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["b8"]["ImageTransparency"] = 0.68;
+G2L["ba"] = Instance.new("ImageLabel", G2L["b"]);
+G2L["ba"]["ZIndex"] = 0;
+G2L["ba"]["BorderSizePixel"] = 0;
+G2L["ba"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["ba"]["ImageTransparency"] = 0.68;
 -- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
-G2L["b8"]["Image"] = [[rbxassetid://159602101]];
-G2L["b8"]["Size"] = UDim2.new(0, 514, 0, 302);
-G2L["b8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["b8"]["BackgroundTransparency"] = 1;
-G2L["b8"]["Name"] = [[BackframeShine]];
+G2L["ba"]["Image"] = [[rbxassetid://159602101]];
+G2L["ba"]["Size"] = UDim2.new(0, 514, 0, 302);
+G2L["ba"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["ba"]["BackgroundTransparency"] = 1;
+G2L["ba"]["Name"] = [[BackframeShine]];
 
 
 -- StarterGui.frostware.main.BackframeShine.UICorner
-G2L["b9"] = Instance.new("UICorner", G2L["b8"]);
-G2L["b9"]["CornerRadius"] = UDim.new(0, 32);
+G2L["bb"] = Instance.new("UICorner", G2L["ba"]);
+G2L["bb"]["CornerRadius"] = UDim.new(0, 32);
 
 
 -- StarterGui.frostware.cooleffect
-G2L["ba"] = Instance.new("Frame", G2L["1"]);
-G2L["ba"]["ZIndex"] = -1;
-G2L["ba"]["BorderSizePixel"] = 0;
-G2L["ba"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["ba"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["ba"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["ba"]["Name"] = [[cooleffect]];
-G2L["ba"]["BackgroundTransparency"] = 1;
+G2L["bc"] = Instance.new("Frame", G2L["1"]);
+G2L["bc"]["ZIndex"] = -1;
+G2L["bc"]["BorderSizePixel"] = 0;
+G2L["bc"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["bc"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["bc"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["bc"]["Name"] = [[cooleffect]];
+G2L["bc"]["BackgroundTransparency"] = 1;
 
 
 -- StarterGui.frostware.cooleffect.ImageLabel
-G2L["bb"] = Instance.new("ImageLabel", G2L["ba"]);
-G2L["bb"]["BorderSizePixel"] = 0;
-G2L["bb"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["bd"] = Instance.new("ImageLabel", G2L["bc"]);
+G2L["bd"]["BorderSizePixel"] = 0;
+G2L["bd"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 -- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
-G2L["bb"]["ImageColor3"] = Color3.fromRGB(38, 71, 28);
-G2L["bb"]["Image"] = [[rbxassetid://104226737053945]];
-G2L["bb"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["bb"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["bb"]["BackgroundTransparency"] = 1;
+G2L["bd"]["ImageColor3"] = Color3.fromRGB(38, 71, 28);
+G2L["bd"]["Image"] = [[rbxassetid://104226737053945]];
+G2L["bd"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["bd"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["bd"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.frostware.dock
+G2L["be"] = Instance.new("TextButton", G2L["1"]);
+G2L["be"]["BorderSizePixel"] = 0;
+G2L["be"]["TextSize"] = 14;
+G2L["be"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["be"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["be"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["be"]["BackgroundTransparency"] = 1;
+G2L["be"]["Size"] = UDim2.new(0.025, 0, 0.64566, 0);
+G2L["be"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["be"]["Text"] = [[]];
+G2L["be"]["Name"] = [[dock]];
+G2L["be"]["Visible"] = false;
+G2L["be"]["Position"] = UDim2.new(0, 0, 0.177, 0);
+
+
+-- StarterGui.frostware.dock.Frame
+G2L["bf"] = Instance.new("Frame", G2L["be"]);
+G2L["bf"]["BorderSizePixel"] = 0;
+G2L["bf"]["BackgroundColor3"] = Color3.fromRGB(35, 35, 35);
+G2L["bf"]["Size"] = UDim2.new(0.25, 0, 1, 0);
+G2L["bf"]["Position"] = UDim2.new(0.375, 0, 0, 0);
+G2L["bf"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["bf"]["BackgroundTransparency"] = 0.6;
+
+
+-- StarterGui.frostware.dock.Frame.UICorner
+G2L["c0"] = Instance.new("UICorner", G2L["bf"]);
+G2L["c0"]["CornerRadius"] = UDim.new(0, 99);
 
 
 -- StarterGui.frostware.UIScale
-G2L["bc"] = Instance.new("UIScale", G2L["1"]);
-G2L["bc"]["Scale"] = 0.79;
+G2L["c1"] = Instance.new("UIScale", G2L["1"]);
+G2L["c1"]["Scale"] = 0.79;
 
 
 -- StarterGui.frostware.TabToggleController
@@ -1854,6 +1909,8 @@ local script = G2L["3"];
 	local cool = script.Parent:FindFirstChild("cooleffect")
 	local closeBtn = main.mainctrls.Close
 	local openBtn = script.Parent.open.ImageButton
+	local dockBtn = main.mainctrls.Dock
+	local dockCloseBtn = script.Parent.dock
 	local stored = {}
 	
 	local function isGui(obj)
@@ -1921,8 +1978,8 @@ local script = G2L["3"];
 		if remaining == 0 and onComplete then onComplete() end
 	end
 	
-	local function hideMain()
-		recordCurrent(main, cool)
+	local function hideWithTween(targetGui)
+		recordCurrent(main, cool, dockCloseBtn, openBtn.Parent)
 		local tuples = {}
 		for _,root in ipairs({main, cool}) do
 			if root then
@@ -1940,32 +1997,55 @@ local script = G2L["3"];
 		playTweens(tuples, 0.35, function()
 			if main then main.Visible = false end
 			if cool then cool.Visible = false end
-			openBtn.Parent.Visible = true
-			local props = {}
-			if openBtn.BackgroundTransparency ~= nil then props.BackgroundTransparency = 0 end
-			if openBtn:IsA("ImageLabel") or openBtn:IsA("ImageButton") then props.ImageTransparency = 0 end
-			playTweens({{obj = openBtn, props = props}}, 0.25)
+			if targetGui then
+				if targetGui.Parent then targetGui.Visible = true end
+				local showProps = {}
+				if targetGui.BackgroundTransparency == nil then showProps.BackgroundTransparency = 0 end
+				if targetGui:IsA("ImageLabel") or targetGui:IsA("ImageButton") then showProps.ImageTransparency = 0 end
+				if targetGui:IsA("TextLabel") or targetGui:IsA("TextButton") or targetGui:IsA("TextBox") then showProps.TextTransparency = 0 end
+				local tuples2 = {}
+				if next(showProps) then table.insert(tuples2, {obj = targetGui, props = showProps}) end
+				local stroke = targetGui:FindFirstChildOfClass("UIStroke")
+				if stroke then table.insert(tuples2, {obj = targetGui, props = {UIStrokeTransparency = 0}}) end
+				if #tuples2 > 0 then playTweens(tuples2, 0.25) end
+			end
 		end)
 	end
 	
-	local function showMain()
-		openBtn.Parent.Visible = false
+	local function showWithTween()
+		if openBtn.Parent then openBtn.Parent.Visible = false end
+		if dockCloseBtn.Parent then dockCloseBtn.Visible = false end
 		if main then main.Visible = true end
 		if cool then cool.Visible = true end
 		local tuples = {}
 		for obj, orig in pairs(stored) do
-			local props = {}
-			if orig.BackgroundTransparency ~= nil then props.BackgroundTransparency = orig.BackgroundTransparency end
-			if orig.ImageTransparency ~= nil then props.ImageTransparency = orig.ImageTransparency end
-			if orig.TextTransparency ~= nil then props.TextTransparency = orig.TextTransparency end
-			if orig.UIStrokeTransparency ~= nil then props.UIStrokeTransparency = orig.UIStrokeTransparency end
-			if next(props) then table.insert(tuples, {obj = obj, props = props}) end
+			if obj and obj.Parent then
+				local props = {}
+				if orig.BackgroundTransparency ~= nil then props.BackgroundTransparency = orig.BackgroundTransparency end
+				if orig.ImageTransparency ~= nil then props.ImageTransparency = orig.ImageTransparency end
+				if orig.TextTransparency ~= nil then props.TextTransparency = orig.TextTransparency end
+				if orig.UIStrokeTransparency ~= nil then props.UIStrokeTransparency = orig.UIStrokeTransparency end
+				if next(props) then table.insert(tuples, {obj = obj, props = props}) end
+			end
 		end
 		playTweens(tuples, 0.35)
 	end
 	
-	closeBtn.MouseButton1Click:Connect(hideMain)
-	openBtn.MouseButton1Click:Connect(showMain)
+	closeBtn.MouseButton1Click:Connect(function()
+		hideWithTween(openBtn.Parent)
+	end)
+	
+	openBtn.MouseButton1Click:Connect(function()
+		showWithTween()
+	end)
+	
+	dockBtn.MouseButton1Click:Connect(function()
+		hideWithTween(dockCloseBtn)
+	end)
+	
+	dockCloseBtn.MouseButton1Click:Connect(function()
+		showWithTween()
+	end)
 	
 end;
 task.spawn(C_3);
