@@ -1397,23 +1397,25 @@ G2L["9b"]["Position"] = UDim2.new(0.14682, 0, -0.12839, 0);
 G2L["9c"] = Instance.new("Frame", G2L["91"]);
 G2L["9c"]["BorderSizePixel"] = 0;
 G2L["9c"]["BackgroundColor3"] = Color3.fromRGB(49, 49, 49);
-G2L["9c"]["Size"] = UDim2.new(0, 100, 0, 116);
-G2L["9c"]["Position"] = UDim2.new(0.03827, 0, 0.15734, 0);
+G2L["9c"]["Size"] = UDim2.new(0, 100, 0, 140);
+G2L["9c"]["Position"] = UDim2.new(0.01914, 0, -0, 0);
 G2L["9c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["9c"]["Name"] = [[scriptdummy]];
 
 
 -- StarterGui.frostware.main.tabs.scripthub.scriptdummy.TextLabel
 G2L["9d"] = Instance.new("TextLabel", G2L["9c"]);
+G2L["9d"]["TextWrapped"] = true;
 G2L["9d"]["BorderSizePixel"] = 0;
-G2L["9d"]["TextSize"] = 14;
+G2L["9d"]["TextSize"] = 11;
 G2L["9d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["9d"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["9d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["9d"]["BackgroundTransparency"] = 1;
-G2L["9d"]["Size"] = UDim2.new(0.8, 0, -0.12371, 39);
+G2L["9d"]["Size"] = UDim2.new(1, 0, 0.01201, 39);
 G2L["9d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["9d"]["Position"] = UDim2.new(0.1, 0, 0.7875, 0);
+G2L["9d"]["Text"] = [[Script Title]];
+G2L["9d"]["Position"] = UDim2.new(0, 0, 0.65893, 0);
 
 
 -- StarterGui.frostware.main.tabs.scripthub.scriptdummy.UICorner
@@ -1427,9 +1429,9 @@ G2L["9f"]["BorderSizePixel"] = 0;
 -- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
 G2L["9f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["9f"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
-G2L["9f"]["Size"] = UDim2.new(0.8, 0, 0.7, 0);
+G2L["9f"]["Size"] = UDim2.new(0, 80, 0, 80);
 G2L["9f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["9f"]["Position"] = UDim2.new(0.1, 0, 0.0875, 0);
+G2L["9f"]["Position"] = UDim2.new(0, 10, 0, 10);
 
 
 -- StarterGui.frostware.main.tabs.console
@@ -2506,26 +2508,26 @@ local script = G2L["92"];
 		layout.Parent = ResultsContainer
 	end
 	
-	local hasSetCustom = type(getgenv) == "function" and type(getgenv().setcustomasset) == "function" or type(setcustomasset) == "function"
-	local setCustom = getgenv and getgenv().setcustomasset or setcustomasset
-	
-	local debounce = false
-	local lastQuery = ""
-	
-	local function clearResults()
-		for i,child in ipairs(ResultsContainer:GetChildren()) do
-			if child ~= Template and not child:IsA("UIListLayout") then
-				child:Destroy()
-			end
+	local function makeAsset(url)
+		if not url or url == "" then return nil end
+		local s = getgenv and getgenv() or _G
+		if type(s.setcustomasset) == "function" then
+			local ok,ret = pcall(s.setcustomasset, url)
+			if ok and ret then return ret end
 		end
-	end
-	
-	local function safeLoadAndRun(code)
-		if type(code) ~= "string" or code == "" then return end
-		local ok,fn = pcall(loadstring, code)
-		if ok and type(fn) == "function" then
-			pcall(fn)
+		if type(s.getcustomasset) == "function" then
+			local ok,ret = pcall(s.getcustomasset, url)
+			if ok and ret then return ret end
 		end
+		if type(s.writecustomasset) == "function" then
+			local ok,ret = pcall(s.writecustomasset, url)
+			if ok and ret then return ret end
+		end
+		if type(s.iscustomasset) == "function" then
+			local ok,ret = pcall(s.iscustomasset, url)
+			if ok and ret then return url end
+		end
+		return url
 	end
 	
 	local function httpFetch(url)
@@ -2543,21 +2545,19 @@ local script = G2L["92"];
 		return nil, "no working http function"
 	end
 	
-	local function applyImage(imgTarget, url)
-		if not imgTarget or not url or url == "" then
-			if imgTarget then imgTarget.Image = "" end
-			return
+	local function safeLoadAndRun(code)
+		if type(code) ~= "string" or code == "" then return end
+		local ok,fn = pcall(loadstring, code)
+		if ok and type(fn) == "function" then
+			pcall(fn)
 		end
-		if hasSetCustom then
-			local ok,asset = pcall(setCustom, url)
-			if ok and asset then
-				imgTarget.Image = asset
-				return
+	end
+	
+	local function clearResults()
+		for i,child in ipairs(ResultsContainer:GetChildren()) do
+			if child ~= Template and not child:IsA("UIListLayout") then
+				child:Destroy()
 			end
-		end
-		local ok,err = pcall(function() imgTarget.Image = url end)
-		if not ok then
-			imgTarget.Image = ""
 		end
 	end
 	
@@ -2567,15 +2567,18 @@ local script = G2L["92"];
 		clone.Visible = true
 		clone.Parent = ResultsContainer
 		clone.Size = Template.Size
-		local thumb = clone:FindFirstChild("ThumbButton", true) or clone:FindFirstChild("Thumb", true) or clone:FindFirstChild("ImageButton", true) or clone:FindFirstChildWhichIsA("ImageLabel", true)
+		local thumb = clone:FindFirstChild("ThumbButton", true) or clone:FindFirstChild("Thumb", true) or clone:FindFirstChild("ImageButton", true)
 		local title = clone:FindFirstChild("Title", true) or clone:FindFirstChildWhichIsA("TextLabel", true)
+		if title then title.Text = entry.title or "Untitled" end
+		if thumb and entry.image and entry.image ~= "" then
+			local asset = makeAsset(entry.image)
+			if asset then
+				thumb.Image = asset
+			else
+				thumb.Image = ""
+			end
+		end
 		if thumb then
-			applyImage(thumb, entry.image or "")
-		end
-		if title then
-			title.Text = entry.title or "Untitled"
-		end
-		if thumb and thumb:IsA("GuiButton") then
 			thumb.MouseButton1Click:Connect(function()
 				if entry.script == "" and entry.id then
 					local url = "https://scriptblox.com/api/script/search?q="..HttpService:UrlEncode(entry.title or "").."&max=1"
@@ -2589,53 +2592,22 @@ local script = G2L["92"];
 				end
 				safeLoadAndRun(entry.script)
 			end)
-		elseif thumb and thumb:IsA("ImageLabel") then
-			local btn = Instance.new("TextButton")
-			btn.Size = UDim2.new(1,0,1,0)
-			btn.BackgroundTransparency = 1
-			btn.Text = ""
-			btn.Parent = clone
-			btn.MouseButton1Click:Connect(function()
-				if entry.script == "" and entry.id then
-					local url = "https://scriptblox.com/api/script/search?q="..HttpService:UrlEncode(entry.title or "").."&max=1"
-					local raw, err = httpFetch(url)
-					if raw then
-						local ok,data = pcall(function() return HttpService:JSONDecode(raw) end)
-						if ok and data and data.result and data.result.scripts and #data.result.scripts>0 then
-							entry.script = data.result.scripts[1].script or ""
-						end
-					end
-				end
-				safeLoadAndRun(entry.script)
-			end)
 		end
 	end
 	
+	local debounce = false
+	local lastQuery = ""
 	local function fetchAndDisplay(query)
-		if not query or query == "" then
-			clearResults()
-			return
-		end
+		if not query or query == "" then clearResults() return end
 		local url = "https://scriptblox.com/api/script/search?q="..HttpService:UrlEncode(query).."&max=5"
 		local raw, err = httpFetch(url)
-		if not raw then
-			clearResults()
-			return
-		end
-		local ok,data = pcall(function() return HttpService:JSONDecode(raw) end)
-		if not ok or not data or not data.result or not data.result.scripts then
-			clearResults()
-			return
-		end
+		if not raw then clearResults() return end
+		local ok, data = pcall(function() return HttpService:JSONDecode(raw) end)
+		if not ok or not data or not data.result or not data.result.scripts then clearResults() return end
 		clearResults()
 		for i=1, math.min(5, #data.result.scripts) do
 			local s = data.result.scripts[i]
-			local entry = {
-				id = s.id,
-				title = s.title or "Untitled",
-				image = s.image or (s.game and s.game.imageUrl) or "",
-				script = s.script or ""
-			}
+			local entry = {id = s.id, title = s.title or "Untitled", image = s.image or (s.game and s.game.imageUrl) or "", script = s.script or ""}
 			createResultItem(entry)
 		end
 	end
