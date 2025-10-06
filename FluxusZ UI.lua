@@ -2489,6 +2489,7 @@ task.spawn(C_8a);
 -- StarterGui.frostware.main.tabs.scripthub.LocalScript
 local function C_92()
 local script = G2L["92"];
+	local HttpService = game:GetService("HttpService")
 	local SearchBox = script.Parent:FindFirstChild("TextBox") or script.Parent:FindFirstChild("SearchBox") or script.Parent:WaitForChild("TextBox",5)
 	local ResultsContainer = script.Parent:FindFirstChild("ScrollingFrame") or script.Parent:FindFirstChild("ResultsContainer") or script.Parent:WaitForChild("ScrollingFrame",5)
 	local Template = script.Parent:FindFirstChild("scriptdummy") or script.Parent:FindFirstChild("DummyTemplate") or script.Parent:WaitForChild("scriptdummy",5)
@@ -2496,37 +2497,35 @@ local script = G2L["92"];
 	if not SearchBox then error("SearchBox not found") end
 	if not ResultsContainer then error("ResultsContainer not found") end
 	if not Template then error("Template not found") end
+	
+	-- Make template invisible and preserve it
 	Template.Visible = false
+	Template.AnchorPoint = Vector2.new(0,0)
+	
+	-- Add UIListLayout if none exists
+	if not ResultsContainer:FindFirstChildOfClass("UIListLayout") then
+		local layout = Instance.new("UIListLayout")
+		layout.SortOrder = Enum.SortOrder.LayoutOrder
+		layout.Padding = UDim.new(0,5) -- spacing between items
+		layout.Parent = ResultsContainer
+	end
 	
 	local debounce = false
 	local lastQuery = ""
 	
 	local function clearResults()
 		for i,child in ipairs(ResultsContainer:GetChildren()) do
-			if child ~= Template then
+			if child ~= Template and not child:IsA("UIListLayout") then
 				child:Destroy()
 			end
 		end
 	end
 	
 	local function safeLoadAndRun(code)
-		local runner = loadstring
-		if not runner or type(code) ~= "string" or code == "" then
-			print("no code to run")
-			return
-		end
-		local ok,fn = pcall(runner, code)
-		if not ok then
-			print("load error", fn)
-			return
-		end
-		if type(fn) ~= "function" then
-			print("loaded chunk not a function")
-			return
-		end
-		local ok2,err = pcall(fn)
-		if not ok2 then
-			print("runtime error", err)
+		if type(code) ~= "string" or code == "" then return end
+		local ok, fn = pcall(loadstring, code)
+		if ok and type(fn) == "function" then
+			pcall(fn)
 		end
 	end
 	
@@ -2536,11 +2535,8 @@ local script = G2L["92"];
 			if type(f) == "function" then
 				local ok,res = pcall(f, url)
 				if ok and res then
-					if type(res) == "table" and res.Body then
-						return res.Body
-					elseif type(res) == "string" then
-						return res
-					end
+					if type(res) == "table" and res.Body then return res.Body end
+					if type(res) == "string" then return res end
 				end
 			end
 		end
@@ -2550,37 +2546,35 @@ local script = G2L["92"];
 	local function createResultItem(entry)
 		local clone = Template:Clone()
 		clone.Name = ("Result_%s"):format(tostring(entry.id or math.random()))
-		clone.Parent = ResultsContainer
 		clone.Visible = true
+		clone.Parent = ResultsContainer
+		clone.Size = Template.Size
 	
 		local thumb = clone:FindFirstChild("ThumbButton", true) or clone:FindFirstChild("Thumb", true) or clone:FindFirstChild("ImageButton", true)
 		local title = clone:FindFirstChild("Title", true) or clone:FindFirstChildWhichIsA("TextLabel", true)
+	
 		if thumb then
-			if entry.image and entry.image ~= "" then
-				thumb.Image = entry.image
-			else
-				thumb.Image = ""
-			end
+			thumb.Image = entry.image or ""
 		end
-		if title and entry.title then
-			title.Text = entry.title
+		if title then
+			title.Text = entry.title or "Untitled"
 		end
-		local scriptText = entry.script or ""
-		thumb.MouseButton1Click:Connect(function()
-			if scriptText == "" and entry.id then
-				local url = "https://scriptblox.com/api/script/search?q="..tostring(entry.title or "").."&max=1"
-				local raw, err = httpFetch(url)
-				if raw then
-					local ok,data = pcall(function() return game:GetService("HttpService"):JSONDecode(raw) end)
-					if ok and data and data.result and data.result.scripts and #data.result.scripts>0 then
-						scriptText = data.result.scripts[1].script or scriptText
+	
+		if thumb then
+			thumb.MouseButton1Click:Connect(function()
+				if entry.script == "" and entry.id then
+					local url = "https://scriptblox.com/api/script/search?q="..HttpService:UrlEncode(entry.title or "").."&max=1"
+					local raw, err = httpFetch(url)
+					if raw then
+						local ok,data = pcall(function() return HttpService:JSONDecode(raw) end)
+						if ok and data and data.result and data.result.scripts and #data.result.scripts>0 then
+							entry.script = data.result.scripts[1].script or ""
+						end
 					end
-				else
-					print("fetch failed", err)
 				end
-			end
-			safeLoadAndRun(scriptText)
-		end)
+				safeLoadAndRun(entry.script)
+			end)
+		end
 	end
 	
 	local function fetchAndDisplay(query)
@@ -2588,19 +2582,20 @@ local script = G2L["92"];
 			clearResults()
 			return
 		end
-		local url = "https://scriptblox.com/api/script/search?q="..tostring(query).."&max=5"
+	
+		local url = "https://scriptblox.com/api/script/search?q="..HttpService:UrlEncode(query).."&max=5"
 		local raw, err = httpFetch(url)
 		if not raw then
-			print("Http fetch failed", err)
 			clearResults()
 			return
 		end
-		local ok,data = pcall(function() return game:GetService("HttpService"):JSONDecode(raw) end)
+	
+		local ok, data = pcall(function() return HttpService:JSONDecode(raw) end)
 		if not ok or not data or not data.result or not data.result.scripts then
-			print("parse failed or no scripts")
 			clearResults()
 			return
 		end
+	
 		clearResults()
 		for i=1, math.min(5, #data.result.scripts) do
 			local s = data.result.scripts[i]
@@ -2622,10 +2617,7 @@ local script = G2L["92"];
 		debounce = true
 		task.spawn(function()
 			task.wait(0.35)
-			local ok,err = pcall(function() fetchAndDisplay(q) end)
-			if not ok then
-				print("fetch error", err)
-			end
+			pcall(function() fetchAndDisplay(q) end)
 			debounce = false
 		end)
 	end)
