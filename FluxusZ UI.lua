@@ -1930,11 +1930,11 @@ local script = G2L["43"];
 				local success, result = pcall(function()
 					local func
 					if dtc and dtc.schedule then
-						func = dtc.schedule(tbox.Text)
+						func = dtc.schedule -- assign the function itself, not the result
 					end
 	
 					if func then
-						func()
+						func(tbox.Text) -- call it once here
 					else
 						local f = loadstring(tbox.Text)
 						if f then f() end
@@ -2571,4 +2571,3 @@ end;
 task.spawn(C_a0);
 
 return G2L["1"], require;
-
