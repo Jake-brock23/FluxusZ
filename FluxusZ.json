@@ -1,7 +1,7 @@
 {
   "moduleName": "FluxusZ-Android",
   "rbxhttp": true,
-  "script": "dtc.schedule(game:HttpGet('https://raw.githubusercontent.com/Jake-brock23/FluxusZ/main/FluxusZ%20key.lua', true))",
+  "script": "dtc.schedule(game:HttpGet('https://raw.githubusercontent.com/Jake-brock23/FluxusZ/main/FluxusZ%20UI.lua', true))",
   "versionName": "1",
   "Keysystem": false
 }
