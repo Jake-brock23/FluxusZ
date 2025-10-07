@@ -922,696 +922,696 @@ G2L["65"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 G2L["65"]["Thickness"] = 3.4;
 
 
--- StarterGui.frostware.main.tabs.settings
+-- StarterGui.frostware.main.tabs.scripthub
 G2L["66"] = Instance.new("Frame", G2L["20"]);
+G2L["66"]["Visible"] = false;
 G2L["66"]["BorderSizePixel"] = 0;
 G2L["66"]["BackgroundColor3"] = Color3.fromRGB(27, 27, 27);
 G2L["66"]["Size"] = UDim2.new(0, 423, 0, 264);
 G2L["66"]["Position"] = UDim2.new(0.15, 0, 0.063, 0);
 G2L["66"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["66"]["Name"] = [[settings]];
+G2L["66"]["Name"] = [[scripthub]];
 G2L["66"]["BackgroundTransparency"] = 0.1;
 
 
--- StarterGui.frostware.main.tabs.settings.main
-G2L["67"] = Instance.new("TextLabel", G2L["66"]);
-G2L["67"]["TextWrapped"] = true;
-G2L["67"]["BorderSizePixel"] = 0;
-G2L["67"]["TextSize"] = 15;
-G2L["67"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["67"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-G2L["67"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["67"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["67"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["67"]["BackgroundTransparency"] = 1;
-G2L["67"]["Size"] = UDim2.new(0, 396, 0, 237);
-G2L["67"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["67"]["Text"] = [[Here you can toggle settings for this menu!]];
-G2L["67"]["Name"] = [[main]];
-G2L["67"]["Position"] = UDim2.new(-0.01991, 0, -0, 0);
-
-
--- StarterGui.frostware.main.tabs.settings.rgb
-G2L["68"] = Instance.new("TextLabel", G2L["66"]);
-G2L["68"]["TextWrapped"] = true;
-G2L["68"]["BorderSizePixel"] = 0;
-G2L["68"]["TextSize"] = 15;
-G2L["68"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["68"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-G2L["68"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["68"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["68"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["68"]["BackgroundTransparency"] = 1;
-G2L["68"]["Size"] = UDim2.new(0, 396, 0, 17);
-G2L["68"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["68"]["Text"] = [[RGB Menu]];
-G2L["68"]["Name"] = [[rgb]];
-G2L["68"]["Position"] = UDim2.new(-0.01991, 0, 0.1663, 0);
-
-
--- StarterGui.frostware.main.tabs.settings.rgb.switch
-G2L["69"] = Instance.new("TextButton", G2L["68"]);
-G2L["69"]["BorderSizePixel"] = 0;
-G2L["69"]["TextSize"] = 14;
-G2L["69"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["69"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["69"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["69"]["Size"] = UDim2.new(0, 50, 0, 24);
-G2L["69"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["69"]["Text"] = [[]];
-G2L["69"]["Name"] = [[switch]];
-G2L["69"]["Position"] = UDim2.new(0, 78, 0, -3);
-
-
--- StarterGui.frostware.main.tabs.settings.rgb.switch.LocalScript
-G2L["6a"] = Instance.new("LocalScript", G2L["69"]);
-
-
-
--- StarterGui.frostware.main.tabs.settings.rgb.switch.rgbfunc
-G2L["6b"] = Instance.new("LocalScript", G2L["69"]);
-G2L["6b"]["Name"] = [[rgbfunc]];
-
-
--- StarterGui.frostware.main.tabs.settings.rgb.switch.UICorner
-G2L["6c"] = Instance.new("UICorner", G2L["69"]);
-G2L["6c"]["CornerRadius"] = UDim.new(0, 32);
-
-
--- StarterGui.frostware.main.tabs.settings.rgb.switch.Frame
-G2L["6d"] = Instance.new("Frame", G2L["69"]);
-G2L["6d"]["BorderSizePixel"] = 0;
-G2L["6d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["6d"]["Size"] = UDim2.new(0.31328, 0, 0.62657, 0);
-G2L["6d"]["Position"] = UDim2.new(0.11345, 0, 0.19048, 0);
-G2L["6d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-
-
--- StarterGui.frostware.main.tabs.settings.rgb.switch.Frame.UICorner
-G2L["6e"] = Instance.new("UICorner", G2L["6d"]);
-G2L["6e"]["CornerRadius"] = UDim.new(99, 0);
-
-
--- StarterGui.frostware.main.tabs.settings.rgb.switch.UIStroke
-G2L["6f"] = Instance.new("UIStroke", G2L["69"]);
-G2L["6f"]["Transparency"] = 0.68;
-G2L["6f"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-G2L["6f"]["Thickness"] = 3.4;
-
-
--- StarterGui.frostware.main.tabs.settings.rgb.TextLabel
-G2L["70"] = Instance.new("TextLabel", G2L["68"]);
-G2L["70"]["BorderSizePixel"] = 0;
-G2L["70"]["TextSize"] = 14;
-G2L["70"]["BackgroundColor3"] = Color3.fromRGB(44, 44, 44);
-G2L["70"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["70"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["70"]["Size"] = UDim2.new(0, 132, 0, 24);
-G2L["70"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["70"]["Text"] = [[Now better than before!!!]];
-G2L["70"]["Position"] = UDim2.new(0.3708, 0, -0.2054, 0);
-
-
--- StarterGui.frostware.main.tabs.settings.rgb.TextLabel.UICorner
-G2L["71"] = Instance.new("UICorner", G2L["70"]);
-G2L["71"]["CornerRadius"] = UDim.new(0, 32);
-
-
--- StarterGui.frostware.main.tabs.settings.UICorner
-G2L["72"] = Instance.new("UICorner", G2L["66"]);
-G2L["72"]["CornerRadius"] = UDim.new(0, 32);
-
-
--- StarterGui.frostware.main.tabs.settings.UIPadding
-G2L["73"] = Instance.new("UIPadding", G2L["66"]);
-G2L["73"]["PaddingTop"] = UDim.new(0.05, 0);
-G2L["73"]["PaddingLeft"] = UDim.new(0.05, 0);
-
-
--- StarterGui.frostware.main.tabs.settings.tdf
-G2L["74"] = Instance.new("TextLabel", G2L["66"]);
-G2L["74"]["TextWrapped"] = true;
-G2L["74"]["BorderSizePixel"] = 0;
-G2L["74"]["TextSize"] = 15;
-G2L["74"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["74"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-G2L["74"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["74"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["74"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["74"]["BackgroundTransparency"] = 1;
-G2L["74"]["Size"] = UDim2.new(0, 396, 0, 17);
-G2L["74"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["74"]["Text"] = [[Time Date And FPS]];
-G2L["74"]["Name"] = [[tdf]];
-G2L["74"]["Position"] = UDim2.new(-0.01991, 0, 0.2899, 0);
-
-
--- StarterGui.frostware.main.tabs.settings.tdf.switch
-G2L["75"] = Instance.new("TextButton", G2L["74"]);
-G2L["75"]["BorderSizePixel"] = 0;
-G2L["75"]["TextSize"] = 14;
-G2L["75"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["75"]["BackgroundColor3"] = Color3.fromRGB(0, 133, 255);
-G2L["75"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["75"]["Size"] = UDim2.new(0, 50, 0, 24);
-G2L["75"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["75"]["Text"] = [[]];
-G2L["75"]["Name"] = [[switch]];
-G2L["75"]["Position"] = UDim2.new(0, 137, 0, -4);
-
-
--- StarterGui.frostware.main.tabs.settings.tdf.switch.LocalScript
-G2L["76"] = Instance.new("LocalScript", G2L["75"]);
-
-
-
--- StarterGui.frostware.main.tabs.settings.tdf.switch.tdffunc
-G2L["77"] = Instance.new("LocalScript", G2L["75"]);
-G2L["77"]["Name"] = [[tdffunc]];
-
-
--- StarterGui.frostware.main.tabs.settings.tdf.switch.UICorner
-G2L["78"] = Instance.new("UICorner", G2L["75"]);
-G2L["78"]["CornerRadius"] = UDim.new(0, 32);
-
-
--- StarterGui.frostware.main.tabs.settings.tdf.switch.Frame
-G2L["79"] = Instance.new("Frame", G2L["75"]);
-G2L["79"]["BorderSizePixel"] = 0;
-G2L["79"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["79"]["Size"] = UDim2.new(0.31328, 0, 0.62657, 0);
-G2L["79"]["Position"] = UDim2.new(0.59, 0, 0.19, 0);
-G2L["79"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-
-
--- StarterGui.frostware.main.tabs.settings.tdf.switch.Frame.UICorner
-G2L["7a"] = Instance.new("UICorner", G2L["79"]);
-G2L["7a"]["CornerRadius"] = UDim.new(99, 0);
-
-
--- StarterGui.frostware.main.tabs.settings.tdf.switch.UIStroke
-G2L["7b"] = Instance.new("UIStroke", G2L["75"]);
-G2L["7b"]["Transparency"] = 0.68;
-G2L["7b"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-G2L["7b"]["Thickness"] = 3.4;
-
-
--- StarterGui.frostware.main.tabs.settings.tdf.TextLabel
-G2L["7c"] = Instance.new("TextLabel", G2L["74"]);
-G2L["7c"]["BorderSizePixel"] = 0;
-G2L["7c"]["TextSize"] = 14;
-G2L["7c"]["BackgroundColor3"] = Color3.fromRGB(44, 44, 44);
-G2L["7c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["7c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["7c"]["RichText"] = true;
-G2L["7c"]["Size"] = UDim2.new(0, 137, 0, 24);
-G2L["7c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["7c"]["Text"] = [[why would you disable...]];
-G2L["7c"]["Position"] = UDim2.new(0.51979, 0, -0.26422, 0);
-
-
--- StarterGui.frostware.main.tabs.settings.tdf.TextLabel.UICorner
-G2L["7d"] = Instance.new("UICorner", G2L["7c"]);
-G2L["7d"]["CornerRadius"] = UDim.new(0, 32);
-
-
--- StarterGui.frostware.main.tabs.settings.cv
-G2L["7e"] = Instance.new("TextLabel", G2L["66"]);
-G2L["7e"]["TextWrapped"] = true;
-G2L["7e"]["BorderSizePixel"] = 0;
-G2L["7e"]["TextSize"] = 15;
-G2L["7e"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["7e"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-G2L["7e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["7e"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["7e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["7e"]["BackgroundTransparency"] = 1;
-G2L["7e"]["Size"] = UDim2.new(0, 396, 0, 17);
-G2L["7e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["7e"]["Text"] = [[Coloured Vignette]];
-G2L["7e"]["Name"] = [[cv]];
-G2L["7e"]["Position"] = UDim2.new(-0.01991, 0, 0.41351, 0);
-
-
--- StarterGui.frostware.main.tabs.settings.cv.switch
-G2L["7f"] = Instance.new("TextButton", G2L["7e"]);
-G2L["7f"]["BorderSizePixel"] = 0;
-G2L["7f"]["TextSize"] = 14;
-G2L["7f"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["7f"]["BackgroundColor3"] = Color3.fromRGB(0, 133, 255);
-G2L["7f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["7f"]["Size"] = UDim2.new(0, 50, 0, 24);
-G2L["7f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["7f"]["Text"] = [[]];
-G2L["7f"]["Name"] = [[switch]];
-G2L["7f"]["Position"] = UDim2.new(0, 137, 0, -4);
-
-
--- StarterGui.frostware.main.tabs.settings.cv.switch.LocalScript
-G2L["80"] = Instance.new("LocalScript", G2L["7f"]);
-
-
-
--- StarterGui.frostware.main.tabs.settings.cv.switch.cvfunc
-G2L["81"] = Instance.new("LocalScript", G2L["7f"]);
-G2L["81"]["Name"] = [[cvfunc]];
-
-
--- StarterGui.frostware.main.tabs.settings.cv.switch.UICorner
-G2L["82"] = Instance.new("UICorner", G2L["7f"]);
-G2L["82"]["CornerRadius"] = UDim.new(0, 32);
-
-
--- StarterGui.frostware.main.tabs.settings.cv.switch.Frame
-G2L["83"] = Instance.new("Frame", G2L["7f"]);
-G2L["83"]["BorderSizePixel"] = 0;
-G2L["83"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["83"]["Size"] = UDim2.new(0.31328, 0, 0.62657, 0);
-G2L["83"]["Position"] = UDim2.new(0.59, 0, 0.19, 0);
-G2L["83"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-
-
--- StarterGui.frostware.main.tabs.settings.cv.switch.Frame.UICorner
-G2L["84"] = Instance.new("UICorner", G2L["83"]);
-G2L["84"]["CornerRadius"] = UDim.new(99, 0);
-
-
--- StarterGui.frostware.main.tabs.settings.cv.switch.UIStroke
-G2L["85"] = Instance.new("UIStroke", G2L["7f"]);
-G2L["85"]["Transparency"] = 0.68;
-G2L["85"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-G2L["85"]["Thickness"] = 3.4;
-
-
--- StarterGui.frostware.main.tabs.settings.cv.TextLabel
-G2L["86"] = Instance.new("TextLabel", G2L["7e"]);
-G2L["86"]["BorderSizePixel"] = 0;
-G2L["86"]["TextSize"] = 14;
-G2L["86"]["BackgroundColor3"] = Color3.fromRGB(44, 44, 44);
-G2L["86"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["86"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["86"]["RichText"] = true;
-G2L["86"]["Size"] = UDim2.new(0, 156, 0, 24);
-G2L["86"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["86"]["Text"] = [[i dont like it too unless its rgb]];
-G2L["86"]["Position"] = UDim2.new(0.51979, 0, -0.26422, 0);
-
-
--- StarterGui.frostware.main.tabs.settings.cv.TextLabel.UICorner
-G2L["87"] = Instance.new("UICorner", G2L["86"]);
-G2L["87"]["CornerRadius"] = UDim.new(0, 32);
-
-
--- StarterGui.frostware.main.tabs.settings.oph
-G2L["88"] = Instance.new("TextLabel", G2L["66"]);
-G2L["88"]["TextWrapped"] = true;
-G2L["88"]["BorderSizePixel"] = 0;
-G2L["88"]["TextSize"] = 15;
-G2L["88"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["88"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-G2L["88"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["88"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["88"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["88"]["BackgroundTransparency"] = 1;
-G2L["88"]["Size"] = UDim2.new(0, 396, 0, 17);
-G2L["88"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["88"]["Text"] = [[Dragger Highlight]];
-G2L["88"]["Name"] = [[oph]];
-G2L["88"]["Position"] = UDim2.new(-0.01991, 0, 0.53464, 0);
-
-
--- StarterGui.frostware.main.tabs.settings.oph.switch
-G2L["89"] = Instance.new("TextButton", G2L["88"]);
-G2L["89"]["BorderSizePixel"] = 0;
-G2L["89"]["TextSize"] = 14;
-G2L["89"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["89"]["BackgroundColor3"] = Color3.fromRGB(0, 133, 255);
-G2L["89"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["89"]["Size"] = UDim2.new(0, 50, 0, 24);
-G2L["89"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["89"]["Text"] = [[]];
-G2L["89"]["Name"] = [[switch]];
-G2L["89"]["Position"] = UDim2.new(0, 137, 0, -4);
-
-
--- StarterGui.frostware.main.tabs.settings.oph.switch.LocalScript
-G2L["8a"] = Instance.new("LocalScript", G2L["89"]);
-
-
-
--- StarterGui.frostware.main.tabs.settings.oph.switch.ophfunc
-G2L["8b"] = Instance.new("LocalScript", G2L["89"]);
-G2L["8b"]["Name"] = [[ophfunc]];
-
-
--- StarterGui.frostware.main.tabs.settings.oph.switch.UICorner
-G2L["8c"] = Instance.new("UICorner", G2L["89"]);
-G2L["8c"]["CornerRadius"] = UDim.new(0, 32);
-
-
--- StarterGui.frostware.main.tabs.settings.oph.switch.Frame
-G2L["8d"] = Instance.new("Frame", G2L["89"]);
-G2L["8d"]["BorderSizePixel"] = 0;
-G2L["8d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["8d"]["Size"] = UDim2.new(0.31328, 0, 0.62657, 0);
-G2L["8d"]["Position"] = UDim2.new(0.59, 0, 0.19, 0);
-G2L["8d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-
-
--- StarterGui.frostware.main.tabs.settings.oph.switch.Frame.UICorner
-G2L["8e"] = Instance.new("UICorner", G2L["8d"]);
-G2L["8e"]["CornerRadius"] = UDim.new(99, 0);
-
-
--- StarterGui.frostware.main.tabs.settings.oph.switch.UIStroke
-G2L["8f"] = Instance.new("UIStroke", G2L["89"]);
-G2L["8f"]["Transparency"] = 0.68;
-G2L["8f"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-G2L["8f"]["Thickness"] = 3.4;
-
-
--- StarterGui.frostware.main.tabs.settings.oph.TextLabel
-G2L["90"] = Instance.new("TextLabel", G2L["88"]);
-G2L["90"]["BorderSizePixel"] = 0;
-G2L["90"]["TextSize"] = 14;
-G2L["90"]["BackgroundColor3"] = Color3.fromRGB(44, 44, 44);
-G2L["90"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["90"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["90"]["RichText"] = true;
-G2L["90"]["Size"] = UDim2.new(0, 101, 0, 24);
-G2L["90"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["90"]["Text"] = [[idk what to say lol]];
-G2L["90"]["Position"] = UDim2.new(0.51979, 0, -0.26422, 0);
-
-
--- StarterGui.frostware.main.tabs.settings.oph.TextLabel.UICorner
-G2L["91"] = Instance.new("UICorner", G2L["90"]);
-G2L["91"]["CornerRadius"] = UDim.new(0, 32);
-
-
--- StarterGui.frostware.main.tabs.settings.ops
-G2L["92"] = Instance.new("TextLabel", G2L["66"]);
-G2L["92"]["TextWrapped"] = true;
-G2L["92"]["BorderSizePixel"] = 0;
-G2L["92"]["TextSize"] = 15;
-G2L["92"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["92"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-G2L["92"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["92"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["92"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["92"]["BackgroundTransparency"] = 1;
-G2L["92"]["Size"] = UDim2.new(0, 396, 0, 17);
-G2L["92"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["92"]["Text"] = [[Floating Icon Round]];
-G2L["92"]["Name"] = [[ops]];
-G2L["92"]["Position"] = UDim2.new(-0.01991, 0, 0.66223, 0);
-
-
--- StarterGui.frostware.main.tabs.settings.ops.switch
-G2L["93"] = Instance.new("TextButton", G2L["92"]);
-G2L["93"]["BorderSizePixel"] = 0;
-G2L["93"]["TextSize"] = 14;
-G2L["93"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["93"]["BackgroundColor3"] = Color3.fromRGB(0, 133, 255);
-G2L["93"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["93"]["Size"] = UDim2.new(0, 50, 0, 24);
-G2L["93"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["93"]["Text"] = [[]];
-G2L["93"]["Name"] = [[switch]];
-G2L["93"]["Position"] = UDim2.new(0, 146, 0, -4);
-
-
--- StarterGui.frostware.main.tabs.settings.ops.switch.LocalScript
-G2L["94"] = Instance.new("LocalScript", G2L["93"]);
-
-
-
--- StarterGui.frostware.main.tabs.settings.ops.switch.opsfunc
-G2L["95"] = Instance.new("LocalScript", G2L["93"]);
-G2L["95"]["Name"] = [[opsfunc]];
-
-
--- StarterGui.frostware.main.tabs.settings.ops.switch.UICorner
-G2L["96"] = Instance.new("UICorner", G2L["93"]);
-G2L["96"]["CornerRadius"] = UDim.new(0, 32);
-
-
--- StarterGui.frostware.main.tabs.settings.ops.switch.Frame
-G2L["97"] = Instance.new("Frame", G2L["93"]);
-G2L["97"]["BorderSizePixel"] = 0;
-G2L["97"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["97"]["Size"] = UDim2.new(0.31328, 0, 0.62657, 0);
-G2L["97"]["Position"] = UDim2.new(0.59, 0, 0.19, 0);
-G2L["97"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-
-
--- StarterGui.frostware.main.tabs.settings.ops.switch.Frame.UICorner
-G2L["98"] = Instance.new("UICorner", G2L["97"]);
-G2L["98"]["CornerRadius"] = UDim.new(99, 0);
-
-
--- StarterGui.frostware.main.tabs.settings.ops.switch.UIStroke
-G2L["99"] = Instance.new("UIStroke", G2L["93"]);
-G2L["99"]["Transparency"] = 0.68;
-G2L["99"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-G2L["99"]["Thickness"] = 3.4;
-
-
--- StarterGui.frostware.main.tabs.settings.ops.TextLabel
-G2L["9a"] = Instance.new("TextLabel", G2L["92"]);
-G2L["9a"]["BorderSizePixel"] = 0;
-G2L["9a"]["TextSize"] = 14;
-G2L["9a"]["BackgroundColor3"] = Color3.fromRGB(44, 44, 44);
-G2L["9a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["9a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["9a"]["RichText"] = true;
-G2L["9a"]["Size"] = UDim2.new(0, 77, 0, 24);
-G2L["9a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["9a"]["Text"] = [[I like it round]];
-G2L["9a"]["Position"] = UDim2.new(0.54251, 0, -0.26422, 0);
-
-
--- StarterGui.frostware.main.tabs.settings.ops.TextLabel.UICorner
-G2L["9b"] = Instance.new("UICorner", G2L["9a"]);
-G2L["9b"]["CornerRadius"] = UDim.new(0, 32);
-
-
--- StarterGui.frostware.main.tabs.settings.UIStroke
-G2L["9c"] = Instance.new("UIStroke", G2L["66"]);
-G2L["9c"]["Transparency"] = 0.68;
-G2L["9c"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-G2L["9c"]["Thickness"] = 3.4;
-
-
--- StarterGui.frostware.main.tabs.scripthub
-G2L["9d"] = Instance.new("Frame", G2L["20"]);
-G2L["9d"]["Visible"] = false;
-G2L["9d"]["BorderSizePixel"] = 0;
-G2L["9d"]["BackgroundColor3"] = Color3.fromRGB(27, 27, 27);
-G2L["9d"]["Size"] = UDim2.new(0, 423, 0, 264);
-G2L["9d"]["Position"] = UDim2.new(0.15, 0, 0.063, 0);
-G2L["9d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["9d"]["Name"] = [[scripthub]];
-G2L["9d"]["BackgroundTransparency"] = 0.1;
-
-
 -- StarterGui.frostware.main.tabs.scripthub.LocalScript
-G2L["9e"] = Instance.new("LocalScript", G2L["9d"]);
+G2L["67"] = Instance.new("LocalScript", G2L["66"]);
 
 
 
 -- StarterGui.frostware.main.tabs.scripthub.ScrollingFrame
-G2L["9f"] = Instance.new("ScrollingFrame", G2L["9d"]);
-G2L["9f"]["Active"] = true;
-G2L["9f"]["BorderSizePixel"] = 0;
-G2L["9f"]["CanvasSize"] = UDim2.new(0, 0, 99, 0);
-G2L["9f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["9f"]["ScrollBarImageTransparency"] = 1;
-G2L["9f"]["Size"] = UDim2.new(1.05263, 0, 0.8764, 0);
-G2L["9f"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["9f"]["Position"] = UDim2.new(-0.05263, 0, 0.1236, 0);
-G2L["9f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["9f"]["BackgroundTransparency"] = 1;
+G2L["68"] = Instance.new("ScrollingFrame", G2L["66"]);
+G2L["68"]["Active"] = true;
+G2L["68"]["BorderSizePixel"] = 0;
+G2L["68"]["CanvasSize"] = UDim2.new(0, 0, 99, 0);
+G2L["68"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["68"]["ScrollBarImageTransparency"] = 1;
+G2L["68"]["Size"] = UDim2.new(1.05263, 0, 0.8764, 0);
+G2L["68"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["68"]["Position"] = UDim2.new(-0.05263, 0, 0.1236, 0);
+G2L["68"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["68"]["BackgroundTransparency"] = 1;
 
 
 -- StarterGui.frostware.main.tabs.scripthub.ScrollingFrame.UIPadding
-G2L["a0"] = Instance.new("UIPadding", G2L["9f"]);
-G2L["a0"]["PaddingTop"] = UDim.new(0, 5);
-G2L["a0"]["PaddingLeft"] = UDim.new(0, 5);
+G2L["69"] = Instance.new("UIPadding", G2L["68"]);
+G2L["69"]["PaddingTop"] = UDim.new(0, 5);
+G2L["69"]["PaddingLeft"] = UDim.new(0, 5);
 
 
 -- StarterGui.frostware.main.tabs.scripthub.ScrollingFrame.UIListLayout
-G2L["a1"] = Instance.new("UIListLayout", G2L["9f"]);
-G2L["a1"]["Wraps"] = true;
-G2L["a1"]["Padding"] = UDim.new(0, 50);
-G2L["a1"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-G2L["a1"]["FillDirection"] = Enum.FillDirection.Horizontal;
+G2L["6a"] = Instance.new("UIListLayout", G2L["68"]);
+G2L["6a"]["Wraps"] = true;
+G2L["6a"]["Padding"] = UDim.new(0, 50);
+G2L["6a"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+G2L["6a"]["FillDirection"] = Enum.FillDirection.Horizontal;
 
 
 -- StarterGui.frostware.main.tabs.scripthub.TextBox
-G2L["a2"] = Instance.new("TextBox", G2L["9d"]);
-G2L["a2"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["a2"]["BorderSizePixel"] = 0;
-G2L["a2"]["TextSize"] = 14;
-G2L["a2"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["a2"]["BackgroundColor3"] = Color3.fromRGB(18, 18, 18);
-G2L["a2"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["a2"]["PlaceholderText"] = [[Script Name...]];
-G2L["a2"]["Size"] = UDim2.new(0, 183, 0, 31);
-G2L["a2"]["Position"] = UDim2.new(0.51345, 0, -0, 0);
-G2L["a2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["a2"]["Text"] = [[]];
+G2L["6b"] = Instance.new("TextBox", G2L["66"]);
+G2L["6b"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["6b"]["BorderSizePixel"] = 0;
+G2L["6b"]["TextSize"] = 14;
+G2L["6b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6b"]["BackgroundColor3"] = Color3.fromRGB(18, 18, 18);
+G2L["6b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["6b"]["PlaceholderText"] = [[Script Name...]];
+G2L["6b"]["Size"] = UDim2.new(0, 183, 0, 31);
+G2L["6b"]["Position"] = UDim2.new(0.51345, 0, -0, 0);
+G2L["6b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6b"]["Text"] = [[]];
 
 
 -- StarterGui.frostware.main.tabs.scripthub.TextBox.UICorner
-G2L["a3"] = Instance.new("UICorner", G2L["a2"]);
-G2L["a3"]["CornerRadius"] = UDim.new(0, 32);
+G2L["6c"] = Instance.new("UICorner", G2L["6b"]);
+G2L["6c"]["CornerRadius"] = UDim.new(0, 32);
 
 
 -- StarterGui.frostware.main.tabs.scripthub.TextBox.UIPadding
-G2L["a4"] = Instance.new("UIPadding", G2L["a2"]);
-G2L["a4"]["PaddingLeft"] = UDim.new(0.05, 0);
+G2L["6d"] = Instance.new("UIPadding", G2L["6b"]);
+G2L["6d"]["PaddingLeft"] = UDim.new(0.05, 0);
 
 
 -- StarterGui.frostware.main.tabs.scripthub.UICorner
-G2L["a5"] = Instance.new("UICorner", G2L["9d"]);
-G2L["a5"]["CornerRadius"] = UDim.new(0, 32);
+G2L["6e"] = Instance.new("UICorner", G2L["66"]);
+G2L["6e"]["CornerRadius"] = UDim.new(0, 32);
 
 
 -- StarterGui.frostware.main.tabs.scripthub.UIPadding
-G2L["a6"] = Instance.new("UIPadding", G2L["9d"]);
-G2L["a6"]["PaddingTop"] = UDim.new(0.05, 0);
-G2L["a6"]["PaddingLeft"] = UDim.new(0.05, 0);
+G2L["6f"] = Instance.new("UIPadding", G2L["66"]);
+G2L["6f"]["PaddingTop"] = UDim.new(0.05, 0);
+G2L["6f"]["PaddingLeft"] = UDim.new(0.05, 0);
 
 
 -- StarterGui.frostware.main.tabs.scripthub.TextLabel
-G2L["a7"] = Instance.new("TextLabel", G2L["9d"]);
-G2L["a7"]["BorderSizePixel"] = 0;
-G2L["a7"]["TextSize"] = 14;
-G2L["a7"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["a7"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["a7"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["a7"]["Size"] = UDim2.new(0, 261, 0, 24);
-G2L["a7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["a7"]["Text"] = [[This Section Is Under Work...]];
-G2L["a7"]["Position"] = UDim2.new(0.14682, 0, -0.12839, 0);
+G2L["70"] = Instance.new("TextLabel", G2L["66"]);
+G2L["70"]["BorderSizePixel"] = 0;
+G2L["70"]["TextSize"] = 14;
+G2L["70"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["70"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["70"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["70"]["Size"] = UDim2.new(0, 261, 0, 24);
+G2L["70"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["70"]["Text"] = [[This Section Is Under Work...]];
+G2L["70"]["Position"] = UDim2.new(0.14682, 0, -0.12839, 0);
 
 
 -- StarterGui.frostware.main.tabs.scripthub.scriptdummy
-G2L["a8"] = Instance.new("Frame", G2L["9d"]);
-G2L["a8"]["BorderSizePixel"] = 0;
-G2L["a8"]["BackgroundColor3"] = Color3.fromRGB(49, 49, 49);
-G2L["a8"]["Size"] = UDim2.new(0, 100, 0, 140);
-G2L["a8"]["Position"] = UDim2.new(0.01914, 0, -0, 0);
-G2L["a8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["a8"]["Name"] = [[scriptdummy]];
+G2L["71"] = Instance.new("Frame", G2L["66"]);
+G2L["71"]["BorderSizePixel"] = 0;
+G2L["71"]["BackgroundColor3"] = Color3.fromRGB(49, 49, 49);
+G2L["71"]["Size"] = UDim2.new(0, 100, 0, 140);
+G2L["71"]["Position"] = UDim2.new(0.01914, 0, -0, 0);
+G2L["71"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["71"]["Name"] = [[scriptdummy]];
 
 
 -- StarterGui.frostware.main.tabs.scripthub.scriptdummy.TextLabel
-G2L["a9"] = Instance.new("TextLabel", G2L["a8"]);
-G2L["a9"]["TextWrapped"] = true;
-G2L["a9"]["BorderSizePixel"] = 0;
-G2L["a9"]["TextSize"] = 11;
-G2L["a9"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["a9"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["a9"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["a9"]["BackgroundTransparency"] = 1;
-G2L["a9"]["Size"] = UDim2.new(1, 0, 0.01201, 39);
-G2L["a9"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["a9"]["Text"] = [[Script Title]];
-G2L["a9"]["Position"] = UDim2.new(0, 0, 0.65893, 0);
+G2L["72"] = Instance.new("TextLabel", G2L["71"]);
+G2L["72"]["TextWrapped"] = true;
+G2L["72"]["BorderSizePixel"] = 0;
+G2L["72"]["TextSize"] = 11;
+G2L["72"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["72"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["72"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["72"]["BackgroundTransparency"] = 1;
+G2L["72"]["Size"] = UDim2.new(1, 0, 0.01201, 39);
+G2L["72"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["72"]["Text"] = [[Script Title]];
+G2L["72"]["Position"] = UDim2.new(0, 0, 0.65893, 0);
 
 
 -- StarterGui.frostware.main.tabs.scripthub.scriptdummy.UICorner
-G2L["aa"] = Instance.new("UICorner", G2L["a8"]);
-G2L["aa"]["CornerRadius"] = UDim.new(0, 24);
+G2L["73"] = Instance.new("UICorner", G2L["71"]);
+G2L["73"]["CornerRadius"] = UDim.new(0, 24);
 
 
 -- StarterGui.frostware.main.tabs.scripthub.scriptdummy.ImageButton
-G2L["ab"] = Instance.new("ImageButton", G2L["a8"]);
-G2L["ab"]["BorderSizePixel"] = 0;
+G2L["74"] = Instance.new("ImageButton", G2L["71"]);
+G2L["74"]["BorderSizePixel"] = 0;
 -- [ERROR] cannot convert ImageContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
-G2L["ab"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["ab"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
-G2L["ab"]["Size"] = UDim2.new(0, 80, 0, 80);
-G2L["ab"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["ab"]["Position"] = UDim2.new(0, 10, 0, 10);
+G2L["74"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["74"]["Image"] = [[rbxasset://textures/ui/GuiImagePlaceholder.png]];
+G2L["74"]["Size"] = UDim2.new(0, 80, 0, 80);
+G2L["74"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["74"]["Position"] = UDim2.new(0, 10, 0, 10);
 
 
 -- StarterGui.frostware.main.tabs.scripthub.UIStroke
-G2L["ac"] = Instance.new("UIStroke", G2L["9d"]);
-G2L["ac"]["Transparency"] = 0.68;
-G2L["ac"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-G2L["ac"]["Thickness"] = 3.4;
+G2L["75"] = Instance.new("UIStroke", G2L["66"]);
+G2L["75"]["Transparency"] = 0.68;
+G2L["75"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["75"]["Thickness"] = 3.4;
 
 
 -- StarterGui.frostware.main.tabs.console
-G2L["ad"] = Instance.new("Frame", G2L["20"]);
-G2L["ad"]["Visible"] = false;
-G2L["ad"]["BorderSizePixel"] = 0;
-G2L["ad"]["BackgroundColor3"] = Color3.fromRGB(27, 27, 27);
-G2L["ad"]["Size"] = UDim2.new(0, 423, 0, 264);
-G2L["ad"]["Position"] = UDim2.new(0.15, 0, 0.063, 0);
-G2L["ad"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["ad"]["Name"] = [[console]];
-G2L["ad"]["BackgroundTransparency"] = 0.1;
+G2L["76"] = Instance.new("Frame", G2L["20"]);
+G2L["76"]["Visible"] = false;
+G2L["76"]["BorderSizePixel"] = 0;
+G2L["76"]["BackgroundColor3"] = Color3.fromRGB(27, 27, 27);
+G2L["76"]["Size"] = UDim2.new(0, 423, 0, 264);
+G2L["76"]["Position"] = UDim2.new(0.15, 0, 0.063, 0);
+G2L["76"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["76"]["Name"] = [[console]];
+G2L["76"]["BackgroundTransparency"] = 0.1;
 
 
 -- StarterGui.frostware.main.tabs.console.UICorner
-G2L["ae"] = Instance.new("UICorner", G2L["ad"]);
-G2L["ae"]["CornerRadius"] = UDim.new(0, 32);
+G2L["77"] = Instance.new("UICorner", G2L["76"]);
+G2L["77"]["CornerRadius"] = UDim.new(0, 32);
 
 
 -- StarterGui.frostware.main.tabs.console.UIPadding
-G2L["af"] = Instance.new("UIPadding", G2L["ad"]);
-G2L["af"]["PaddingTop"] = UDim.new(0.05, 0);
-G2L["af"]["PaddingLeft"] = UDim.new(0.05, 0);
+G2L["78"] = Instance.new("UIPadding", G2L["76"]);
+G2L["78"]["PaddingTop"] = UDim.new(0.05, 0);
+G2L["78"]["PaddingLeft"] = UDim.new(0.05, 0);
 
 
 -- StarterGui.frostware.main.tabs.console.ScrollingFrame
-G2L["b0"] = Instance.new("ScrollingFrame", G2L["ad"]);
-G2L["b0"]["Active"] = true;
-G2L["b0"]["BorderSizePixel"] = 0;
-G2L["b0"]["CanvasSize"] = UDim2.new(0, 0, 999999, 0);
-G2L["b0"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["b0"]["Size"] = UDim2.new(0.99, 0, 0.99, 0);
-G2L["b0"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["b0"]["Position"] = UDim2.new(-0.0224, 0, -0.02392, 0);
-G2L["b0"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["b0"]["ScrollBarThickness"] = 8;
-G2L["b0"]["BackgroundTransparency"] = 1;
+G2L["79"] = Instance.new("ScrollingFrame", G2L["76"]);
+G2L["79"]["Active"] = true;
+G2L["79"]["BorderSizePixel"] = 0;
+G2L["79"]["CanvasSize"] = UDim2.new(0, 0, 999999, 0);
+G2L["79"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["79"]["Size"] = UDim2.new(0.99, 0, 0.99, 0);
+G2L["79"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["79"]["Position"] = UDim2.new(-0.0224, 0, -0.02392, 0);
+G2L["79"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["79"]["ScrollBarThickness"] = 8;
+G2L["79"]["BackgroundTransparency"] = 1;
 
 
 -- StarterGui.frostware.main.tabs.console.ScrollingFrame.UIPadding
-G2L["b1"] = Instance.new("UIPadding", G2L["b0"]);
-G2L["b1"]["PaddingTop"] = UDim.new(0, 10);
-G2L["b1"]["PaddingLeft"] = UDim.new(0, 10);
+G2L["7a"] = Instance.new("UIPadding", G2L["79"]);
+G2L["7a"]["PaddingTop"] = UDim.new(0, 10);
+G2L["7a"]["PaddingLeft"] = UDim.new(0, 10);
 
 
 -- StarterGui.frostware.main.tabs.console.ScrollingFrame.TextLabel
-G2L["b2"] = Instance.new("TextLabel", G2L["b0"]);
-G2L["b2"]["TextWrapped"] = true;
-G2L["b2"]["TextTruncate"] = Enum.TextTruncate.AtEnd;
-G2L["b2"]["BorderSizePixel"] = 0;
-G2L["b2"]["TextSize"] = 14;
-G2L["b2"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["b2"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-G2L["b2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["b2"]["FontFace"] = Font.new([[rbxasset://fonts/families/RobotoMono.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["b2"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["b2"]["BackgroundTransparency"] = 1;
-G2L["b2"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["b2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["b2"]["Text"] = [[gng tf]];
+G2L["7b"] = Instance.new("TextLabel", G2L["79"]);
+G2L["7b"]["TextWrapped"] = true;
+G2L["7b"]["TextTruncate"] = Enum.TextTruncate.AtEnd;
+G2L["7b"]["BorderSizePixel"] = 0;
+G2L["7b"]["TextSize"] = 14;
+G2L["7b"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["7b"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["7b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7b"]["FontFace"] = Font.new([[rbxasset://fonts/families/RobotoMono.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["7b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7b"]["BackgroundTransparency"] = 1;
+G2L["7b"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["7b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7b"]["Text"] = [[gng tf]];
 
 
 -- StarterGui.frostware.main.tabs.console.ScrollingFrame.TextLabel.LocalScript
-G2L["b3"] = Instance.new("LocalScript", G2L["b2"]);
+G2L["7c"] = Instance.new("LocalScript", G2L["7b"]);
 
 
 
 -- StarterGui.frostware.main.tabs.console.UIStroke
-G2L["b4"] = Instance.new("UIStroke", G2L["ad"]);
+G2L["7d"] = Instance.new("UIStroke", G2L["76"]);
+G2L["7d"]["Transparency"] = 0.68;
+G2L["7d"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["7d"]["Thickness"] = 3.4;
+
+
+-- StarterGui.frostware.main.tabs.settings
+G2L["7e"] = Instance.new("Frame", G2L["20"]);
+G2L["7e"]["BorderSizePixel"] = 0;
+G2L["7e"]["BackgroundColor3"] = Color3.fromRGB(27, 27, 27);
+G2L["7e"]["Size"] = UDim2.new(0, 423, 0, 264);
+G2L["7e"]["Position"] = UDim2.new(0.15, 0, 0.063, 0);
+G2L["7e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7e"]["Name"] = [[settings]];
+G2L["7e"]["BackgroundTransparency"] = 0.1;
+
+
+-- StarterGui.frostware.main.tabs.settings.main
+G2L["7f"] = Instance.new("TextLabel", G2L["7e"]);
+G2L["7f"]["TextWrapped"] = true;
+G2L["7f"]["BorderSizePixel"] = 0;
+G2L["7f"]["TextSize"] = 15;
+G2L["7f"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["7f"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["7f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7f"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["7f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7f"]["BackgroundTransparency"] = 1;
+G2L["7f"]["Size"] = UDim2.new(0, 396, 0, 237);
+G2L["7f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7f"]["Text"] = [[Here you can toggle settings for this menu!]];
+G2L["7f"]["Name"] = [[main]];
+G2L["7f"]["Position"] = UDim2.new(-0.01991, 0, -0, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.rgb
+G2L["80"] = Instance.new("TextLabel", G2L["7e"]);
+G2L["80"]["TextWrapped"] = true;
+G2L["80"]["BorderSizePixel"] = 0;
+G2L["80"]["TextSize"] = 15;
+G2L["80"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["80"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["80"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["80"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["80"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["80"]["BackgroundTransparency"] = 1;
+G2L["80"]["Size"] = UDim2.new(0, 396, 0, 17);
+G2L["80"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["80"]["Text"] = [[RGB Menu]];
+G2L["80"]["Name"] = [[rgb]];
+G2L["80"]["Position"] = UDim2.new(-0.01991, 0, 0.1663, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.rgb.switch
+G2L["81"] = Instance.new("TextButton", G2L["80"]);
+G2L["81"]["BorderSizePixel"] = 0;
+G2L["81"]["TextSize"] = 14;
+G2L["81"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["81"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["81"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["81"]["Size"] = UDim2.new(0, 50, 0, 24);
+G2L["81"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["81"]["Text"] = [[]];
+G2L["81"]["Name"] = [[switch]];
+G2L["81"]["Position"] = UDim2.new(0, 78, 0, -3);
+
+
+-- StarterGui.frostware.main.tabs.settings.rgb.switch.LocalScript
+G2L["82"] = Instance.new("LocalScript", G2L["81"]);
+
+
+
+-- StarterGui.frostware.main.tabs.settings.rgb.switch.rgbfunc
+G2L["83"] = Instance.new("LocalScript", G2L["81"]);
+G2L["83"]["Name"] = [[rgbfunc]];
+
+
+-- StarterGui.frostware.main.tabs.settings.rgb.switch.UICorner
+G2L["84"] = Instance.new("UICorner", G2L["81"]);
+G2L["84"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.settings.rgb.switch.Frame
+G2L["85"] = Instance.new("Frame", G2L["81"]);
+G2L["85"]["BorderSizePixel"] = 0;
+G2L["85"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["85"]["Size"] = UDim2.new(0.31328, 0, 0.62657, 0);
+G2L["85"]["Position"] = UDim2.new(0.11345, 0, 0.19048, 0);
+G2L["85"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.rgb.switch.Frame.UICorner
+G2L["86"] = Instance.new("UICorner", G2L["85"]);
+G2L["86"]["CornerRadius"] = UDim.new(99, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.rgb.switch.UIStroke
+G2L["87"] = Instance.new("UIStroke", G2L["81"]);
+G2L["87"]["Transparency"] = 0.68;
+G2L["87"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["87"]["Thickness"] = 3.4;
+
+
+-- StarterGui.frostware.main.tabs.settings.rgb.TextLabel
+G2L["88"] = Instance.new("TextLabel", G2L["80"]);
+G2L["88"]["BorderSizePixel"] = 0;
+G2L["88"]["TextSize"] = 14;
+G2L["88"]["BackgroundColor3"] = Color3.fromRGB(44, 44, 44);
+G2L["88"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["88"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["88"]["Size"] = UDim2.new(0, 132, 0, 24);
+G2L["88"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["88"]["Text"] = [[Now better than before!!!]];
+G2L["88"]["Position"] = UDim2.new(0.3708, 0, -0.2054, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.rgb.TextLabel.UICorner
+G2L["89"] = Instance.new("UICorner", G2L["88"]);
+G2L["89"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.settings.UICorner
+G2L["8a"] = Instance.new("UICorner", G2L["7e"]);
+G2L["8a"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.settings.UIPadding
+G2L["8b"] = Instance.new("UIPadding", G2L["7e"]);
+G2L["8b"]["PaddingTop"] = UDim.new(0.05, 0);
+G2L["8b"]["PaddingLeft"] = UDim.new(0.05, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.tdf
+G2L["8c"] = Instance.new("TextLabel", G2L["7e"]);
+G2L["8c"]["TextWrapped"] = true;
+G2L["8c"]["BorderSizePixel"] = 0;
+G2L["8c"]["TextSize"] = 15;
+G2L["8c"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["8c"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["8c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8c"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["8c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8c"]["BackgroundTransparency"] = 1;
+G2L["8c"]["Size"] = UDim2.new(0, 396, 0, 17);
+G2L["8c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8c"]["Text"] = [[Time Date And FPS]];
+G2L["8c"]["Name"] = [[tdf]];
+G2L["8c"]["Position"] = UDim2.new(-0.01991, 0, 0.2899, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.tdf.switch
+G2L["8d"] = Instance.new("TextButton", G2L["8c"]);
+G2L["8d"]["BorderSizePixel"] = 0;
+G2L["8d"]["TextSize"] = 14;
+G2L["8d"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8d"]["BackgroundColor3"] = Color3.fromRGB(0, 133, 255);
+G2L["8d"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["8d"]["Size"] = UDim2.new(0, 50, 0, 24);
+G2L["8d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8d"]["Text"] = [[]];
+G2L["8d"]["Name"] = [[switch]];
+G2L["8d"]["Position"] = UDim2.new(0, 137, 0, -4);
+
+
+-- StarterGui.frostware.main.tabs.settings.tdf.switch.LocalScript
+G2L["8e"] = Instance.new("LocalScript", G2L["8d"]);
+
+
+
+-- StarterGui.frostware.main.tabs.settings.tdf.switch.tdffunc
+G2L["8f"] = Instance.new("LocalScript", G2L["8d"]);
+G2L["8f"]["Name"] = [[tdffunc]];
+
+
+-- StarterGui.frostware.main.tabs.settings.tdf.switch.UICorner
+G2L["90"] = Instance.new("UICorner", G2L["8d"]);
+G2L["90"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.settings.tdf.switch.Frame
+G2L["91"] = Instance.new("Frame", G2L["8d"]);
+G2L["91"]["BorderSizePixel"] = 0;
+G2L["91"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["91"]["Size"] = UDim2.new(0.31328, 0, 0.62657, 0);
+G2L["91"]["Position"] = UDim2.new(0.59, 0, 0.19, 0);
+G2L["91"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.tdf.switch.Frame.UICorner
+G2L["92"] = Instance.new("UICorner", G2L["91"]);
+G2L["92"]["CornerRadius"] = UDim.new(99, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.tdf.switch.UIStroke
+G2L["93"] = Instance.new("UIStroke", G2L["8d"]);
+G2L["93"]["Transparency"] = 0.68;
+G2L["93"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["93"]["Thickness"] = 3.4;
+
+
+-- StarterGui.frostware.main.tabs.settings.tdf.TextLabel
+G2L["94"] = Instance.new("TextLabel", G2L["8c"]);
+G2L["94"]["BorderSizePixel"] = 0;
+G2L["94"]["TextSize"] = 14;
+G2L["94"]["BackgroundColor3"] = Color3.fromRGB(44, 44, 44);
+G2L["94"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["94"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["94"]["RichText"] = true;
+G2L["94"]["Size"] = UDim2.new(0, 137, 0, 24);
+G2L["94"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["94"]["Text"] = [[why would you disable...]];
+G2L["94"]["Position"] = UDim2.new(0.51979, 0, -0.26422, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.tdf.TextLabel.UICorner
+G2L["95"] = Instance.new("UICorner", G2L["94"]);
+G2L["95"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.settings.cv
+G2L["96"] = Instance.new("TextLabel", G2L["7e"]);
+G2L["96"]["TextWrapped"] = true;
+G2L["96"]["BorderSizePixel"] = 0;
+G2L["96"]["TextSize"] = 15;
+G2L["96"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["96"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["96"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["96"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["96"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["96"]["BackgroundTransparency"] = 1;
+G2L["96"]["Size"] = UDim2.new(0, 396, 0, 17);
+G2L["96"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["96"]["Text"] = [[Coloured Vignette]];
+G2L["96"]["Name"] = [[cv]];
+G2L["96"]["Position"] = UDim2.new(-0.01991, 0, 0.41351, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.cv.switch
+G2L["97"] = Instance.new("TextButton", G2L["96"]);
+G2L["97"]["BorderSizePixel"] = 0;
+G2L["97"]["TextSize"] = 14;
+G2L["97"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["97"]["BackgroundColor3"] = Color3.fromRGB(0, 133, 255);
+G2L["97"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["97"]["Size"] = UDim2.new(0, 50, 0, 24);
+G2L["97"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["97"]["Text"] = [[]];
+G2L["97"]["Name"] = [[switch]];
+G2L["97"]["Position"] = UDim2.new(0, 137, 0, -4);
+
+
+-- StarterGui.frostware.main.tabs.settings.cv.switch.LocalScript
+G2L["98"] = Instance.new("LocalScript", G2L["97"]);
+
+
+
+-- StarterGui.frostware.main.tabs.settings.cv.switch.cvfunc
+G2L["99"] = Instance.new("LocalScript", G2L["97"]);
+G2L["99"]["Name"] = [[cvfunc]];
+
+
+-- StarterGui.frostware.main.tabs.settings.cv.switch.UICorner
+G2L["9a"] = Instance.new("UICorner", G2L["97"]);
+G2L["9a"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.settings.cv.switch.Frame
+G2L["9b"] = Instance.new("Frame", G2L["97"]);
+G2L["9b"]["BorderSizePixel"] = 0;
+G2L["9b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9b"]["Size"] = UDim2.new(0.31328, 0, 0.62657, 0);
+G2L["9b"]["Position"] = UDim2.new(0.59, 0, 0.19, 0);
+G2L["9b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.cv.switch.Frame.UICorner
+G2L["9c"] = Instance.new("UICorner", G2L["9b"]);
+G2L["9c"]["CornerRadius"] = UDim.new(99, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.cv.switch.UIStroke
+G2L["9d"] = Instance.new("UIStroke", G2L["97"]);
+G2L["9d"]["Transparency"] = 0.68;
+G2L["9d"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["9d"]["Thickness"] = 3.4;
+
+
+-- StarterGui.frostware.main.tabs.settings.cv.TextLabel
+G2L["9e"] = Instance.new("TextLabel", G2L["96"]);
+G2L["9e"]["BorderSizePixel"] = 0;
+G2L["9e"]["TextSize"] = 14;
+G2L["9e"]["BackgroundColor3"] = Color3.fromRGB(44, 44, 44);
+G2L["9e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["9e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9e"]["RichText"] = true;
+G2L["9e"]["Size"] = UDim2.new(0, 156, 0, 24);
+G2L["9e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9e"]["Text"] = [[i dont like it too unless its rgb]];
+G2L["9e"]["Position"] = UDim2.new(0.51979, 0, -0.26422, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.cv.TextLabel.UICorner
+G2L["9f"] = Instance.new("UICorner", G2L["9e"]);
+G2L["9f"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.settings.oph
+G2L["a0"] = Instance.new("TextLabel", G2L["7e"]);
+G2L["a0"]["TextWrapped"] = true;
+G2L["a0"]["BorderSizePixel"] = 0;
+G2L["a0"]["TextSize"] = 15;
+G2L["a0"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["a0"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["a0"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a0"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["a0"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a0"]["BackgroundTransparency"] = 1;
+G2L["a0"]["Size"] = UDim2.new(0, 396, 0, 17);
+G2L["a0"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a0"]["Text"] = [[Dragger Highlight]];
+G2L["a0"]["Name"] = [[oph]];
+G2L["a0"]["Position"] = UDim2.new(-0.01991, 0, 0.53464, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.oph.switch
+G2L["a1"] = Instance.new("TextButton", G2L["a0"]);
+G2L["a1"]["BorderSizePixel"] = 0;
+G2L["a1"]["TextSize"] = 14;
+G2L["a1"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a1"]["BackgroundColor3"] = Color3.fromRGB(0, 133, 255);
+G2L["a1"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["a1"]["Size"] = UDim2.new(0, 50, 0, 24);
+G2L["a1"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a1"]["Text"] = [[]];
+G2L["a1"]["Name"] = [[switch]];
+G2L["a1"]["Position"] = UDim2.new(0, 137, 0, -4);
+
+
+-- StarterGui.frostware.main.tabs.settings.oph.switch.LocalScript
+G2L["a2"] = Instance.new("LocalScript", G2L["a1"]);
+
+
+
+-- StarterGui.frostware.main.tabs.settings.oph.switch.ophfunc
+G2L["a3"] = Instance.new("LocalScript", G2L["a1"]);
+G2L["a3"]["Name"] = [[ophfunc]];
+
+
+-- StarterGui.frostware.main.tabs.settings.oph.switch.UICorner
+G2L["a4"] = Instance.new("UICorner", G2L["a1"]);
+G2L["a4"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.settings.oph.switch.Frame
+G2L["a5"] = Instance.new("Frame", G2L["a1"]);
+G2L["a5"]["BorderSizePixel"] = 0;
+G2L["a5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a5"]["Size"] = UDim2.new(0.31328, 0, 0.62657, 0);
+G2L["a5"]["Position"] = UDim2.new(0.59, 0, 0.19, 0);
+G2L["a5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.oph.switch.Frame.UICorner
+G2L["a6"] = Instance.new("UICorner", G2L["a5"]);
+G2L["a6"]["CornerRadius"] = UDim.new(99, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.oph.switch.UIStroke
+G2L["a7"] = Instance.new("UIStroke", G2L["a1"]);
+G2L["a7"]["Transparency"] = 0.68;
+G2L["a7"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["a7"]["Thickness"] = 3.4;
+
+
+-- StarterGui.frostware.main.tabs.settings.oph.TextLabel
+G2L["a8"] = Instance.new("TextLabel", G2L["a0"]);
+G2L["a8"]["BorderSizePixel"] = 0;
+G2L["a8"]["TextSize"] = 14;
+G2L["a8"]["BackgroundColor3"] = Color3.fromRGB(44, 44, 44);
+G2L["a8"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["a8"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a8"]["RichText"] = true;
+G2L["a8"]["Size"] = UDim2.new(0, 101, 0, 24);
+G2L["a8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a8"]["Text"] = [[idk what to say lol]];
+G2L["a8"]["Position"] = UDim2.new(0.51979, 0, -0.26422, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.oph.TextLabel.UICorner
+G2L["a9"] = Instance.new("UICorner", G2L["a8"]);
+G2L["a9"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.settings.ops
+G2L["aa"] = Instance.new("TextLabel", G2L["7e"]);
+G2L["aa"]["TextWrapped"] = true;
+G2L["aa"]["BorderSizePixel"] = 0;
+G2L["aa"]["TextSize"] = 15;
+G2L["aa"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["aa"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["aa"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["aa"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["aa"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["aa"]["BackgroundTransparency"] = 1;
+G2L["aa"]["Size"] = UDim2.new(0, 396, 0, 17);
+G2L["aa"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["aa"]["Text"] = [[Floating Icon Round]];
+G2L["aa"]["Name"] = [[ops]];
+G2L["aa"]["Position"] = UDim2.new(-0.01991, 0, 0.66223, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.ops.switch
+G2L["ab"] = Instance.new("TextButton", G2L["aa"]);
+G2L["ab"]["BorderSizePixel"] = 0;
+G2L["ab"]["TextSize"] = 14;
+G2L["ab"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["ab"]["BackgroundColor3"] = Color3.fromRGB(0, 133, 255);
+G2L["ab"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["ab"]["Size"] = UDim2.new(0, 50, 0, 24);
+G2L["ab"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["ab"]["Text"] = [[]];
+G2L["ab"]["Name"] = [[switch]];
+G2L["ab"]["Position"] = UDim2.new(0, 146, 0, -4);
+
+
+-- StarterGui.frostware.main.tabs.settings.ops.switch.LocalScript
+G2L["ac"] = Instance.new("LocalScript", G2L["ab"]);
+
+
+
+-- StarterGui.frostware.main.tabs.settings.ops.switch.opsfunc
+G2L["ad"] = Instance.new("LocalScript", G2L["ab"]);
+G2L["ad"]["Name"] = [[opsfunc]];
+
+
+-- StarterGui.frostware.main.tabs.settings.ops.switch.UICorner
+G2L["ae"] = Instance.new("UICorner", G2L["ab"]);
+G2L["ae"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.settings.ops.switch.Frame
+G2L["af"] = Instance.new("Frame", G2L["ab"]);
+G2L["af"]["BorderSizePixel"] = 0;
+G2L["af"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["af"]["Size"] = UDim2.new(0.31328, 0, 0.62657, 0);
+G2L["af"]["Position"] = UDim2.new(0.59, 0, 0.19, 0);
+G2L["af"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.ops.switch.Frame.UICorner
+G2L["b0"] = Instance.new("UICorner", G2L["af"]);
+G2L["b0"]["CornerRadius"] = UDim.new(99, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.ops.switch.UIStroke
+G2L["b1"] = Instance.new("UIStroke", G2L["ab"]);
+G2L["b1"]["Transparency"] = 0.68;
+G2L["b1"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["b1"]["Thickness"] = 3.4;
+
+
+-- StarterGui.frostware.main.tabs.settings.ops.TextLabel
+G2L["b2"] = Instance.new("TextLabel", G2L["aa"]);
+G2L["b2"]["BorderSizePixel"] = 0;
+G2L["b2"]["TextSize"] = 14;
+G2L["b2"]["BackgroundColor3"] = Color3.fromRGB(44, 44, 44);
+G2L["b2"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["b2"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b2"]["RichText"] = true;
+G2L["b2"]["Size"] = UDim2.new(0, 77, 0, 24);
+G2L["b2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["b2"]["Text"] = [[I like it round]];
+G2L["b2"]["Position"] = UDim2.new(0.54251, 0, -0.26422, 0);
+
+
+-- StarterGui.frostware.main.tabs.settings.ops.TextLabel.UICorner
+G2L["b3"] = Instance.new("UICorner", G2L["b2"]);
+G2L["b3"]["CornerRadius"] = UDim.new(0, 32);
+
+
+-- StarterGui.frostware.main.tabs.settings.UIStroke
+G2L["b4"] = Instance.new("UIStroke", G2L["7e"]);
 G2L["b4"]["Transparency"] = 0.68;
 G2L["b4"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 G2L["b4"]["Thickness"] = 3.4;
@@ -2304,6 +2304,9 @@ local script = G2L["57"];
 	local textBox = script.Parent
 	local label = script.Parent.TextLabel
 	
+	if not isfile("tab1") then
+		writefile("tab1", "print'FluxusZ On Top'")
+	end
 	textBox.Text=readfile("tab1")
 	
 	local function updateLines()
@@ -2329,487 +2332,9 @@ local script = G2L["57"];
 	updateLines()
 end;
 task.spawn(C_57);
--- StarterGui.frostware.main.tabs.settings.rgb.switch.LocalScript
-local function C_6a()
-local script = G2L["6a"];
-	local TweenService = game:GetService("TweenService")
-	local button = script.Parent
-	local frame = button:FindFirstChildOfClass("Frame")
-	
-	local debounce = false
-	local toggled = false
-	
-	-- Store original properties
-	local originalBgColor = button.BackgroundColor3
-	local originalFramePos = frame and frame.Position or nil
-	
-	local targetBgColor = Color3.fromRGB(0, 132, 255)
-	local targetFramePos = UDim2.new(0.59, 0, 0.19, 0)
-	button.MouseButton1Click:Connect(function()
-	    if debounce then return end
-	    debounce = true
-	
-	    if not toggled then
-	        -- Tween to target properties
-	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-	        local bgGoal = {
-	            BackgroundColor3 = targetBgColor
-	        }
-	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
-	        bgTween:Play()
-	
-	        if frame and targetFramePos then
-	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-	            local frameGoal = {
-	                Position = targetFramePos
-	            }
-	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
-	            frameTween:Play()
-	        end
-	        toggled = true
-	    else
-	        -- Tween back to original properties
-	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-	        local bgGoal = {
-	            BackgroundColor3 = originalBgColor
-	        }
-	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
-	        bgTween:Play()
-	
-	        if frame and originalFramePos then
-	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-	            local frameGoal = {
-	                Position = originalFramePos
-	            }
-	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
-	            frameTween:Play()
-	        end
-	        toggled = false
-	    end
-	
-	    task.wait(0.125)
-	    debounce = false
-	end)
-	
-	
-end;
-task.spawn(C_6a);
--- StarterGui.frostware.main.tabs.settings.rgb.switch.rgbfunc
-local function C_6b()
-local script = G2L["6b"];
-	local RunService = game:GetService("RunService")
-	local gui = script.Parent.Parent.Parent.Parent.Parent.Parent
-	local main = gui:WaitForChild("main")
-	local coolEffect = gui:WaitForChild("cooleffect")
-	local open = gui:WaitForChild("open")
-	local button = script.Parent
-	
-	local enabled = false
-	local updateConn
-	local descendantConn
-	local strokes = {}
-	
-	local function addStroke(obj)
-		if obj:IsA("UIStroke") and not obj:IsDescendantOf(coolEffect) and not obj:IsDescendantOf(open) then
-			local ok1, origColor = pcall(function() return obj.Color end)
-			local ok2, origTrans = pcall(function() return obj.Transparency end)
-			if ok1 and ok2 then
-				table.insert(strokes, {obj = obj, origColor = origColor, origTrans = origTrans})
-			end
-		end
-	end
-	
-	local function collectStrokes()
-		strokes = {}
-		for _, v in pairs(main:GetDescendants()) do
-			addStroke(v)
-		end
-	end
-	
-	local function restore()
-		for _, t in pairs(strokes) do
-			if t.obj and t.obj.Parent then
-				pcall(function()
-					t.obj.Color = t.origColor
-					t.obj.Transparency = t.origTrans
-				end)
-			end
-		end
-	end
-	
-	local speed = 0.125
-	local openSpeed = 0.35
-	
-	local function start()
-		collectStrokes()
-		descendantConn = main.DescendantAdded:Connect(addStroke)
-		updateConn = RunService.Heartbeat:Connect(function()
-			local time = tick()
-			local hue = time * speed % 1
-			local openHue = time * openSpeed % 1
-			local col = Color3.fromHSV(hue, 1, 1)
-			local openCol = Color3.fromHSV(openHue, 1, 1)
-	
-			for i = #strokes, 1, -1 do
-				local t = strokes[i]
-				if not t.obj or not t.obj.Parent then
-					table.remove(strokes, i)
-				else
-					pcall(function()
-						t.obj.Color = col
-						t.obj.Transparency = 0
-					end)
-				end
-			end
-	
-			pcall(function()
-				local openStroke = open:FindFirstChildOfClass("UIStroke")
-				if openStroke then
-					openStroke.Color = openCol
-					openStroke.Transparency = 0
-				end
-			end)
-	
-			pcall(function()
-				if coolEffect and coolEffect:IsA("Frame") then
-					local img = coolEffect:FindFirstChildWhichIsA("ImageLabel") or coolEffect:FindFirstChildWhichIsA("ImageButton")
-					if img then img.ImageColor3 = col end
-				end
-			end)
-		end)
-	end
-	
-	local function stop()
-		if descendantConn then descendantConn:Disconnect() descendantConn = nil end
-		if updateConn then updateConn:Disconnect() updateConn = nil end
-		restore()
-		strokes = {}
-		pcall(function()
-			local openStroke = open:FindFirstChildOfClass("UIStroke")
-			if openStroke then openStroke.Color = Color3.new(0, 0, 0) end
-		end)
-		pcall(function()
-			local img = coolEffect:FindFirstChildWhichIsA("ImageLabel") or coolEffect:FindFirstChildWhichIsA("ImageButton")
-			if img then img.ImageColor3 = Color3.new(0.145098, 0.27451, 0.105882) end
-		end)
-	end
-	
-	button.Activated:Connect(function()
-		enabled = not enabled
-		if enabled then start() else stop() end
-		pcall(function() button:SetAttribute("rgb_enabled", enabled) end)
-	end)
-	
-end;
-task.spawn(C_6b);
--- StarterGui.frostware.main.tabs.settings.tdf.switch.LocalScript
-local function C_76()
-local script = G2L["76"];
-	local TweenService = game:GetService("TweenService")
-	local button = script.Parent
-	local frame = button:FindFirstChildOfClass("Frame")
-	
-	local debounce = false
-	local toggled = false
-	
-	-- Store original properties
-	local originalBgColor = button.BackgroundColor3
-	local originalFramePos = frame and frame.Position or nil
-	
-	local targetBgColor = Color3.fromRGB(0, 0, 0)
-	local targetFramePos = UDim2.new(0.113, 0, 0.19, 0)
-	button.MouseButton1Click:Connect(function()
-	    if debounce then return end
-	    debounce = true
-	
-	    if not toggled then
-	        -- Tween to target properties
-	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-	        local bgGoal = {
-	            BackgroundColor3 = targetBgColor
-	        }
-	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
-	        bgTween:Play()
-	
-	        if frame and targetFramePos then
-	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-	            local frameGoal = {
-	                Position = targetFramePos
-	            }
-	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
-	            frameTween:Play()
-	        end
-	        toggled = true
-	    else
-	        -- Tween back to original properties
-	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-	        local bgGoal = {
-	            BackgroundColor3 = originalBgColor
-	        }
-	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
-	        bgTween:Play()
-	
-	        if frame and originalFramePos then
-	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-	            local frameGoal = {
-	                Position = originalFramePos
-	            }
-	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
-	            frameTween:Play()
-	        end
-	        toggled = false
-	    end
-	
-	    task.wait(0.125)
-	    debounce = false
-	end)
-	
-	
-end;
-task.spawn(C_76);
--- StarterGui.frostware.main.tabs.settings.tdf.switch.tdffunc
-local function C_77()
-local script = G2L["77"];
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.Parent.Parent.StatusBar.tdf.Visible = not script.Parent.Parent.Parent.Parent.Parent.StatusBar.tdf.Visible
-	end)
-end;
-task.spawn(C_77);
--- StarterGui.frostware.main.tabs.settings.cv.switch.LocalScript
-local function C_80()
-local script = G2L["80"];
-	local TweenService = game:GetService("TweenService")
-	local button = script.Parent
-	local frame = button:FindFirstChildOfClass("Frame")
-	
-	local debounce = false
-	local toggled = false
-	
-	-- Store original properties
-	local originalBgColor = button.BackgroundColor3
-	local originalFramePos = frame and frame.Position or nil
-	
-	local targetBgColor = Color3.fromRGB(0, 0, 0)
-	local targetFramePos = UDim2.new(0.113, 0, 0.19, 0)
-	button.MouseButton1Click:Connect(function()
-	    if debounce then return end
-	    debounce = true
-	
-	    if not toggled then
-	        -- Tween to target properties
-	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-	        local bgGoal = {
-	            BackgroundColor3 = targetBgColor
-	        }
-	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
-	        bgTween:Play()
-	
-	        if frame and targetFramePos then
-	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-	            local frameGoal = {
-	                Position = targetFramePos
-	            }
-	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
-	            frameTween:Play()
-	        end
-	        toggled = true
-	    else
-	        -- Tween back to original properties
-	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-	        local bgGoal = {
-	            BackgroundColor3 = originalBgColor
-	        }
-	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
-	        bgTween:Play()
-	
-	        if frame and originalFramePos then
-	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-	            local frameGoal = {
-	                Position = originalFramePos
-	            }
-	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
-	            frameTween:Play()
-	        end
-	        toggled = false
-	    end
-	
-	    task.wait(0.125)
-	    debounce = false
-	end)
-	
-	
-end;
-task.spawn(C_80);
--- StarterGui.frostware.main.tabs.settings.cv.switch.cvfunc
-local function C_81()
-local script = G2L["81"];
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.Parent.Parent.Parent.cooleffect.Visible = not script.Parent.Parent.Parent.Parent.Parent.Parent.cooleffect.Visible
-	end)
-end;
-task.spawn(C_81);
--- StarterGui.frostware.main.tabs.settings.oph.switch.LocalScript
-local function C_8a()
-local script = G2L["8a"];
-	local TweenService = game:GetService("TweenService")
-	local button = script.Parent
-	local frame = button:FindFirstChildOfClass("Frame")
-	
-	local debounce = false
-	local toggled = false
-	
-	-- Store original properties
-	local originalBgColor = button.BackgroundColor3
-	local originalFramePos = frame and frame.Position or nil
-	
-	local targetBgColor = Color3.fromRGB(0, 0, 0)
-	local targetFramePos = UDim2.new(0.113, 0, 0.19, 0)
-	button.MouseButton1Click:Connect(function()
-	    if debounce then return end
-	    debounce = true
-	
-	    if not toggled then
-	        -- Tween to target properties
-	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-	        local bgGoal = {
-	            BackgroundColor3 = targetBgColor
-	        }
-	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
-	        bgTween:Play()
-	
-	        if frame and targetFramePos then
-	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-	            local frameGoal = {
-	                Position = targetFramePos
-	            }
-	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
-	            frameTween:Play()
-	        end
-	        toggled = true
-	    else
-	        -- Tween back to original properties
-	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-	        local bgGoal = {
-	            BackgroundColor3 = originalBgColor
-	        }
-	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
-	        bgTween:Play()
-	
-	        if frame and originalFramePos then
-	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-	            local frameGoal = {
-	                Position = originalFramePos
-	            }
-	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
-	            frameTween:Play()
-	        end
-	        toggled = false
-	    end
-	
-	    task.wait(0.125)
-	    debounce = false
-	end)
-	
-	
-end;
-task.spawn(C_8a);
--- StarterGui.frostware.main.tabs.settings.oph.switch.ophfunc
-local function C_8b()
-local script = G2L["8b"];
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.Parent.Parent.Parent.open.UIStroke.Enabled = not script.Parent.Parent.Parent.Parent.Parent.Parent.open.UIStroke.Enabled
-		script.Parent.Parent.Parent.Parent.Parent.Parent.open.BackgroundTransparency = (script.Parent.Parent.Parent.Parent.Parent.Parent.open.BackgroundTransparency == 1 and 0.75) or 1
-	end)
-end;
-task.spawn(C_8b);
--- StarterGui.frostware.main.tabs.settings.ops.switch.LocalScript
-local function C_94()
-local script = G2L["94"];
-	local TweenService = game:GetService("TweenService")
-	local button = script.Parent
-	local frame = button:FindFirstChildOfClass("Frame")
-	
-	local debounce = false
-	local toggled = false
-	
-	-- Store original properties
-	local originalBgColor = button.BackgroundColor3
-	local originalFramePos = frame and frame.Position or nil
-	
-	local targetBgColor = Color3.fromRGB(0, 0, 0)
-	local targetFramePos = UDim2.new(0.113, 0, 0.19, 0)
-	button.MouseButton1Click:Connect(function()
-	    if debounce then return end
-	    debounce = true
-	
-	    if not toggled then
-	        -- Tween to target properties
-	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-	        local bgGoal = {
-	            BackgroundColor3 = targetBgColor
-	        }
-	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
-	        bgTween:Play()
-	
-	        if frame and targetFramePos then
-	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-	            local frameGoal = {
-	                Position = targetFramePos
-	            }
-	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
-	            frameTween:Play()
-	        end
-	        toggled = true
-	    else
-	        -- Tween back to original properties
-	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-	        local bgGoal = {
-	            BackgroundColor3 = originalBgColor
-	        }
-	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
-	        bgTween:Play()
-	
-	        if frame and originalFramePos then
-	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-	            local frameGoal = {
-	                Position = originalFramePos
-	            }
-	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
-	            frameTween:Play()
-	        end
-	        toggled = false
-	    end
-	
-	    task.wait(0.125)
-	    debounce = false
-	end)
-	
-	
-end;
-task.spawn(C_94);
--- StarterGui.frostware.main.tabs.settings.ops.switch.opsfunc
-local function C_95()
-local script = G2L["95"];
-	script.Parent.MouseButton1Click:Connect(function()
-		local corner = script.Parent.Parent.Parent.Parent.Parent.Parent.open.UICorner
-		if corner.CornerRadius.Offset < 50 then
-			corner.CornerRadius = UDim.new(0, 99)
-		else
-			corner.CornerRadius = UDim.new(0, 24)
-		end
-		local corner2 = script.Parent.Parent.Parent.Parent.Parent.Parent.open.ImageButton.UICorner
-		if corner2.CornerRadius.Offset < 50 then
-			corner2.CornerRadius = UDim.new(0, 99)
-		else
-			corner2.CornerRadius = UDim.new(0, 16)
-		end
-	end)
-	
-end;
-task.spawn(C_95);
 -- StarterGui.frostware.main.tabs.scripthub.LocalScript
-local function C_9e()
-local script = G2L["9e"];
+local function C_67()
+local script = G2L["67"];
 	local HttpService = game:GetService("HttpService")
 	local SearchBox = script.Parent:FindFirstChild("TextBox") or script.Parent:FindFirstChild("SearchBox") or script.Parent:WaitForChild("TextBox",5)
 	local ResultsContainer = script.Parent:FindFirstChild("ScrollingFrame") or script.Parent:FindFirstChild("ResultsContainer") or script.Parent:WaitForChild("ScrollingFrame",5)
@@ -2944,10 +2469,10 @@ local script = G2L["9e"];
 	end)
 	
 end;
-task.spawn(C_9e);
+task.spawn(C_67);
 -- StarterGui.frostware.main.tabs.console.ScrollingFrame.TextLabel.LocalScript
-local function C_b3()
-local script = G2L["b3"];
+local function C_7c()
+local script = G2L["7c"];
 	local label = script.Parent
 	local LogService = game:GetService("LogService")
 	label.RichText = true
@@ -3032,7 +2557,485 @@ local script = G2L["b3"];
 	end)
 	
 end;
-task.spawn(C_b3);
+task.spawn(C_7c);
+-- StarterGui.frostware.main.tabs.settings.rgb.switch.LocalScript
+local function C_82()
+local script = G2L["82"];
+	local TweenService = game:GetService("TweenService")
+	local button = script.Parent
+	local frame = button:FindFirstChildOfClass("Frame")
+	
+	local debounce = false
+	local toggled = false
+	
+	-- Store original properties
+	local originalBgColor = button.BackgroundColor3
+	local originalFramePos = frame and frame.Position or nil
+	
+	local targetBgColor = Color3.fromRGB(0, 132, 255)
+	local targetFramePos = UDim2.new(0.59, 0, 0.19, 0)
+	button.MouseButton1Click:Connect(function()
+	    if debounce then return end
+	    debounce = true
+	
+	    if not toggled then
+	        -- Tween to target properties
+	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	        local bgGoal = {
+	            BackgroundColor3 = targetBgColor
+	        }
+	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
+	        bgTween:Play()
+	
+	        if frame and targetFramePos then
+	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	            local frameGoal = {
+	                Position = targetFramePos
+	            }
+	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
+	            frameTween:Play()
+	        end
+	        toggled = true
+	    else
+	        -- Tween back to original properties
+	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	        local bgGoal = {
+	            BackgroundColor3 = originalBgColor
+	        }
+	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
+	        bgTween:Play()
+	
+	        if frame and originalFramePos then
+	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	            local frameGoal = {
+	                Position = originalFramePos
+	            }
+	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
+	            frameTween:Play()
+	        end
+	        toggled = false
+	    end
+	
+	    task.wait(0.125)
+	    debounce = false
+	end)
+	
+	
+end;
+task.spawn(C_82);
+-- StarterGui.frostware.main.tabs.settings.rgb.switch.rgbfunc
+local function C_83()
+local script = G2L["83"];
+	local RunService = game:GetService("RunService")
+	local gui = script.Parent.Parent.Parent.Parent.Parent.Parent
+	local main = gui:WaitForChild("main")
+	local coolEffect = gui:WaitForChild("cooleffect")
+	local open = gui:WaitForChild("open")
+	local button = script.Parent
+	
+	local enabled = false
+	local updateConn
+	local descendantConn
+	local strokes = {}
+	
+	local function addStroke(obj)
+		if obj:IsA("UIStroke") and not obj:IsDescendantOf(coolEffect) and not obj:IsDescendantOf(open) then
+			local ok1, origColor = pcall(function() return obj.Color end)
+			local ok2, origTrans = pcall(function() return obj.Transparency end)
+			if ok1 and ok2 then
+				table.insert(strokes, {obj = obj, origColor = origColor, origTrans = origTrans})
+			end
+		end
+	end
+	
+	local function collectStrokes()
+		strokes = {}
+		for _, v in pairs(main:GetDescendants()) do
+			addStroke(v)
+		end
+	end
+	
+	local function restore()
+		for _, t in pairs(strokes) do
+			if t.obj and t.obj.Parent then
+				pcall(function()
+					t.obj.Color = t.origColor
+					t.obj.Transparency = t.origTrans
+				end)
+			end
+		end
+	end
+	
+	local speed = 0.125
+	local openSpeed = 0.35
+	
+	local function start()
+		collectStrokes()
+		descendantConn = main.DescendantAdded:Connect(addStroke)
+		updateConn = RunService.Heartbeat:Connect(function()
+			local time = tick()
+			local hue = time * speed % 1
+			local openHue = time * openSpeed % 1
+			local col = Color3.fromHSV(hue, 1, 1)
+			local openCol = Color3.fromHSV(openHue, 1, 1)
+	
+			for i = #strokes, 1, -1 do
+				local t = strokes[i]
+				if not t.obj or not t.obj.Parent then
+					table.remove(strokes, i)
+				else
+					pcall(function()
+						t.obj.Color = col
+						t.obj.Transparency = 0
+					end)
+				end
+			end
+	
+			pcall(function()
+				local openStroke = open:FindFirstChildOfClass("UIStroke")
+				if openStroke then
+					openStroke.Color = openCol
+					openStroke.Transparency = 0
+				end
+			end)
+	
+			pcall(function()
+				if coolEffect and coolEffect:IsA("Frame") then
+					local img = coolEffect:FindFirstChildWhichIsA("ImageLabel") or coolEffect:FindFirstChildWhichIsA("ImageButton")
+					if img then img.ImageColor3 = col end
+				end
+			end)
+		end)
+	end
+	
+	local function stop()
+		if descendantConn then descendantConn:Disconnect() descendantConn = nil end
+		if updateConn then updateConn:Disconnect() updateConn = nil end
+		restore()
+		strokes = {}
+		pcall(function()
+			local openStroke = open:FindFirstChildOfClass("UIStroke")
+			if openStroke then openStroke.Color = Color3.new(0, 0, 0) end
+		end)
+		pcall(function()
+			local img = coolEffect:FindFirstChildWhichIsA("ImageLabel") or coolEffect:FindFirstChildWhichIsA("ImageButton")
+			if img then img.ImageColor3 = Color3.new(0.145098, 0.27451, 0.105882) end
+		end)
+	end
+	
+	button.Activated:Connect(function()
+		enabled = not enabled
+		if enabled then start() else stop() end
+		pcall(function() button:SetAttribute("rgb_enabled", enabled) end)
+	end)
+	
+end;
+task.spawn(C_83);
+-- StarterGui.frostware.main.tabs.settings.tdf.switch.LocalScript
+local function C_8e()
+local script = G2L["8e"];
+	local TweenService = game:GetService("TweenService")
+	local button = script.Parent
+	local frame = button:FindFirstChildOfClass("Frame")
+	
+	local debounce = false
+	local toggled = false
+	
+	-- Store original properties
+	local originalBgColor = button.BackgroundColor3
+	local originalFramePos = frame and frame.Position or nil
+	
+	local targetBgColor = Color3.fromRGB(0, 0, 0)
+	local targetFramePos = UDim2.new(0.113, 0, 0.19, 0)
+	button.MouseButton1Click:Connect(function()
+	    if debounce then return end
+	    debounce = true
+	
+	    if not toggled then
+	        -- Tween to target properties
+	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	        local bgGoal = {
+	            BackgroundColor3 = targetBgColor
+	        }
+	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
+	        bgTween:Play()
+	
+	        if frame and targetFramePos then
+	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	            local frameGoal = {
+	                Position = targetFramePos
+	            }
+	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
+	            frameTween:Play()
+	        end
+	        toggled = true
+	    else
+	        -- Tween back to original properties
+	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	        local bgGoal = {
+	            BackgroundColor3 = originalBgColor
+	        }
+	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
+	        bgTween:Play()
+	
+	        if frame and originalFramePos then
+	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	            local frameGoal = {
+	                Position = originalFramePos
+	            }
+	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
+	            frameTween:Play()
+	        end
+	        toggled = false
+	    end
+	
+	    task.wait(0.125)
+	    debounce = false
+	end)
+	
+	
+end;
+task.spawn(C_8e);
+-- StarterGui.frostware.main.tabs.settings.tdf.switch.tdffunc
+local function C_8f()
+local script = G2L["8f"];
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.Parent.Parent.StatusBar.tdf.Visible = not script.Parent.Parent.Parent.Parent.Parent.StatusBar.tdf.Visible
+	end)
+end;
+task.spawn(C_8f);
+-- StarterGui.frostware.main.tabs.settings.cv.switch.LocalScript
+local function C_98()
+local script = G2L["98"];
+	local TweenService = game:GetService("TweenService")
+	local button = script.Parent
+	local frame = button:FindFirstChildOfClass("Frame")
+	
+	local debounce = false
+	local toggled = false
+	
+	-- Store original properties
+	local originalBgColor = button.BackgroundColor3
+	local originalFramePos = frame and frame.Position or nil
+	
+	local targetBgColor = Color3.fromRGB(0, 0, 0)
+	local targetFramePos = UDim2.new(0.113, 0, 0.19, 0)
+	button.MouseButton1Click:Connect(function()
+	    if debounce then return end
+	    debounce = true
+	
+	    if not toggled then
+	        -- Tween to target properties
+	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	        local bgGoal = {
+	            BackgroundColor3 = targetBgColor
+	        }
+	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
+	        bgTween:Play()
+	
+	        if frame and targetFramePos then
+	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	            local frameGoal = {
+	                Position = targetFramePos
+	            }
+	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
+	            frameTween:Play()
+	        end
+	        toggled = true
+	    else
+	        -- Tween back to original properties
+	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	        local bgGoal = {
+	            BackgroundColor3 = originalBgColor
+	        }
+	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
+	        bgTween:Play()
+	
+	        if frame and originalFramePos then
+	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	            local frameGoal = {
+	                Position = originalFramePos
+	            }
+	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
+	            frameTween:Play()
+	        end
+	        toggled = false
+	    end
+	
+	    task.wait(0.125)
+	    debounce = false
+	end)
+	
+	
+end;
+task.spawn(C_98);
+-- StarterGui.frostware.main.tabs.settings.cv.switch.cvfunc
+local function C_99()
+local script = G2L["99"];
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.Parent.Parent.Parent.cooleffect.Visible = not script.Parent.Parent.Parent.Parent.Parent.Parent.cooleffect.Visible
+	end)
+end;
+task.spawn(C_99);
+-- StarterGui.frostware.main.tabs.settings.oph.switch.LocalScript
+local function C_a2()
+local script = G2L["a2"];
+	local TweenService = game:GetService("TweenService")
+	local button = script.Parent
+	local frame = button:FindFirstChildOfClass("Frame")
+	
+	local debounce = false
+	local toggled = false
+	
+	-- Store original properties
+	local originalBgColor = button.BackgroundColor3
+	local originalFramePos = frame and frame.Position or nil
+	
+	local targetBgColor = Color3.fromRGB(0, 0, 0)
+	local targetFramePos = UDim2.new(0.113, 0, 0.19, 0)
+	button.MouseButton1Click:Connect(function()
+	    if debounce then return end
+	    debounce = true
+	
+	    if not toggled then
+	        -- Tween to target properties
+	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	        local bgGoal = {
+	            BackgroundColor3 = targetBgColor
+	        }
+	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
+	        bgTween:Play()
+	
+	        if frame and targetFramePos then
+	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	            local frameGoal = {
+	                Position = targetFramePos
+	            }
+	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
+	            frameTween:Play()
+	        end
+	        toggled = true
+	    else
+	        -- Tween back to original properties
+	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	        local bgGoal = {
+	            BackgroundColor3 = originalBgColor
+	        }
+	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
+	        bgTween:Play()
+	
+	        if frame and originalFramePos then
+	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	            local frameGoal = {
+	                Position = originalFramePos
+	            }
+	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
+	            frameTween:Play()
+	        end
+	        toggled = false
+	    end
+	
+	    task.wait(0.125)
+	    debounce = false
+	end)
+	
+	
+end;
+task.spawn(C_a2);
+-- StarterGui.frostware.main.tabs.settings.oph.switch.ophfunc
+local function C_a3()
+local script = G2L["a3"];
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.Parent.Parent.Parent.open.UIStroke.Enabled = not script.Parent.Parent.Parent.Parent.Parent.Parent.open.UIStroke.Enabled
+		script.Parent.Parent.Parent.Parent.Parent.Parent.open.BackgroundTransparency = (script.Parent.Parent.Parent.Parent.Parent.Parent.open.BackgroundTransparency == 1 and 0.75) or 1
+	end)
+end;
+task.spawn(C_a3);
+-- StarterGui.frostware.main.tabs.settings.ops.switch.LocalScript
+local function C_ac()
+local script = G2L["ac"];
+	local TweenService = game:GetService("TweenService")
+	local button = script.Parent
+	local frame = button:FindFirstChildOfClass("Frame")
+	
+	local debounce = false
+	local toggled = false
+	
+	-- Store original properties
+	local originalBgColor = button.BackgroundColor3
+	local originalFramePos = frame and frame.Position or nil
+	
+	local targetBgColor = Color3.fromRGB(0, 0, 0)
+	local targetFramePos = UDim2.new(0.113, 0, 0.19, 0)
+	button.MouseButton1Click:Connect(function()
+	    if debounce then return end
+	    debounce = true
+	
+	    if not toggled then
+	        -- Tween to target properties
+	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	        local bgGoal = {
+	            BackgroundColor3 = targetBgColor
+	        }
+	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
+	        bgTween:Play()
+	
+	        if frame and targetFramePos then
+	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	            local frameGoal = {
+	                Position = targetFramePos
+	            }
+	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
+	            frameTween:Play()
+	        end
+	        toggled = true
+	    else
+	        -- Tween back to original properties
+	        local bgTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	        local bgGoal = {
+	            BackgroundColor3 = originalBgColor
+	        }
+	        local bgTween = TweenService:Create(button, bgTweenInfo, bgGoal)
+	        bgTween:Play()
+	
+	        if frame and originalFramePos then
+	            local frameTweenInfo = TweenInfo.new(0.125, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	            local frameGoal = {
+	                Position = originalFramePos
+	            }
+	            local frameTween = TweenService:Create(frame, frameTweenInfo, frameGoal)
+	            frameTween:Play()
+	        end
+	        toggled = false
+	    end
+	
+	    task.wait(0.125)
+	    debounce = false
+	end)
+	
+	
+end;
+task.spawn(C_ac);
+-- StarterGui.frostware.main.tabs.settings.ops.switch.opsfunc
+local function C_ad()
+local script = G2L["ad"];
+	script.Parent.MouseButton1Click:Connect(function()
+		local corner = script.Parent.Parent.Parent.Parent.Parent.Parent.open.UICorner
+		if corner.CornerRadius.Offset < 50 then
+			corner.CornerRadius = UDim.new(0, 99)
+		else
+			corner.CornerRadius = UDim.new(0, 24)
+		end
+		local corner2 = script.Parent.Parent.Parent.Parent.Parent.Parent.open.ImageButton.UICorner
+		if corner2.CornerRadius.Offset < 50 then
+			corner2.CornerRadius = UDim.new(0, 99)
+		else
+			corner2.CornerRadius = UDim.new(0, 16)
+		end
+	end)
+	
+end;
+task.spawn(C_ad);
 -- StarterGui.frostware.main.StatusBar.tdf.LocalScript
 local function C_ba()
 local script = G2L["ba"];
