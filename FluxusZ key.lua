@@ -57,8 +57,8 @@ gradient.Parent = line
 
 task.spawn(function()
 	while task.wait() do
-		for i = 0, 1, 0.01 do
-			gradient.Offset = Vector2.new(i, 0)
+		for r = 0, 360, 4 do
+			gradient.Rotation = r
 			task.wait(0.03)
 		end
 	end
@@ -70,15 +70,17 @@ local function addBreathingOutline(button)
 	stroke.Thickness = 2
 	stroke.Color = Color3.fromRGB(100,100,100)
 	stroke.Parent = button
-	local grad = Instance.new("UIGradient")
-	grad.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(100,100,100)), ColorSequenceKeypoint.new(1, Color3.fromRGB(255,255,255))}
-	grad.Rotation = 45
-	grad.Parent = stroke
 	local running = true
 	task.spawn(function()
 		while button.Parent and running do
-			for i = 0,1,0.02 do grad.Offset = Vector2.new(i,i) task.wait(0.03) end
-			for i = 1,0,-0.02 do grad.Offset = Vector2.new(i,i) task.wait(0.03) end
+			for i = 0,1,0.02 do
+				stroke.Color = Color3.fromRGB(100,100,100):Lerp(Color3.fromRGB(255,255,255), i)
+				task.wait(0.03)
+			end
+			for i = 1,0,-0.02 do
+				stroke.Color = Color3.fromRGB(100,100,100):Lerp(Color3.fromRGB(255,255,255), i)
+				task.wait(0.03)
+			end
 		end
 	end)
 	return function() running = false stroke:Destroy() end
@@ -258,28 +260,15 @@ local function loadSavedKey()
 		if not ok_exists or not exists then
 			return nil
 		end
+	end
+	if readfile then
 		local ok_read, content = pcall(readfile, filePath)
 		if ok_read then
 			return content
 		end
-		return nil
 	end
-
-	if readfile then
-		local ok, content = pcall(readfile, filePath)
-		if ok then
-			return content
-		end
-	end
-
 	return nil
 end
-
-return {
-	saveKey = saveKey,
-	loadSavedKey = loadSavedKey,
-	filePath = filePath
-}
 
 local function disableGui(guiObj)
 	for _, obj in pairs(guiObj:GetDescendants()) do
