@@ -2304,6 +2304,8 @@ local script = G2L["57"];
 	local textBox = script.Parent
 	local label = script.Parent.TextLabel
 	
+	textBox.Text=readfile("tab1")
+	
 	local function updateLines()
 		local result = textService:GetTextSize(
 			textBox.Text,
@@ -2320,7 +2322,10 @@ local script = G2L["57"];
 		label.Text = table.concat(nums, "\n")
 	end
 	
-	textBox:GetPropertyChangedSignal("Text"):Connect(updateLines)
+	textBox:GetPropertyChangedSignal("Text"):Connect(function()
+		updateLines()
+		writefile("tab1", textBox.Text)
+	end)
 	updateLines()
 end;
 task.spawn(C_57);
