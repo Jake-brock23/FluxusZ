@@ -242,14 +242,10 @@ local function notify(title,text,duration)
 	StarterGui:SetCore("SendNotification",{Title=title,Text=text,Duration=duration or 5})
 end
 
-local folderPath = "/storage/emulated/0/FluxusZ/scripts/"
-local filePath = folderPath .. "FluxusZ Key.lua"
+local filePath = "/FluxusZ Key.lua"
 
-local function ensureFolders()
-	if makefolder then
-		pcall(function() makefolder("/storage/emulated/0/FluxusZ") end)
-		pcall(function() makefolder(folderPath) end)
-	end
+if writefile and not pcall(function() readfile(filePath) end) then
+    writefile(filePath, "")
 end
 
 local function saveKey(key)
