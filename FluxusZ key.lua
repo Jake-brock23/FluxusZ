@@ -242,32 +242,44 @@ local function notify(title,text,duration)
 	StarterGui:SetCore("SendNotification",{Title=title,Text=text,Duration=duration or 5})
 end
 
-local filePath = "/FluxusZ Key.lua"
+local filePath = "FluxusZ Key.lua"
 
-if writefile and not pcall(function() readfile(filePath) end) then
-    writefile(filePath, "")
-end
-
-local function saveKey(key)
+local function saveKey(content)
 	if writefile then
-		ensureFolders()
-		pcall(function() writefile(filePath, key) end)
+		local ok = pcall(writefile, filePath, content or "")
+		return ok
 	end
+	return false
 end
 
 local function loadSavedKey()
-	if readfile and isfile then
-		ensureFolders()
-		local ok, exists = pcall(function() return isfile(filePath) end)
-		if ok and exists then
-			local ok2, content = pcall(function() return readfile(filePath) end)
-			if ok2 then
-				return content
-			end
+	if isfile then
+		local ok_exists, exists = pcall(isfile, filePath)
+		if not ok_exists or not exists then
+			return nil
+		end
+		local ok_read, content = pcall(readfile, filePath)
+		if ok_read then
+			return content
+		end
+		return nil
+	end
+
+	if readfile then
+		local ok, content = pcall(readfile, filePath)
+		if ok then
+			return content
 		end
 	end
+
 	return nil
 end
+
+return {
+	saveKey = saveKey,
+	loadSavedKey = loadSavedKey,
+	filePath = filePath
+}
 
 local function disableGui(guiObj)
 	for _, obj in pairs(guiObj:GetDescendants()) do
