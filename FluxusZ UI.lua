@@ -8,6 +8,14 @@
 ]=]
 
 -- Instances: 208 | Scripts: 24 | Modules: 0 | Tags: 0
+
+-- set this to true if you want to roll out the ui with new changess
+local _newui = false
+if _newui then
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Jake-brock23/FluxusZ/refs/heads/main/beta/fluxusz-beta.lua"))()
+	return
+end
+
 local G2L = {};
 
 while not game:IsLoaded() do
@@ -3061,3 +3069,4 @@ end;
 task.spawn(C_ba);
 
 return G2L["1"], require;
+
