@@ -10,8 +10,9 @@
 -- Instances: 208 | Scripts: 24 | Modules: 0 | Tags: 0
 
 -- set this to true if you want to roll out the ui with new changess
-local _newui = false
+local _newui = true
 if _newui then
+	dtc.maketoast("[+] autoexecute now works!")
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Jake-brock23/FluxusZ/refs/heads/main/beta/fluxusz-beta.lua"))()
 	return
 end
@@ -3069,4 +3070,5 @@ end;
 task.spawn(C_ba);
 
 return G2L["1"], require;
+
 
