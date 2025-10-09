@@ -294,17 +294,22 @@ if savedKey then
 end
 
 checkKeyBtn.MouseButton1Click:Connect(function()
-	local enteredKey=keyBox.Text
-	if enteredKey=="" then notify("Error","Please enter a key.",5) return end
-	local status=api.check_key(enteredKey)
-	if status and status.code=="KEY_VALID" then
-		saveKey(enteredKey)
-		getgenv().script_key = tostring(enteredKey)
-		notify("Success","Key valid. Loading...",5)
-		loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/647637e93926b1f672f1cf98d3016672.lua"))()
+	local key = keyBox.Text
+	
+	if key == "" then
+		notify("Error", "Please enter a valid key.", 5)
+		return
+	end
+	
+	local status = api.check_key(key)
+	if status and status.code == "KEY_VALID" then
+		saveKey(key)
+		getgenv().script_key = key
+		notify("Success", "Key is valid. Loading...", 5)
+		print("hi")
 		disableGui(gui)
 	else
-		notify("Invalid","Key is invalid or expired.",5)
+		notify("Invalid", "Key is invalid or expired", 5)
 	end
 end)
 
