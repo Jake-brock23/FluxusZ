@@ -164,7 +164,7 @@ G2L["10"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["10"]["BackgroundTransparency"] = 1;
 G2L["10"]["Size"] = UDim2.new(0.95341, 0, 0.12356, 0);
 G2L["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["10"]["Text"] = [[%hhs, %mm, %ss]];
+G2L["10"]["Text"] = [[INF]];
 G2L["10"]["Position"] = UDim2.new(0.04659, 0, 0.24138, 0);
 
 
@@ -563,7 +563,7 @@ G2L["38"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["38"]["BackgroundTransparency"] = 1;
 G2L["38"]["Size"] = UDim2.new(0.88121, 0, 0.368, 0);
 G2L["38"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["38"]["Text"] = [[I aint writing an essay gng]];
+G2L["38"]["Text"] = [[Welcome to FluxusZ V2, the Ultimate next-generation exploit]];
 G2L["38"]["Position"] = UDim2.new(0.0466, 0, 0.388, 0);
 
 
@@ -2961,5 +2961,6 @@ end;
 task.spawn(C_c8);
 
 return G2L["1"], require;
+
 
 
