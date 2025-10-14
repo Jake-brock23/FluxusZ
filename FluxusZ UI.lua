@@ -1,7 +1,19 @@
+if _G.Loaded then
+	dtc.maketoast("Fluxus Z is already running")
+	return
+end
+
+-- autoexecute ( PLEASE DONT FORGET THIS FFS )
+setreadonly(dtc, false)
+dtc.pushautoexec()
+setreadonly(dtc, true)
+
+_G.Loaded = true -- mark our UI as loaded after the autoexecute is called
+
 local G2L = {};
 
 -- StarterGui.ScreenGui
-G2L["1"] = Instance.new("ScreenGui", cloneref(game:GetService("CoreGui")));
+G2L["1"] = Instance.new("ScreenGui", cloneref(game:GetService("CoreGui"))); -- To whoever fuckass that didn't set the screengui parent to hui or coregui, pls kys
 G2L["1"]["SafeAreaCompatibility"] = Enum.SafeAreaCompatibility.None;
 G2L["1"]["IgnoreGuiInset"] = true;
 G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.None;
@@ -2949,4 +2961,5 @@ end;
 task.spawn(C_c8);
 
 return G2L["1"], require;
+
 
