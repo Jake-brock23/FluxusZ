@@ -3,6 +3,20 @@ if _G.Loaded then
 	return
 end
 
+-- HELPERS
+local HttpService = game:GetService("HttpService")
+local changelogs_url = "https://raw.githubusercontent.com/Jake-brock23/FluxusZ/refs/heads/main/beta/changelogs.json"
+
+local function fetchJsonText()
+    local res = game:HttpGet(changelogs_url)
+    local data = HttpService:JSONDecode(res)
+    local text = "Date: " .. data.date .. "\nChangelogs:\n"
+    for _, v in ipairs(data.changelogs) do
+        text = text .. "- " .. v .. "\n"
+    end
+    return text
+end
+
 -- autoexecute ( PLEASE DONT FORGET THIS FFS )
 setreadonly(dtc, false)
 dtc.pushautoexec()
@@ -563,7 +577,7 @@ G2L["38"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["38"]["BackgroundTransparency"] = 1;
 G2L["38"]["Size"] = UDim2.new(0.88121, 0, 0.368, 0);
 G2L["38"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["38"]["Text"] = [[Welcome to FluxusZ V2, the Ultimate next-generation exploit]];
+G2L["38"]["Text"] = fetchJsonText();
 G2L["38"]["Position"] = UDim2.new(0.0466, 0, 0.388, 0);
 
 
@@ -2568,7 +2582,6 @@ task.spawn(C_56);
 -- StarterGui.ScreenGui.holder.main.e.CloudScripts.SearchButton.LocalScript
 local function C_5e()
 local script = G2L["5e"];
-	local HttpService = game:GetService("HttpService")
 	local searchButton = script.Parent
 	local cloudScripts = searchButton.Parent
 	local searchBox = cloudScripts:WaitForChild("Prmotthingy"):WaitForChild("TextBox")
@@ -2961,6 +2974,3 @@ end;
 task.spawn(C_c8);
 
 return G2L["1"], require;
-
-
-
