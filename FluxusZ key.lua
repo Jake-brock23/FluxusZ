@@ -1,3 +1,4 @@
+-- unused. luarmor is not supported! [ i did this commit so I can corrupt the whole repository! ]
 local Players = game:GetService("Players")
 local TweenService = game:GetService("TweenService")
 local UserInputService = game:GetService("UserInputService")
