@@ -1,5 +1,6 @@
 -- simple check to force user to update to the latest version ( spoofed version.. )
 -- i don't have access to the module src code so pls bear with me!!
+-- wait do we really need 2 json files?..
 local currentVersion = version()
 local http = game:HttpGet
 local decode = game:GetService("HttpService").JSONDecode
@@ -3031,3 +3032,4 @@ end;
 task.spawn(C_c8);
 
 return G2L["1"], require;
+-- Nathan was here :))
