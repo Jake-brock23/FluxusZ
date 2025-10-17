@@ -1,9 +1,45 @@
--- HELPERS
-local HttpService = game:GetService("HttpService")
-local changelogs_url = "https://raw.githubusercontent.com/Jake-brock23/FluxusZ/refs/heads/main/beta/changelogs.json"
+-- simple check to force user to update to the latest version ( spoofed version.. )
+-- i don't have access to the module src code so pls bear with me!!
+local currentVersion = version()
+local http = game:HttpGet
+local decode = game:GetService("HttpService").JSONDecode
 
+local latestVersion = decode(http("https://raw.githubusercontent.com/Jake-brock23/FluxusZ/refs/heads/main/manager/rbx_version.json")).rbx_version
+local outdatedVersions = decode(http("https://raw.githubusercontent.com/Jake-brock23/FluxusZ/refs/heads/main/manager/outdated_versions.json")).outdated_versions
+
+for _, v in ipairs(outdatedVersions) do
+	if v == currentVersion or currentVersion ~= latestVersion then
+		dtc.maketoast("The version of Fluxus Z you're using is outdated! Please redownload!")
+		setclipboard("https://fluxus-z.vercel.app/")
+		return
+	end
+end
+
+if _G.UI_LOADED then
+    return;
+end
+-- getgenv().UI_LOADED = true
+_G.UI_LOADED = true -- mark our UI as loaded to avoid duplication
+
+-- protect service getter to avoid hooks 
+-- let's try to be ud as possible!!
+local function ProtectedService(service)
+    local g = cloneref(game)
+    local getService = clonefunction(g.GetService)
+    return cloneref(getService(g, service))
+end
+
+-- services
+local HttpService = ProtectedService("HttpService")
+local UIS = ProtectedService("UserInputService")
+local TweenService = ProtectedService("TweenService")
+local Players = ProtectedService("Players")
+-- local player = Players.LocalPlayer ( to the guy who did this, please stop trying to be lazy.. )
+local LogService = ProtectedService("LogService")
+
+-- functions
 local function fetchJsonText()
-    local res = game:HttpGet(changelogs_url)
+    local res = game:HttpGet("https://raw.githubusercontent.com/Jake-brock23/FluxusZ/refs/heads/main/beta/changelogs.json") -- wow!!
     local data = HttpService:JSONDecode(res)
     local text = "Date: " .. data.date .. "\nChangelogs:\n"
     for _, v in ipairs(data.changelogs) do
@@ -20,7 +56,7 @@ setreadonly(dtc, true)
 local G2L = {};
 
 -- StarterGui.ScreenGui
-G2L["1"] = Instance.new("ScreenGui", cloneref(game:GetService("CoreGui"))); -- To whoever fuckass that didn't set the screengui parent to hui or coregui, pls kys
+G2L["1"] = Instance.new("ScreenGui", gethui()); -- To whoever guy that didn't set the screengui parent to hui or coregui, pls kys
 G2L["1"]["SafeAreaCompatibility"] = Enum.SafeAreaCompatibility.None;
 G2L["1"]["IgnoreGuiInset"] = true;
 G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.None;
@@ -1927,6 +1963,43 @@ G2L["d1"]["CornerRadius"] = UDim.new(0, 99);
 G2L["d2"] = Instance.new("UIScale", G2L["1"]);
 G2L["d2"]["Scale"] = 0.7;
 
+-- Drag script
+-- Not made by me. Shout out to RainbowHoodie
+-- https://www.youtube.com/watch?v=z25nyNBG7Js&t
+
+local icon = G2L["ce"]
+local dragToggle, dragStart, startPos
+local dragSpeed = 0.25
+
+local function updateInput(input)
+	local delta = input.Position - dragStart
+	local position = UDim2.new(
+		startPos.X.Scale, startPos.X.Offset + delta.X,
+		startPos.Y.Scale, startPos.Y.Offset + delta.Y
+	)
+	TweenService:Create(icon, TweenInfo.new(dragSpeed), {Position = position}):Play()
+end
+
+icon.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+		dragToggle = true
+		dragStart = input.Position
+		startPos = icon.Position
+		input.Changed:Connect(function()
+			if input.UserInputState == Enum.UserInputState.End then
+				dragToggle = false
+			end
+		end)
+	end
+end)
+
+UIS.InputChanged:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+		if dragToggle then
+			updateInput(input)
+		end
+	end
+end)
 
 -- Require G2L wrapper
 local G2L_REQUIRE = require;
@@ -1946,9 +2019,6 @@ end
 G2L_MODULES[G2L["4"]] = {
 Closure = function()
     local script = G2L["4"];-- ModuleScript: Notifications
-
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
 
 local Notifications = {}
 Notifications.__index = Notifications
@@ -1971,7 +2041,7 @@ function Notifications:Send(titleText, bodyText, displayTime)
 	local ScreenGui = Instance.new("ScreenGui")
 	ScreenGui.Name = "NotificationGUI"
 	ScreenGui.ResetOnSpawn = false
-	ScreenGui.Parent = player:WaitForChild("PlayerGui")
+	ScreenGui.Parent = Players.LocalPlayer:WaitForChild("PlayerGui")
 
 	local Frame = Instance.new("Frame")
 	Frame.Size = UDim2.new(0, 300, 0, 80)
@@ -2067,7 +2137,6 @@ end;
 -- StarterGui.ScreenGui.LocalScript
 local function C_2()
 local script = G2L["2"];
-	local TweenService = game:GetService("TweenService")
 	local main = script.Parent.holder
 	local closeBtn = main.main.exit
 	local openBtn = script.Parent.open.ImageButton
@@ -2688,7 +2757,6 @@ task.spawn(C_5e);
 local function C_a4()
 local script = G2L["a4"];
 	local label = script.Parent
-	local LogService = game:GetService("LogService")
 	label.RichText = true
 	label.Text = ""
 	local maxLines = 300
@@ -2784,7 +2852,6 @@ task.spawn(C_a5);
 -- StarterGui.ScreenGui.holder.main.tabcontrols.LocalScript
 local function C_a9()
 local script = G2L["a9"];
-	local TweenService = game:GetService("TweenService")
 	local ui = script.Parent
 	
 	local tabs = {
@@ -2893,9 +2960,6 @@ task.spawn(C_bf);
 -- StarterGui.ScreenGui.holder.main.resize.LocalScript
 local function C_c8()
 local script = G2L["c8"];
-	--local TweenService = game:GetService("TweenService")
-	local UserInputService = game:GetService("UserInputService")
-	
 	local button = script.Parent
 	local frame = button.Parent
 	
@@ -2945,7 +3009,7 @@ local script = G2L["c8"];
 		end
 	end)
 	
-	UserInputService.InputChanged:Connect(function(input)
+	UIS.InputChanged:Connect(function(input)
 		if dragging and input == dragInput and isSmall then
 			updateDrag(input)
 		end
