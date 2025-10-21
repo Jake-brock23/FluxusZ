@@ -1,6 +1,8 @@
 local HttpService = game:GetService("HttpService")
 local changelogs_url = "https://raw.githubusercontent.com/Jake-brock23/FluxusZ/refs/heads/main/beta/changelogs.json"
 
+getgenv()._PULL_INT()
+
 if _G.Loaded then
 	dtc.maketoast("Fluxus Z is already running")
 	return
@@ -2974,4 +2976,5 @@ end;
 task.spawn(C_c8);
 
 return G2L["1"], require;
+
 
