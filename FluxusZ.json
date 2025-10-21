@@ -2,6 +2,6 @@
   "moduleName": "Fluxus Z",
   "rbxhttp": true,
   "script": "dtc.schedule(game:HttpGet('https://raw.githubusercontent.com/Jake-brock23/FluxusZ/main/FluxusZ%20UI.lua', true))",
-  "versionName": "2.0.0",
+  "versionName": "2.0.1",
   "Keysystem": false
 }
