@@ -11,7 +11,7 @@ api.script_id = "647637e93926b1f672f1cf98d3016672"
 local gui = Instance.new("ScreenGui")
 gui.Name = "FluxusZ_UI"
 gui.ResetOnSpawn = false
-gui.Parent = player:WaitForChild("PlayerGui")
+gui.Parent = player:WaitForChild("PlayerGui") --// Are we serious homie? You lit trash talked no hui usages and then proceed to miss this one?
 
 local main = Instance.new("Frame")
 main.Size = UDim2.new(0, 600, 0, 250)

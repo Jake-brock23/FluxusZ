@@ -1,6 +1,6 @@
 -- simple check to force user to update to the latest version ( spoofed version.. )
 -- i don't have access to the module src code so pls bear with me!!
--- wait do we really need 2 json files?..
+-- wait do we really need 2 json files?.. --// no, just one is enough, youre adding overhead by doing 2 requests, my module has the same issue for example, however a cache exists to deal with that until a proper fix can be made.
 local currentVersion = version()
 local http = game:HttpGet
 local decode = game:GetService("HttpService").JSONDecode
@@ -8,10 +8,26 @@ local decode = game:GetService("HttpService").JSONDecode
 local latestVersion = decode(http("https://raw.githubusercontent.com/Jake-brock23/FluxusZ/refs/heads/main/manager/rbx_version.json")).rbx_version
 local outdatedVersions = decode(http("https://raw.githubusercontent.com/Jake-brock23/FluxusZ/refs/heads/main/manager/outdated_versions.json")).outdated_versions
 
+--// clones, do not keep a ref to the table if youre not using everything in it.
+--// let everything else get gced
+_PULL_INT();
+
+--// Thank me for organizing the table like this because i will stop providing support to you later
+--// AKA Detectedly will be no more :yawn:
+local Interface = {
+	runcode = clonefunction(Detectedly.runcode),
+	toast = clonefunction(Detectedly.toast),
+	pushautoexec = clonefunction(Detectedly.pushautoexec),
+}; Detectedly = nil;
+
+--// as far as i can tell, youre using this for a beta testing ui, also did my fixes here.
+--// once again, go tell jake to do this himself next time.
+
 for _, v in ipairs(outdatedVersions) do
 	if v == currentVersion or currentVersion ~= latestVersion then
-		dtc.maketoast("The version of Fluxus Z you're using is outdated! Please redownload!")
-		setclipboard("https://fluxus-z.vercel.app/")
+		--// You know, a little splash screen or something would be cooler than a toast and also less likely to be missed
+		Interface.toast("The version of Fluxus Z you're using is outdated! Please redownload!")
+		setclipboard("https://fluxus-z.vercel.app/") --// I have a far cooler api for this, go tell jake to give you it.
 		return
 	end
 end
@@ -24,8 +40,14 @@ _G.UI_LOADED = true -- mark our UI as loaded to avoid duplication
 
 -- protect service getter to avoid hooks 
 -- let's try to be ud as possible!!
+--// Dude no. WHat the fuck?
+--// Youre making a 1 2 3 4 5, 5 fucking copies of game and getservice, possibly more
+--// all per call to this function, holy shit dude use upvalues
+--// define g and getService outside of the function and pass them in as upvalues.
+--// that way you dont have multiple copies made per call fucks sake
+--// Always keep performance in mind
 local function ProtectedService(service)
-    local g = cloneref(game)
+    local g = cloneref(game) 
     local getService = clonefunction(g.GetService)
     return cloneref(getService(g, service))
 end
@@ -35,7 +57,7 @@ local HttpService = ProtectedService("HttpService")
 local UIS = ProtectedService("UserInputService")
 local TweenService = ProtectedService("TweenService")
 local Players = ProtectedService("Players")
--- local player = Players.LocalPlayer ( to the guy who did this, please stop trying to be lazy.. )
+-- local player = Players.LocalPlayer ( to the guy who did this, please stop trying to be lazy.. ) --// i dont know who he is, but i can guarantee that he has a better codestyle than you.
 local LogService = ProtectedService("LogService")
 
 -- functions
@@ -50,13 +72,16 @@ local function fetchJsonText()
 end
 
 -- autoexecute ( PLEASE DONT FORGET THIS FFS )
-setreadonly(dtc, false)
-dtc.pushautoexec()
-setreadonly(dtc, true)
+Interface.pushautoexec()
 
 local G2L = {};
 
 -- StarterGui.ScreenGui
+--// may i know what happened to clonerefing the gethui like in the other ui..?
+--// i appreciate it not being done here as cloneref on hui is redundant but like
+--// what happened to the consistency, was there like a revelation to not do it here?
+--// or did you just forget?
+--// im not insulting it because no cloneref on hui is better, im just confused.
 G2L["1"] = Instance.new("ScreenGui", gethui()); -- To whoever guy that didn't set the screengui parent to hui or coregui, pls kys
 G2L["1"]["SafeAreaCompatibility"] = Enum.SafeAreaCompatibility.None;
 G2L["1"]["IgnoreGuiInset"] = true;
@@ -2614,7 +2639,7 @@ local script = G2L["50"];
 		if not textBox or textBox.Text == "" then return end
 	
 		pcall(function()
-			dtc.schedule(textBox.Text)
+			Interface.runcode(textBox.Text)
 		end)
 	end)
 	
@@ -2732,7 +2757,7 @@ local script = G2L["5e"];
 			if execButton then
 				execButton.MouseButton1Click:Connect(function()
 					local s, err = pcall(function()
-						loadstring(info.script)()
+						loadstring(info.script)() --// Little fun fact, running code in your ui thread is an open vuln
 					end)
 					if not s then
 						warn("[CloudScripts] Error executing script:", err)

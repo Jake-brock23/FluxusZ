@@ -1,8 +1,24 @@
 local HttpService = game:GetService("HttpService")
 local changelogs_url = "https://raw.githubusercontent.com/Jake-brock23/FluxusZ/refs/heads/main/beta/changelogs.json"
 
+--// clones, do not keep a ref to the table if youre not using everything in it.
+--// let everything else get gced
+_PULL_INT();
+
+--// Thank me for organizing the table like this because i will stop providing support to you after this version
+--// AKA Detectedly will be no more :yawn:
+local Interface = {
+	runcode = clonefunction(Detectedly.runcode),
+	toast = clonefunction(Detectedly.toast),
+	pushautoexec = clonefunction(Detectedly.pushautoexec),
+}; Detectedly = nil;
+
+--// youre hit by asset dtcs due to no custom assets in your imagelabels
+--// no clue why jake wanted me to do literal 4 line changes
+--// holy incompetency.
+
 if _G.Loaded then
-	dtc.maketoast("Fluxus Z is already running")
+	Interface.toast("Fluxus Z is already running")
 	return
 end
 
@@ -18,16 +34,15 @@ local function fetchJsonText()
 end
 
 -- autoexecute ( PLEASE DONT FORGET THIS FFS )
-setreadonly(dtc, false)
-dtc.pushautoexec()
-setreadonly(dtc, true)
+Interface.pushautoexec() --// running this pre ui load is a bad idea btw.
 
 _G.Loaded = true -- mark our UI as loaded after the autoexecute is called
 
 local G2L = {};
 
 -- StarterGui.ScreenGui
-G2L["1"] = Instance.new("ScreenGui", cloneref(game:GetService("CoreGui"))); -- To whoever fuckass that didn't set the screengui parent to hui or coregui, pls kys
+--// you do realize gethui is a thing right?
+G2L["1"] = Instance.new("ScreenGui", cloneref(gethui())); -- To whoever fuckass that didn't set the screengui parent to hui or coregui, pls kys
 G2L["1"]["SafeAreaCompatibility"] = Enum.SafeAreaCompatibility.None;
 G2L["1"]["IgnoreGuiInset"] = true;
 G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.None;
@@ -2551,7 +2566,7 @@ local script = G2L["50"];
 		if not textBox or textBox.Text == "" then return end
 	
 		pcall(function()
-			dtc.schedule(textBox.Text)
+			Interface.runcode(textBox.Text)
 		end)
 	end)
 	
@@ -2669,7 +2684,7 @@ local script = G2L["5e"];
 			if execButton then
 				execButton.MouseButton1Click:Connect(function()
 					local s, err = pcall(function()
-						loadstring(info.script)()
+						loadstring(info.script)() --// Little fun fact: Running scripts in your ui thread is an open vuln
 					end)
 					if not s then
 						warn("[CloudScripts] Error executing script:", err)
@@ -2738,6 +2753,7 @@ local script = G2L["a4"];
 	
 	local oldPrint, oldWarn, oldError = print, warn, error
 	
+	--// This actually looks pretty fun to play with, i respect it.
 	print = function(...)
 		local parts = {}
 		for i=1,select("#",...) do parts[#parts+1] = tostring(select(i,...)) end
