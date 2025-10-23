@@ -13,9 +13,9 @@ local Interface = {
 	pushautoexec = clonefunction(Detectedly.pushautoexec),
 }; Detectedly = nil;
 
---// youre hit by asset dtcs due to no custom assets in your imagelabels
+--// youre hit by asset dtcs due to no custom assets in your imagelabels -- I won't bother fixing this
 --// no clue why jake wanted me to do literal 4 line changes
---// holy incompetency.
+--// holy incompetency. -- MY BAD..
 
 if _G.Loaded then
 	Interface.toast("Fluxus Z is already running")
@@ -34,7 +34,7 @@ local function fetchJsonText()
 end
 
 -- autoexecute ( PLEASE DONT FORGET THIS FFS )
-Interface.pushautoexec() --// running this pre ui load is a bad idea btw.
+Interface.pushautoexec() --// running this pre ui load is a bad idea btw. -- This is fluxus z so whatever..
 
 _G.Loaded = true -- mark our UI as loaded after the autoexecute is called
 
@@ -42,6 +42,7 @@ local G2L = {};
 
 -- StarterGui.ScreenGui
 --// you do realize gethui is a thing right?
+-- Thanks for changing this <3. Mb
 G2L["1"] = Instance.new("ScreenGui", cloneref(gethui())); -- To whoever fuckass that didn't set the screengui parent to hui or coregui, pls kys
 G2L["1"]["SafeAreaCompatibility"] = Enum.SafeAreaCompatibility.None;
 G2L["1"]["IgnoreGuiInset"] = true;
@@ -2990,6 +2991,7 @@ end;
 task.spawn(C_c8);
 
 return G2L["1"], require;
+
 
 
 
