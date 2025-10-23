@@ -14,6 +14,8 @@ _PULL_INT();
 
 --// Thank me for organizing the table like this because i will stop providing support to you later
 --// AKA Detectedly will be no more :yawn:
+-- NO NO. I didn't organize the table for a reason! but thanks anyways incase Jakey didn't thank you.
+
 local Interface = {
 	runcode = clonefunction(Detectedly.runcode),
 	toast = clonefunction(Detectedly.toast),
@@ -22,6 +24,7 @@ local Interface = {
 
 --// as far as i can tell, youre using this for a beta testing ui, also did my fixes here.
 --// once again, go tell jake to do this himself next time.
+-- Noted. I won't help them anymore xd
 
 for _, v in ipairs(outdatedVersions) do
 	if v == currentVersion or currentVersion ~= latestVersion then
@@ -46,6 +49,7 @@ _G.UI_LOADED = true -- mark our UI as loaded to avoid duplication
 --// define g and getService outside of the function and pass them in as upvalues.
 --// that way you dont have multiple copies made per call fucks sake
 --// Always keep performance in mind
+-- No, I created this on purpose. You know what I mean.
 local function ProtectedService(service)
     local g = cloneref(game) 
     local getService = clonefunction(g.GetService)
@@ -57,7 +61,7 @@ local HttpService = ProtectedService("HttpService")
 local UIS = ProtectedService("UserInputService")
 local TweenService = ProtectedService("TweenService")
 local Players = ProtectedService("Players")
--- local player = Players.LocalPlayer ( to the guy who did this, please stop trying to be lazy.. ) --// i dont know who he is, but i can guarantee that he has a better codestyle than you.
+-- local player = Players.LocalPlayer ( to the guy who did this, please stop trying to be lazy.. ) --// i dont know who he is, but i can guarantee that he has a better codestyle than you. -- noted.
 local LogService = ProtectedService("LogService")
 
 -- functions
@@ -82,6 +86,7 @@ local G2L = {};
 --// what happened to the consistency, was there like a revelation to not do it here?
 --// or did you just forget?
 --// im not insulting it because no cloneref on hui is better, im just confused.
+-- I didn't cloneref gethui for a reason.. I guess you can tell what I wanted to do.
 G2L["1"] = Instance.new("ScreenGui", gethui()); -- To whoever guy that didn't set the screengui parent to hui or coregui, pls kys
 G2L["1"]["SafeAreaCompatibility"] = Enum.SafeAreaCompatibility.None;
 G2L["1"]["IgnoreGuiInset"] = true;
@@ -3058,3 +3063,4 @@ task.spawn(C_c8);
 
 return G2L["1"], require;
 -- Nathan was here :))
+
