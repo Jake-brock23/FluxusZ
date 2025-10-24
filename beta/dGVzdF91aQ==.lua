@@ -1,20 +1,10 @@
--- simple check to force user to update to the latest version ( spoofed version.. )
--- i don't have access to the module src code so pls bear with me!!
--- wait do we really need 2 json files?.. --// no, just one is enough, youre adding overhead by doing 2 requests, my module has the same issue for example, however a cache exists to deal with that until a proper fix can be made.
-local currentVersion = version()
-local http = game:HttpGet
-local decode = game:GetService("HttpService").JSONDecode
-
-local latestVersion = decode(http("https://raw.githubusercontent.com/Jake-brock23/FluxusZ/refs/heads/main/manager/rbx_version.json")).rbx_version
-local outdatedVersions = decode(http("https://raw.githubusercontent.com/Jake-brock23/FluxusZ/refs/heads/main/manager/outdated_versions.json")).outdated_versions
-
 --// clones, do not keep a ref to the table if youre not using everything in it.
 --// let everything else get gced
 _PULL_INT();
 
 --// Thank me for organizing the table like this because i will stop providing support to you later
 --// AKA Detectedly will be no more :yawn:
--- NO NO. I didn't organize the table for a reason! but thanks anyways incase Jakey didn't thank you.
+-- # Thank you nop for organizing this table.
 
 local Interface = {
 	runcode = clonefunction(Detectedly.runcode),
@@ -24,22 +14,12 @@ local Interface = {
 
 --// as far as i can tell, youre using this for a beta testing ui, also did my fixes here.
 --// once again, go tell jake to do this himself next time.
--- Noted. I won't help them anymore xd
+-- # Last commit from me probably
 
-for _, v in ipairs(outdatedVersions) do
-	if v == currentVersion or currentVersion ~= latestVersion then
-		--// You know, a little splash screen or something would be cooler than a toast and also less likely to be missed
-		Interface.toast("The version of Fluxus Z you're using is outdated! Please redownload!")
-		setclipboard("https://fluxus-z.vercel.app/") --// I have a far cooler api for this, go tell jake to give you it.
-		return
-	end
-end
-
-if _G.UI_LOADED then
+if getgenv().UI_LOADED then
     return;
 end
--- getgenv().UI_LOADED = true
-_G.UI_LOADED = true -- mark our UI as loaded to avoid duplication
+getgenv().UI_LOADED = true -- #  Mark our UI as loaded to avoid any UI duplication
 
 -- protect service getter to avoid hooks 
 -- let's try to be ud as possible!!
@@ -49,14 +29,14 @@ _G.UI_LOADED = true -- mark our UI as loaded to avoid duplication
 --// define g and getService outside of the function and pass them in as upvalues.
 --// that way you dont have multiple copies made per call fucks sake
 --// Always keep performance in mind
--- No, I created this on purpose. You know what I mean.
+-- # FIXED
+local g = cloneref(game) 
+local getService = clonefunction(g.GetService)
 local function ProtectedService(service)
-    local g = cloneref(game) 
-    local getService = clonefunction(g.GetService)
     return cloneref(getService(g, service))
 end
 
--- services
+-- # ROBLOX Services
 local HttpService = ProtectedService("HttpService")
 local UIS = ProtectedService("UserInputService")
 local TweenService = ProtectedService("TweenService")
@@ -64,7 +44,7 @@ local Players = ProtectedService("Players")
 -- local player = Players.LocalPlayer ( to the guy who did this, please stop trying to be lazy.. ) --// i dont know who he is, but i can guarantee that he has a better codestyle than you. -- noted.
 local LogService = ProtectedService("LogService")
 
--- functions
+-- # JSON Fetcher
 local function fetchJsonText()
     local res = game:HttpGet("https://raw.githubusercontent.com/Jake-brock23/FluxusZ/refs/heads/main/beta/changelogs.json") -- wow!!
     local data = HttpService:JSONDecode(res)
@@ -75,8 +55,11 @@ local function fetchJsonText()
     return text
 end
 
--- autoexecute ( PLEASE DONT FORGET THIS FFS )
+-- # Enable autoexecute
 Interface.pushautoexec()
+
+-- # Set the FPS cap to 0
+setfpscap(0)
 
 local G2L = {};
 
@@ -86,7 +69,7 @@ local G2L = {};
 --// what happened to the consistency, was there like a revelation to not do it here?
 --// or did you just forget?
 --// im not insulting it because no cloneref on hui is better, im just confused.
--- I didn't cloneref gethui for a reason.. I guess you can tell what I wanted to do.
+-- # To answer your question, yes I just forgot to cloneref it. but yeah I'm not gonna do it anyways.
 G2L["1"] = Instance.new("ScreenGui", gethui()); -- To whoever guy that didn't set the screengui parent to hui or coregui, pls kys
 G2L["1"]["SafeAreaCompatibility"] = Enum.SafeAreaCompatibility.None;
 G2L["1"]["IgnoreGuiInset"] = true;
@@ -94,11 +77,8 @@ G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.None;
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 G2L["1"]["ResetOnSpawn"] = false;
 
-
 -- StarterGui.ScreenGui.LocalScript
 G2L["2"] = Instance.new("LocalScript", G2L["1"]);
-
-
 
 -- StarterGui.ScreenGui.holder
 G2L["3"] = Instance.new("Frame", G2L["1"]);
@@ -109,11 +89,8 @@ G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["3"]["Name"] = [[holder]];
 G2L["3"]["BackgroundTransparency"] = 1;
 
-
 -- StarterGui.ScreenGui.holder.ModuleScript
 G2L["4"] = Instance.new("ModuleScript", G2L["3"]);
-
-
 
 -- StarterGui.ScreenGui.holder.main
 G2L["5"] = Instance.new("Frame", G2L["3"]);
@@ -125,11 +102,8 @@ G2L["5"]["Position"] = UDim2.new(0.0112, 0, 0, 0);
 G2L["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["5"]["Name"] = [[main]];
 
-
 -- StarterGui.ScreenGui.holder.main.LocalScript
 G2L["6"] = Instance.new("LocalScript", G2L["5"]);
-
-
 
 -- StarterGui.ScreenGui.holder.main.e
 G2L["7"] = Instance.new("Frame", G2L["5"]);
@@ -139,7 +113,6 @@ G2L["7"]["Size"] = UDim2.new(0.90514, 0, 0.99357, 0);
 G2L["7"]["Position"] = UDim2.new(0.0923, 0, 0.00453, 0);
 G2L["7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["7"]["Name"] = [[e]];
-
 
 -- StarterGui.ScreenGui.holder.main.e.tabname
 G2L["8"] = Instance.new("TextLabel", G2L["7"]);
@@ -158,11 +131,9 @@ G2L["8"]["Text"] = [[Dashboard]];
 G2L["8"]["Name"] = [[tabname]];
 G2L["8"]["Position"] = UDim2.new(0, 0, 0.02267, 0);
 
-
 -- StarterGui.ScreenGui.holder.main.e.UIPadding
 G2L["9"] = Instance.new("UIPadding", G2L["7"]);
 G2L["9"]["PaddingLeft"] = UDim.new(0, 20);
-
 
 -- StarterGui.ScreenGui.holder.main.e.hometab
 G2L["a"] = Instance.new("Frame", G2L["7"]);
@@ -173,7 +144,6 @@ G2L["a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["a"]["Name"] = [[hometab]];
 G2L["a"]["BackgroundTransparency"] = 1;
 
-
 -- StarterGui.ScreenGui.holder.main.e.hometab.keyinfocontainer
 G2L["b"] = Instance.new("Frame", G2L["a"]);
 G2L["b"]["BorderSizePixel"] = 0;
@@ -183,16 +153,12 @@ G2L["b"]["Position"] = UDim2.new(0, 0, 0.12594, 0);
 G2L["b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["b"]["Name"] = [[keyinfocontainer]];
 
-
 -- StarterGui.ScreenGui.holder.main.e.hometab.keyinfocontainer.UICorner
 G2L["c"] = Instance.new("UICorner", G2L["b"]);
-
-
 
 -- StarterGui.ScreenGui.holder.main.e.hometab.keyinfocontainer.UIStroke
 G2L["d"] = Instance.new("UIStroke", G2L["b"]);
 G2L["d"]["Color"] = Color3.fromRGB(40, 48, 80);
-
 
 -- StarterGui.ScreenGui.holder.main.e.hometab.keyinfocontainer.TextLabel
 G2L["e"] = Instance.new("TextLabel", G2L["b"]);
@@ -209,7 +175,6 @@ G2L["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["e"]["Text"] = [[License Information]];
 G2L["e"]["Position"] = UDim2.new(0.0466, 0, 0, 0);
 
-
 -- StarterGui.ScreenGui.holder.main.e.hometab.keyinfocontainer.TextLabel
 G2L["f"] = Instance.new("TextLabel", G2L["b"]);
 G2L["f"]["TextWrapped"] = true;
@@ -224,7 +189,6 @@ G2L["f"]["Size"] = UDim2.new(0.90681, 0, 0.12356, 0);
 G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["f"]["Text"] = [[Expiration]];
 G2L["f"]["Position"] = UDim2.new(0.0466, 0, 0.15805, 0);
-
 
 -- StarterGui.ScreenGui.holder.main.e.hometab.keyinfocontainer.TextLabel
 G2L["10"] = Instance.new("TextLabel", G2L["b"]);
@@ -241,7 +205,6 @@ G2L["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["10"]["Text"] = [[INF]];
 G2L["10"]["Position"] = UDim2.new(0.04659, 0, 0.24138, 0);
 
-
 -- StarterGui.ScreenGui.holder.main.e.hometab.keyinfocontainer.ImageLabel
 G2L["11"] = Instance.new("ImageLabel", G2L["b"]);
 G2L["11"]["BorderSizePixel"] = 0;
@@ -255,7 +218,6 @@ G2L["11"]["Size"] = UDim2.new(0.90681, 0, 0.40805, 0);
 G2L["11"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["11"]["Rotation"] = 180;
 G2L["11"]["Position"] = UDim2.new(0.04659, 0, 0.39368, 0);
-
 
 -- StarterGui.ScreenGui.holder.main.e.hometab.keyinfocontainer.ImageLabel.UICorner
 G2L["12"] = Instance.new("UICorner", G2L["11"]);
@@ -3063,4 +3025,5 @@ task.spawn(C_c8);
 
 return G2L["1"], require;
 -- Nathan was here :))
+
 
