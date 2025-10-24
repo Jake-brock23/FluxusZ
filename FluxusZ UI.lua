@@ -1,5 +1,6 @@
 local HttpService = game:GetService("HttpService")
 local changelogs_url = "https://raw.githubusercontent.com/Jake-brock23/FluxusZ/refs/heads/main/beta/changelogs.json"
+local HUI = cloneref(gethui())
 
 --// clones, do not keep a ref to the table if youre not using everything in it.
 --// let everything else get gced
@@ -14,15 +15,15 @@ local Interface = {
 }; Detectedly = nil;
 
 --// youre hit by asset dtcs due to no custom assets in your imagelabels -- I won't bother fixing this
---// no clue why jake wanted me to do literal 4 line changes
+--// no clue why jake wanted me to do literal 4 line changes 
 --// holy incompetency. -- MY BAD..
 
-if _G.Loaded then
+if _G.UI_LOADED then
 	Interface.toast("Fluxus Z is already running")
 	return
 end
 
--- HELPERS
+-- # json fetcher
 local function fetchJsonText()
     local res = game:HttpGet(changelogs_url)
     local data = HttpService:JSONDecode(res)
@@ -33,17 +34,22 @@ local function fetchJsonText()
     return text
 end
 
--- autoexecute ( PLEASE DONT FORGET THIS FFS )
-Interface.pushautoexec() --// running this pre ui load is a bad idea btw. -- This is fluxus z so whatever..
+-- Interface.pushautoexec() --// running this pre ui load is a bad idea btw. -- This is fluxus z so whatever.. (FIXED)
 
-_G.Loaded = true -- mark our UI as loaded after the autoexecute is called
+_G.UI_LOADED = true -- # Mark our UI as loaded to avoid any UI duplication issues.
+
+-- # Enable autoexecute
+Interface.pushautoexec()
+
+-- # Set fps cap to 0
+setfpscap(0)
 
 local G2L = {};
 
 -- StarterGui.ScreenGui
 --// you do realize gethui is a thing right?
 -- Thanks for changing this <3. Mb
-G2L["1"] = Instance.new("ScreenGui", cloneref(gethui())); -- To whoever fuckass that didn't set the screengui parent to hui or coregui, pls kys
+G2L["1"] = Instance.new("ScreenGui", HUI); -- To whoever fuckass that didn't set the screengui parent to hui or coregui, pls kys
 G2L["1"]["SafeAreaCompatibility"] = Enum.SafeAreaCompatibility.None;
 G2L["1"]["IgnoreGuiInset"] = true;
 G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.None;
@@ -2991,6 +2997,7 @@ end;
 task.spawn(C_c8);
 
 return G2L["1"], require;
+
 
 
 
