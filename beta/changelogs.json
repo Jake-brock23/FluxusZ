@@ -1,7 +1,7 @@
 {
-  "date": "10/14/2025",
+  "date": "10/24/2025",
   "changelogs": [
-    "Fixed the game UI overlapping with the exploit UI",
-    "Added Asynchronous changelogs system"
+    "Updated to Roblox 2.694.983"
   ]
 }
+
