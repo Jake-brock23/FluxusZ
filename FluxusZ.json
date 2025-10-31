@@ -1,10 +1,11 @@
 {
   "moduleName": "FluxusZ",
   "rbxhttp": true,
-  "script": "loadstring(game:HttpGet('https://raw.githubusercontent.com/Jake-brock23/FluxusZ/main/FluxusZ%20UI.lua', true))()",
+  "script": "loadstring(game:HttpGet('https://raw.githubusercontent.com/Jake-brock23/FluxusZ/main/Fluxz_key.lua', true))()",
   "versionName": "2.0.2",
   "Keysystem": false
 }
+
 
 
 
