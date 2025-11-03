@@ -287,8 +287,7 @@ local savedKey = loadSavedKey()
 if savedKey then
 	local status = api.check_key(savedKey)
 	if status and status.code=="KEY_VALID" then
-		getgenv().script_key = tostring(savedKey)
-		loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/647637e93926b1f672f1cf98d3016672.lua"))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Jake-brock23/FluxusZ/main/FluxusZ%20UI.lua",true))()
 		disableGui(gui)
 	end
 end
