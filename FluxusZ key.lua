@@ -305,7 +305,7 @@ checkKeyBtn.MouseButton1Click:Connect(function()
 		saveKey(key)
 		getgenv().script_key = key
 		notify("Success", "Key is valid. Loading...", 5)
-		print("hi")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Jake-brock23/FluxusZ/main/FluxusZ%20UI.lua",true))()
 		disableGui(gui)
 	else
 		notify("Invalid", "Key is invalid or expired", 5)
@@ -313,8 +313,12 @@ checkKeyBtn.MouseButton1Click:Connect(function()
 end)
 
 getKeyBtn.MouseButton1Click:Connect(function()
-	local link=(selectedLink=="Linkvertise") and "https://ads.luarmor.net/get_key?for=FluxusZ_linkvertise-cDcnFUgUZqBv" or "https://ads.luarmor.net/get_key?for=FluxusZ_lootlab-QijTuTGqffhs"
+	local link = (selectedLink == "Linkvertise") 
+		and "https://ads.luarmor.net/get_key?for=FluxusZ_linkvertise-cDcnFUgUZqBv" 
+		or "https://ads.luarmor.net/get_key?for=FluxusZ_lootlab-QijTuTGqffhs"
+	
 	setclipboard(link)
+	notify("Success", "Key link has been copied.", 3)
 end)
 
 local toggleBtn = Instance.new("ImageButton")
@@ -370,6 +374,7 @@ exitBtn.MouseButton1Click:Connect(function()
 end)
 
 TweenService:Create(main,TweenInfo.new(0.6,Enum.EasingStyle.Quart,Enum.EasingDirection.Out),{Position=UDim2.new(0.5,0,0.5,0)}):Play()
+
 
 
 
