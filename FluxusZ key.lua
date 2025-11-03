@@ -10,7 +10,7 @@ api.script_id = "647637e93926b1f672f1cf98d3016672"
 local gui = Instance.new("ScreenGui")
 gui.Name = "FluxusZ_UI"
 gui.ResetOnSpawn = false
-gui.Parent = game:GetService("CoreGui")
+gui.Parent = cloneref(gethui()) 
 
 local main = Instance.new("Frame")
 main.Size = UDim2.new(0, 600, 0, 250)
@@ -370,5 +370,6 @@ exitBtn.MouseButton1Click:Connect(function()
 end)
 
 TweenService:Create(main,TweenInfo.new(0.6,Enum.EasingStyle.Quart,Enum.EasingDirection.Out),{Position=UDim2.new(0.5,0,0.5,0)}):Play()
+
 
 
