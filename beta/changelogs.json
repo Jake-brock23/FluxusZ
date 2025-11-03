@@ -1,8 +1,11 @@
 {
-  "date": "10/26/2025",
+  "date": "11/3/2025",
   "changelogs": [
-    "Updated to Roblox 2.696.799"
+    "Updated to Roblox 2.696.799",
+    "Fixed Steal a Brainrot detection",
+    "Fixed an issue related to the UI"
   ]
 }
+
 
 
