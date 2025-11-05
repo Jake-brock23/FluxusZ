@@ -1,11 +1,12 @@
 {
   "moduleName": "FluxusZ",
   "rbxhttp": true,
-  "script_url": "https://raw.githubusercontent.com/Jake-brock23/FluxusZ/main/FluxusZ%20key.lua",
+  "script_url": "loadstring(game:HttpGet('https://raw.githubusercontent.com/Jake-brock23/FluxusZ/main/FluxusZ%20key.lua', true))()",
   "disc_invite": "https://discord.gg/fluxus",
   "versionName": "2.0.3",
   "Keysystem": false
 }
+
 
 
 
