@@ -315,7 +315,7 @@ end)
 getKeyBtn.MouseButton1Click:Connect(function()
 	local link = (selectedLink == "Linkvertise") 
 		and "https://ads.luarmor.net/get_key?for=FluxusZ_linkvertise-cDcnFUgUZqBv" 
-		or "https://ads.luarmor.net/get_key?for=FluxusZ_lootlabs-FdBXGFAgfyBE"
+		or "https://ads.luarmor.net/get_key?for=FluxusZ_lootlabs-sTfYnrKCYPeW"
 	
 	setclipboard(link)
 	notify("Success", "Key link has been copied.", 3)
@@ -374,6 +374,7 @@ exitBtn.MouseButton1Click:Connect(function()
 end)
 
 TweenService:Create(main,TweenInfo.new(0.6,Enum.EasingStyle.Quart,Enum.EasingDirection.Out),{Position=UDim2.new(0.5,0,0.5,0)}):Play()
+
 
 
 
