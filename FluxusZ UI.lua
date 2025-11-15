@@ -12,6 +12,7 @@ local Interface = {
 	runcode = clonefunction(Detectedly.runcode),
 	toast = clonefunction(Detectedly.toast),
 	pushautoexec = clonefunction(Detectedly.pushautoexec),
+	writefile = clonefunction(Detectedly.writefile),
 }; Detectedly = nil;
 
 --// youre hit by asset dtcs due to no custom assets in your imagelabels -- I won't bother fixing this
@@ -2997,6 +2998,7 @@ end;
 task.spawn(C_c8);
 
 return G2L["1"], require;
+
 
 
 
