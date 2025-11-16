@@ -13,7 +13,7 @@ local r = clonefunction(Detectedly.runcode)
 local t = clonefunction(Detectedly.toast)
 local p = clonefunction(Detectedly.pushautoexec)
 
--- add the thing zephh :sob
+Detectedly = nil
 
 local Interface = {
     writefile = w,
@@ -3004,6 +3004,7 @@ end;
 task.spawn(C_c8);
 
 return G2L["1"], require;
+
 
 
 
