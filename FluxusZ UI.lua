@@ -4,7 +4,7 @@ local HUI = cloneref(gethui())
 
 --// clones, do not keep a ref to the table if youre not using everything in it.
 --// let everything else get gced
-_PULL_INT();
+getgenv()._PULL_INT()
 
 --// Thank me for organizing the table like this because i will stop providing support to you after this version
 --// AKA Detectedly will be no more :yawn:
@@ -3004,6 +3004,7 @@ end;
 task.spawn(C_c8);
 
 return G2L["1"], require;
+
 
 
 
