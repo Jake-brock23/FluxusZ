@@ -8,13 +8,19 @@ _PULL_INT();
 
 --// Thank me for organizing the table like this because i will stop providing support to you after this version
 --// AKA Detectedly will be no more :yawn:
-local Interface = {
-	runcode = clonefunction(Detectedly.runcode),
-	toast = clonefunction(Detectedly.toast),
-	pushautoexec = clonefunction(Detectedly.pushautoexec),
-	writefile = clonefunction(Detectedly.writefile),
-}; Detectedly = nil;
+local w = clonefunction(Detectedly.writefile)
+local r = clonefunction(Detectedly.runcode)
+local t = clonefunction(Detectedly.toast)
+local p = clonefunction(Detectedly.pushautoexec)
 
+Detectedly = nil
+
+local Interface = {
+    writefile = w,
+    runcode = r,
+    toast = t,
+    pushautoexec = p,
+}
 --// youre hit by asset dtcs due to no custom assets in your imagelabels -- I won't bother fixing this
 --// no clue why jake wanted me to do literal 4 line changes 
 --// holy incompetency. -- MY BAD..
@@ -2998,6 +3004,7 @@ end;
 task.spawn(C_c8);
 
 return G2L["1"], require;
+
 
 
 
