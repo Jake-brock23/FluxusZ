@@ -165,7 +165,7 @@ local function createLinkButton(name,x,iconId)
 end
 
 local linkvertiseBtn = createLinkButton("Linkvertise",0,"rbxassetid://86481729660500")
-local lootlabsBtn = createLinkButton("Lootlabs",180,"rbxassetid://128402195473780")
+local lootlabsBtn = createLinkButton("workink",180,"rbxassetid://78917276990621")
 local selectedLink = "Linkvertise"
 local currentCancel
 
@@ -175,7 +175,7 @@ local function selectButton(btn)
 end
 
 linkvertiseBtn.MouseButton1Click:Connect(function() selectedLink="Linkvertise" selectButton(linkvertiseBtn) end)
-lootlabsBtn.MouseButton1Click:Connect(function() selectedLink="Lootlabs" selectButton(lootlabsBtn) end)
+lootlabsBtn.MouseButton1Click:Connect(function() selectedLink="workink" selectButton(lootlabsBtn) end)
 selectButton(linkvertiseBtn)
 
 local keyBox = Instance.new("TextBox")
@@ -315,7 +315,7 @@ end)
 getKeyBtn.MouseButton1Click:Connect(function()
 	local link = (selectedLink == "Linkvertise") 
 		and "https://ads.luarmor.net/get_key?for=FluxusZ_linkvertise-cDcnFUgUZqBv" 
-		or "https://ads.luarmor.net/get_key?for=FluxusZ_lootlabs-sTfYnrKCYPeW"
+		or "https://ads.luarmor.net/get_key?for=FluxusZ_Workink-OeGgOfKRbZfR"
 	
 	setclipboard(link)
 	notify("Success", "Key link has been copied.", 3)
