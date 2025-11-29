@@ -287,7 +287,7 @@ local savedKey = loadSavedKey()
 if savedKey then
 	local status = api.check_key(savedKey)
 	if status and status.code=="KEY_VALID" then
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Jake-brock23/FluxusZ/main/FluxusZ%20UI.lua",true))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Jake-brock23/FluxusZ/main/New%20Fluxusz.lua",true))()
 		disableGui(gui)
 	end
 end
@@ -305,7 +305,7 @@ checkKeyBtn.MouseButton1Click:Connect(function()
 		saveKey(key)
 		getgenv().script_key = key
 		notify("Success", "Key is valid. Loading...", 5)
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Jake-brock23/FluxusZ/main/FluxusZ%20UI.lua",true))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Jake-brock23/FluxusZ/main/New%20Fluxusz.lua",true))()
 		disableGui(gui)
 	else
 		notify("Invalid", "Key is invalid or expired", 5)
@@ -374,6 +374,7 @@ exitBtn.MouseButton1Click:Connect(function()
 end)
 
 TweenService:Create(main,TweenInfo.new(0.6,Enum.EasingStyle.Quart,Enum.EasingDirection.Out),{Position=UDim2.new(0.5,0,0.5,0)}):Play()
+
 
 
 
