@@ -3,8 +3,9 @@
 getgenv()._PULL_INT();
 
 local dtc = {
-  pushautoexec = clonefunction(Detectedly.pushautoexec);
-} Detectedly = nil;
+  pushautoexec = clonefunction(Detectedly.pushautoexec),
+} 
+Detectedly = nil;
 
 dtc.pushautoexec();
 
