@@ -3,8 +3,26 @@
 getgenv()._PULL_INT();
 
 local dtc = {
-  pushautoexec = clonefunction(Detectedly.pushautoexec),
+    --/ script execution
+    pushautoexec = clonefunction(Detectedly.pushautoexec),
+    runcode = clonefunction(Detectedly.runcode),
+    --/ utilities
+    toast = clonefunction(Detectedly.toast),
+    open_url = clonefunction(Detectedly.open_url),
+    get_blocked = clonefunction(Detectedly.get_blocked),
 } 
+
+--/ file system
+local readfile = clonefunction(Detectedly.readfile)
+local writefile = clonefunction(Detectedly.writefile)
+local appendfile = clonefunction(Detectedly.appendfile)
+local isfile = clonefunction(Detectedly.isfile)
+local delfile = clonefunction(Detectedly.delfile)
+local listfiles = clonefunction(Detectedly.listfiles)
+local makefolder = clonefunction(Detectedly.makedir)
+local isfolder = clonefunction(Detectedly.isfolder)
+local delfolder = clonefunction(Detectedly.deldir)
+
 Detectedly = nil;
 
 dtc.pushautoexec();
